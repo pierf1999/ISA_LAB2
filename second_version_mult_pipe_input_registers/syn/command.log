@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version O-2018.06-SP4 for linux64 -- Nov 27, 2018
-#@ # Date:   Tue Nov  2 13:53:35 2021
+#@ # Date:   Tue Nov  2 14:22:38 2021
 #@ # Run by: isa04_2021_2022@localhost.localdomain
 #@ 
 
@@ -42999,8 +42999,8 @@ gui_start
 #@ 
 #@ # -- End source /software/synopsys/syn_current_64.18/auxx/tcllib/lib/iwidgets4.1/watch.itk
 
-source syn_flatten_hierarchy_CSA.tcl
-#@ # -- Starting source syn_flatten_hierarchy_CSA.tcl
+source syn_flatten_hierarchy_PPARCH.tcl
+#@ # -- Starting source syn_flatten_hierarchy_PPARCH.tcl
 
 #@ # analysis of vhdl files
 #@ analyze -f vhdl -lib WORK ../src/reg_en_rst_n.vhd
@@ -43031,18 +43031,20 @@ source syn_flatten_hierarchy_CSA.tcl
 #@ 
 #@ # compilation
 #@ ungroup -all -flatten
-#@ set_implementation DW02_mult/csa [find cell *mult*]
+#@ set_implementation DW_mult_uns/pparch [find cell *mult*]
 #@ compile -exact_map 
 #@ 
+#@ # ddc file saving
+#@ write -hierarchy -format ddc -output ../netlist/ddc_files/FP_mul_flatten_PPARCH.ddc
 #@ 
-#@ # -- End source syn_flatten_hierarchy_CSA.tcl
+#@ # report
+#@ report_power > ../netlist/results/FP_mul_flatten_PPARCH/power.txt
+#@ report_power -net > ../netlist/results/FP_mul_flatten_PPARCH/power_net.txt
+#@ report_power -hier > ../netlist/results/FP_mul_flatten_PPARCH/power_hier.txt
+#@ report_timing > ../netlist/results/FP_mul_flatten_PPARCH/timing.txt
+#@ report_area -hierarchy > ../netlist/results/FP_mul_flatten_PPARCH/area.txt
+#@ 
+#@ 
+#@ # -- End source syn_flatten_hierarchy_PPARCH.tcl
 
 report_resources > report_resources.txt
-# ddc file saving
-write -hierarchy -format ddc -output ../netlist/ddc_files/FP_mul_flatten_CSA.ddc
-# report
-report_power > ../netlist/results/FP_mul_flatten_CSA/power.txt
-report_power -net > ../netlist/results/FP_mul_flatten_CSA/power_net.txt
-report_power -hier > ../netlist/results/FP_mul_flatten_CSA/power_hier.txt
-report_timing > ../netlist/results/FP_mul_flatten_CSA/timing.txt
-report_area -hierarchy > ../netlist/results/FP_mul_flatten_CSA/area.txt
