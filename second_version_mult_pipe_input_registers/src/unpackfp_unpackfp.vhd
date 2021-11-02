@@ -13,48 +13,47 @@ USE ieee.std_logic_1164.all;
 USE ieee.std_logic_arith.all;
 
 ENTITY UnpackFP IS
-   PORT( 
-      FP    : IN     std_logic_vector (31 DOWNTO 0);
-      SIG   : OUT    std_logic_vector (31 DOWNTO 0);
-      EXP   : OUT    std_logic_vector (7 DOWNTO 0);
-      SIGN  : OUT    std_logic;
-      isNaN : OUT    std_logic;
-      isINF : OUT    std_logic;
-      isZ   : OUT    std_logic;
-      isDN  : OUT    std_logic
-   );
+    PORT(
+        FP    : IN  std_logic_vector(31 DOWNTO 0);
+        SIG   : OUT std_logic_vector(31 DOWNTO 0);
+        EXP   : OUT std_logic_vector(7 DOWNTO 0);
+        SIGN  : OUT std_logic;
+        isNaN : OUT std_logic;
+        isINF : OUT std_logic;
+        isZ   : OUT std_logic;
+        isDN  : OUT std_logic
+    );
 
--- Declarations
+    -- Declarations
 
-END UnpackFP ;
-
+END UnpackFP;
 
 -- hds interface_end
 ARCHITECTURE UnpackFP OF UnpackFP IS
-	SIGNAL exp_int : std_logic_vector(7 DOWNTO 0);
-	SIGNAL sig_int : std_logic_vector(22 DOWNTO 0);
-	SIGNAL expZ, expFF, sigZ : std_logic;
+    SIGNAL exp_int           : std_logic_vector(7 DOWNTO 0);
+    SIGNAL sig_int           : std_logic_vector(22 DOWNTO 0);
+    SIGNAL expZ, expFF, sigZ : std_logic;
 BEGIN
-	exp_int <= FP(30 DOWNTO 23);
-	sig_int <= FP(22 DOWNTO 0);
+    exp_int <= FP(30 DOWNTO 23);
+    sig_int <= FP(22 DOWNTO 0);
 
-	SIGN <= FP(31);
-	EXP <= exp_int;
-	SIG(22 DOWNTO 0) <= sig_int;
+    SIGN             <= FP(31);
+    EXP              <= exp_int;
+    SIG(22 DOWNTO 0) <= sig_int;
 
-	expZ <= '1' WHEN (exp_int=X"00") ELSE '0';
-	expFF <= '1' WHEN (exp_int=X"FF") ELSE '0';
+    expZ  <= '1' WHEN (exp_int = X"00") ELSE '0';
+    expFF <= '1' WHEN (exp_int = X"FF") ELSE '0';
 
-	sigZ <= '1' WHEN (sig_int="00000000000000000000000") ELSE '0';
+    sigZ <= '1' WHEN (sig_int = "00000000000000000000000") ELSE '0';
 
-	isNaN <= expFF AND (NOT sigZ);
-	isINF <= expFF AND sigZ;
-	isZ <= expZ AND sigZ;
-	isDN <= expZ AND (NOT sigZ);
+    isNaN <= expFF AND (NOT sigZ);
+    isINF <= expFF AND sigZ;
+    isZ   <= expZ AND sigZ;
+    isDN  <= expZ AND (NOT sigZ);
 
-	-- Restore hidden 1.ffff when not zero or denormal
-	SIG(23) <= NOT expZ;
+    -- Restore hidden 1.ffff when not zero or denormal
+    SIG(23) <= NOT expZ;
 
-	SIG(31 DOWNTO 24) <= (OTHERS => '0');
+    SIG(31 DOWNTO 24) <= (OTHERS => '0');
 END UnpackFP;
 
