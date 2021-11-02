@@ -1,0 +1,58 @@
+ 
+****************************************
+Report : area
+Design : FPmul
+Version: O-2018.06-SP4
+Date   : Tue Nov  2 16:00:39 2021
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db)
+
+Number of ports:                         1314
+Number of nets:                          4480
+Number of cells:                         3031
+Number of combinational cells:           2500
+Number of sequential cells:               483
+Number of macros/black boxes:               0
+Number of buf/inv:                        412
+Number of references:                       8
+
+Combinational area:               3747.673999
+Buf/Inv area:                      266.532001
+Noncombinational area:            2189.445921
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                  5937.119921
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  ---------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
+                                  Total      Total    national   national   boxes   Design
+--------------------------------  ---------  -------  ---------  ---------  ------  ------------------------------
+FPmul                             5937.1199    100.0     4.2560     9.0440  0.0000  FPmul
+I1                                 128.7440      2.2    15.4280     0.0000  0.0000  FPmul_stage1
+I1/I0                               76.0760      1.3    35.3780    40.6980  0.0000  UnpackFP_0
+I1/I1                               37.2400      0.6    37.2400     0.0000  0.0000  UnpackFP_1
+I2                                4638.7740     78.1    12.5020   135.6600  0.0000  FPmul_stage2
+I2/add_1_root_add_143_2             48.6780      0.8    44.1560     4.5220  0.0000  FPmul_stage2_DW01_add_0
+I2/mult_151                       4441.9340     74.8  3251.0520  1190.8820  0.0000  FPmul_stage2_DW_mult_uns_2
+I3                                 396.0740      6.7     0.0000    27.1320  0.0000  FPmul_stage3
+I3/I11                             137.7880      2.3    45.7520     0.0000  0.0000  FPround_SIG_width28
+I3/I11/add_43                       92.0360      1.6    92.0360     0.0000  0.0000  FPround_SIG_width28_DW01_inc_1
+I3/I9                              231.1540      3.9    68.3620   162.7920  0.0000  FPnormalize_SIG_width28_0
+I4                                 467.0960      7.9    30.5900    22.6100  0.0000  FPmul_stage4
+I4/I1                              225.5680      3.8    71.8200   153.7480  0.0000  FPnormalize_SIG_width28_1
+I4/I3                              188.3280      3.2    39.1020   149.2260  0.0000  PackFP
+REGA                               144.7040      2.4     0.0000   144.7040  0.0000  reg_en_rst_n_N32_0
+REGB                               148.4280      2.5     0.0000   148.4280  0.0000  reg_en_rst_n_N32_1
+--------------------------------  ---------  -------  ---------  ---------  ------  ------------------------------
+Total                                                 3747.6740  2189.4459  0.0000
+
+1

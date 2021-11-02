@@ -1,0 +1,57 @@
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : FPmul
+Version: O-2018.06-SP4
+Date   : Tue Nov  2 16:00:39 2021
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db)
+
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+FPmul                  5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+FPmul                                     0.116    0.224 1.18e+05  117.897 100.0
+  I4 (FPmul_stage4)                       0.000    0.000 8.41e+03    8.415   7.1
+    I3 (PackFP)                           0.000    0.000 3.52e+03    3.519   3.0
+    I1 (FPnormalize_SIG_width28_1)        0.000    0.000 3.89e+03    3.888   3.3
+  I3 (FPmul_stage3)                       0.000    0.000 7.10e+03    7.098   6.0
+    I11 (FPround_SIG_width28)             0.000    0.000 2.66e+03    2.657   2.3
+      add_43 (FPround_SIG_width28_DW01_inc_1)
+                                          0.000    0.000 1.96e+03    1.960   1.7
+    I9 (FPnormalize_SIG_width28_0)        0.000    0.000 3.97e+03    3.967   3.4
+  I2 (FPmul_stage2)                       0.000    0.000 9.34e+04   93.443  79.3
+    mult_151 (FPmul_stage2_DW_mult_uns_2)
+                                          0.000    0.000 9.00e+04   89.989  76.3
+    add_1_root_add_143_2 (FPmul_stage2_DW01_add_0)
+                                          0.000    0.000  858.024    0.858   0.7
+  I1 (FPmul_stage1)                       0.116    0.224 2.94e+03    3.279   2.8
+    I1 (UnpackFP_1)                       0.000    0.000 1.02e+03    1.022   0.9
+    I0 (UnpackFP_0)                       0.116    0.224 1.54e+03    1.882   1.6
+  REGB (reg_en_rst_n_N32_1)               0.000    0.000 2.78e+03    2.784   2.4
+  REGA (reg_en_rst_n_N32_0)               0.000    0.000 2.53e+03    2.532   2.1
+1
