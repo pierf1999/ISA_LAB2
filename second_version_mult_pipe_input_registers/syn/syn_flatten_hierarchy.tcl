@@ -26,10 +26,7 @@ set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
 set_load $OLOAD [all_outputs]
 
 # compilation
-<<<<<<< HEAD
-=======
 ungroup -all -flatten
->>>>>>> 57dff0260db8984643a1cca4a678f7a49f7c299f
 compile -exact_map 
 
 # ddc file saving
