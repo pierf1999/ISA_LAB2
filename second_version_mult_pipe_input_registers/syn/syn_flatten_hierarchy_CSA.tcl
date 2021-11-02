@@ -27,15 +27,17 @@ set_load $OLOAD [all_outputs]
 
 # compilation
 ungroup -all -flatten
+set_implementation DW02_mult/csa [find cell *mult*]
 compile -exact_map 
 
 # ddc file saving
-write -hierarchy -format ddc -output ../netlist/ddc_files/FP_mul_flatten.ddc
+write -hierarchy -format ddc -output ../netlist/ddc_files/FP_mul_flatten_CSA.ddc
 
 # report
-report_power > ../netlist/results/FP_mul_flatten/power.txt
-report_power -net > ../netlist/results/FP_mul_flatten/power_net.txt
-report_power -hier > ../netlist/results/FP_mul_flatten/power_hier.txt
-report_timing > ../netlist/results/FP_mul_flatten/timing.txt
-report_area -hierarchy > ../netlist/results/FP_mul_flatten/area.txt
+report_power > ../netlist/results/FP_mul_flatten_CSA/power.txt
+report_power -net > ../netlist/results/FP_mul_flatten_CSA/power_net.txt
+report_power -hier > ../netlist/results/FP_mul_flatten_CSA/power_hier.txt
+report_timing > ../netlist/results/FP_mul_flatten_CSA/timing.txt
+report_area -hierarchy > ../netlist/results/FP_mul_flatten_CSA/area.txt
+
 
