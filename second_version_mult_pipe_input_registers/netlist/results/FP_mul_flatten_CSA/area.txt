@@ -1,0 +1,47 @@
+ 
+****************************************
+Report : area
+Design : FPmul
+Version: O-2018.06-SP4
+Date   : Tue Nov  2 13:59:27 2021
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db)
+
+Number of ports:                          490
+Number of nets:                          3233
+Number of cells:                         2382
+Number of combinational cells:           2113
+Number of sequential cells:               243
+Number of macros/black boxes:               0
+Number of buf/inv:                        208
+Number of references:                      27
+
+Combinational area:               3825.878003
+Buf/Inv area:                      154.014000
+Noncombinational area:            1099.377960
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                  4925.255963
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  ---------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
+                                  Total      Total    national   national   boxes   Design
+--------------------------------  ---------  -------  ---------  ---------  ------  -----------------
+FPmul                             4925.2560    100.0   255.6260  1099.3780  0.0000  FPmul
+I2/mult_134                       3476.6200     70.6  3328.1920     0.0000  0.0000  FPmul_DW02_mult_0
+I2/mult_134/FS_1                   148.4280      3.0   148.4280     0.0000  0.0000  FPmul_DW01_add_5
+I3/I11/add_45                       61.1800      1.2    61.1800     0.0000  0.0000  FPmul_DW01_inc_0
+add_1_root_I2/add_126_2             32.4520      0.7    32.4520     0.0000  0.0000  FPmul_DW01_add_3
+--------------------------------  ---------  -------  ---------  ---------  ------  -----------------
+Total                                                 3825.8780  1099.3780  0.0000
+
+1
