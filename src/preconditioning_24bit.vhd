@@ -29,7 +29,6 @@ entity PRECONDITIONING_24BIT is
     P11 : in  std_logic_vector(24 downto 0);
     S11 : in  std_logic;
     P12 : in  std_logic_vector(23 downto 0);
-    S12 : in  std_logic;
     R0 : out  std_logic_vector(47 downto 0);
     R1 : out  std_logic_vector(47 downto 0);
     R2 : out  std_logic_vector(46 downto 0);

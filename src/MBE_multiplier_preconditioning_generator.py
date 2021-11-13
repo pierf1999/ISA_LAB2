@@ -42,7 +42,7 @@ def getRows():
     return r
 
 # N: even number of input bits
-N = 8
+N = 24
 
 filename = "preconditioning_" + str(N) + "bit.vhd"
 try:
@@ -60,11 +60,12 @@ entity PRECONDITIONING_""" + str(N) + """BIT is
 """)
 
 for i in range(int(N/2)+1):
-    if i != N/2:
+    if i != int(N/2):
         vhdl_file.write("    P" + str(i) + " : in  std_logic_vector(" + str(N) + " downto 0);\n")
     else:
         vhdl_file.write("    P" + str(i) + " : in  std_logic_vector(" + str(N - 1) + " downto 0);\n")
-    vhdl_file.write("    S" + str(i) + " : in  std_logic;\n")
+    if i != int(N/2):
+        vhdl_file.write("    S" + str(i) + " : in  std_logic;\n")
 
 parallelism_R = 2 * N
 for i in range(int(N/2)+1):
