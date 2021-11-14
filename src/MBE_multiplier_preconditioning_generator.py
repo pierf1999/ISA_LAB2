@@ -42,7 +42,7 @@ def getRows():
     return r
 
 # N: even number of input bits
-N = 24
+N = 8
 
 filename = "preconditioning_" + str(N) + "bit.vhd"
 try:
