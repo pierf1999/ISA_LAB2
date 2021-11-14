@@ -62,6 +62,10 @@ def tree_generator(N_bits):
 		# next iteration (j+1).
 		dots_actually_present_current_col = dots_cols[0]
 
+		# useful for the console printing
+		FAs_total = 0
+		HAs_total = 0
+
 		# these variables are used in the vhdl writing part as a sort of indexes, together with i, j and k.
 		offset_inputs = 0
 		offset_outputs_sum = 0
@@ -95,6 +99,10 @@ def tree_generator(N_bits):
 				FAs = 0
 				HAs = 1
 				print(str(i) + ", " + str(j) + ":\t\t" + "FAs: " + str(FAs) + ", HAs: " + str(HAs))
+
+			# useful for the console printing
+			FAs_total += FAs
+			HAs_total += HAs
 
 			# write the vhdl code of the FAs
 			for k in range(FAs):
@@ -157,7 +165,9 @@ def tree_generator(N_bits):
 			offset_outputs_carry = 0
 
 		# this print is just to better visualize the log on the console
-		print("")
+		print("Total number of FAs: " + str(FAs_total))
+		print("Total number of HAs: " + str(HAs_total) + "\n")
+
 		
 	# close files
 	file_tree.close()
@@ -168,7 +178,7 @@ def tree_generator(N_bits):
 
 
 def main():
-	tree_generator(8)
+	tree_generator(24)
 
 if __name__ == '__main__':
 	main()
