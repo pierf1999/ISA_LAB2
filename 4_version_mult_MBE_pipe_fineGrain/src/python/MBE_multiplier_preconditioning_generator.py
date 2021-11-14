@@ -10,7 +10,6 @@ def initParallelism(parallelism):
             parallelism.append(N)
         else:
             parallelism.append(N + 1)
-    print(parallelism)
 
 def getRows():
     r = [] # list output rows
