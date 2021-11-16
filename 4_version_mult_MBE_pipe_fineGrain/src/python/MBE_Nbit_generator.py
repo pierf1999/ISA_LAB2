@@ -1,7 +1,7 @@
 import sys
 
 # N: even number of input bits
-N = 8
+N = 24
 
 filename = "MBE_" + str(N) + "bit.vhd"
 try:
@@ -93,10 +93,29 @@ for i in range(int(N/2)+1):
 vhdl_file.write("        );")  
 vhdl_file.write("""
     end component PRECONDITIONING_""" + str(N) + """BIT;
-
 """)
 
-################################# INSERISCI COMPONENT dadda_tree #################################
+vhdl_file.write("""
+    component dadda_tree
+        port(
+""")
+
+parallelism_R = 2 * N
+for i in range(int(N/2)+1):
+    if i > 1:
+        if i > 2 and i < int(N/2):
+            parallelism_R = parallelism_R - 2
+        else:
+            parallelism_R = parallelism_R - 1
+    vhdl_file.write("            d5_" + str(i) + " : in  std_logic_vector(" + str(parallelism_R - 1) + " downto 0);\n")
+vhdl_file.write("""            sum_output   : out std_logic_vector(47 downto 0);
+            carry_output : out std_logic_vector(47 downto 0)
+""")
+vhdl_file.write("        );")  
+vhdl_file.write("""
+    end component dadda_tree;
+
+""")
 
 vhdl_file.write("""
     --------signals--------------------------------------
@@ -115,7 +134,7 @@ for i in range(int(N/2)+1):
             parallelism_R = parallelism_R - 1
     vhdl_file.write("    signal R" + str(i) + " : std_logic_vector(" + str(parallelism_R - 1) + " downto 0);\n")
     
-vhdl_file.write("""
+vhdl_file.write("""    signal SUM_DADDA_ADDER, CARRY_DADDA_ADDER : std_logic_vector(47 downto 0);
 
 begin
 
@@ -174,8 +193,6 @@ begin
     PP_1C_PRECOND(""" + str((N + 1) * int(N/2) + N - 1) + """ downto """ + str((N + 1) * int(N/2)) + """) <= PP_MUX_1C(""" + str((N + 1) * int(N/2) + N - 1) + """ downto """ + str((N + 1) * int(N/2)) + """);
 """)
 
-################################# ISTANZIAZIONE PRECONDITIONING #################################
-
 vhdl_file.write("""
     i_PRECONDITIONING: PRECONDITIONING_""" + str(N) + """BIT
         port map(
@@ -203,5 +220,25 @@ for i in range(int(N/2)+1):
         vhdl_file.write("\n")
 
 vhdl_file.write("        );\n") 
+
+vhdl_file.write("""
+    i_DADDATREE: dadda_tree
+            port map(
+""")
+
+parallelism_R = 2 * N
+for i in range(int(N/2)+1):
+    if i > 1:
+        if i > 2 and i < int(N/2):
+            parallelism_R = parallelism_R - 2
+        else:
+            parallelism_R = parallelism_R - 1
+    vhdl_file.write("            d5_" + str(i) + " => R" + str(i) + ",\n")
+vhdl_file.write("""            sum_output   => SUM_DADDA_ADDER,
+            carry_output => CARRY_DADDA_ADDER
+""")
+vhdl_file.write("        );\n")  
+
+vhdl_file.write("    P <= std_logic_vector(unsigned(SUM_DADDA_ADDER) + unsigned(CARRY_DADDA_ADDER));")
 
 vhdl_file.write("\nend STRUCTURAL;")
