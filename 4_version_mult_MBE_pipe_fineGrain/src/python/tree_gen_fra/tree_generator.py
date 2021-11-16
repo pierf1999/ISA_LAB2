@@ -26,8 +26,6 @@ def tree_generator(N_bits):
 
 	# open the file to be written
 	file_tree = open("dadda_tree.vhd", "w")
-	file_signals = open("dadda_tree_signals.vhd", "w")
-	file_log = open("log.txt", "w")
 
 	# generate the maximum height for each level
 	levels_height = [2]
@@ -42,18 +40,30 @@ def tree_generator(N_bits):
 	levels_height[0] = N_operands
 	print(levels_height)
 
+	entity_signals_vhdl = ""
+	for k in range(levels_height[0]):
+		MSB_dot = 2*N_bits - numpy.where(numpy.array([dots - k for dots in dots_cols[::-1]])>0)[0][0]
+		entity_signals_vhdl += "\t\td0_" + str(k) + \
+		" : in std_logic_vector(" + str(MSB_dot) + " downto 0);\n"
+	entity_signals_vhdl += "\t\tsum_output : out std_logic_vector(" + str(2*N_bits - 1) + " downto 0);\n"
+	entity_signals_vhdl += "\t\tcarry_output : out std_logic_vector(" + str(2*N_bits - 1) + " downto 0)\n);"
+	entity_vhdl = "library ieee;\nuse ieee.std_logic_1164.all;\nuse ieee.numeric_std.all;\n\n" + \
+	"entity dadda_tree is\n" + "\tport(\n" + entity_signals_vhdl + "\nend dadda_tree;\n\n\n"
+
+	architecture_signals_vhdl = "architecture structural of dadda_tree is\n\n"
+
+	tree_vhdl = ""
 	# iterate to "solve" the tree
 	# with i we iterate through the different levels
 	for i in range(len(levels_height) - 1):
 		# here I write the vhdl signals for the current level
 		signals_vhdl = ""
-		for k in range(levels_height[i]):
+		for k in range(levels_height[i + 1]):
 			# this seems a very complex line, but itis simply a possible way to find the required parallelism
 			# for the signal representing the row (k) you are considering in this level (i)
 			MSB_dot = 2*N_bits - numpy.where(numpy.array([dots - k for dots in dots_cols[::-1]])>0)[0][0]
-			signals_vhdl += "signal d" + str(i) + "_" + str(k) + \
-			": std_logic_vector(" + str(MSB_dot) + " downto 0);\n"
-		file_signals.write(signals_vhdl)
+			architecture_signals_vhdl += "\tsignal d" + str(i + 1) + "_" + str(k) + \
+			" : std_logic_vector(" + str(MSB_dot) + " downto 0);\n"
 
 		# This variable is needed to store the number of dots currently present in the considered column (j), but it
 		# will be used in the next iteration (j+1). It's needed only in the vhdl writing for the part related to the
@@ -140,8 +150,8 @@ def tree_generator(N_bits):
 				"d" + str(i) + "_" + str(offset_inputs + k) + "(" + str(j) + ")"\
 				";\n\n"
 
-			# write into the file
-			file_tree.write(FAs_vhdl + HAs_vhdl + remaining_dots_vhdl)
+			# string to be written into the file
+			tree_vhdl += FAs_vhdl + HAs_vhdl + remaining_dots_vhdl
 
 			# we update the number of dots of the current column in order to prepare it
 			# for the next iteration
@@ -168,11 +178,27 @@ def tree_generator(N_bits):
 		print("Total number of FAs: " + str(FAs_total))
 		print("Total number of HAs: " + str(HAs_total) + "\n")
 
+	architecture_signals_vhdl += "\nbegin\n\n"
+
+	output_assignment_vhdl = "sum_output = "
+	for k in range(2*N_bits - 1, -1, -1):
+		output_assignment_vhdl += "d" + str(len(levels_height) - 1) + "_0(" + str(k) + ")"
+		if k > 0:
+			output_assignment_vhdl += " & "
+	output_assignment_vhdl += ";\n"
+
+	output_assignment_vhdl += "carry_output = "
+	for k in range(2*N_bits - 1, 0, -1):
+		output_assignment_vhdl += "d" + str(len(levels_height) - 1) + "_1(" + str(k) + ")"
+		if k > 1:
+			output_assignment_vhdl += " & "
+	output_assignment_vhdl += " & '0';\n\n"
+
+	file_tree.write(entity_vhdl + architecture_signals_vhdl + tree_vhdl + output_assignment_vhdl)
+	file_tree.write("end structural;")
 		
 	# close files
 	file_tree.close()
-	file_signals.close()
-	file_log.close()
 
 
 

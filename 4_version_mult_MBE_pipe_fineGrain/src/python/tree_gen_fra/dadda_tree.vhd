@@ -1,3 +1,57 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity dadda_tree is
+	port(
+		d0_0 : in std_logic_vector(47 downto 0);
+		d0_1 : in std_logic_vector(47 downto 0);
+		d0_2 : in std_logic_vector(46 downto 0);
+		d0_3 : in std_logic_vector(44 downto 0);
+		d0_4 : in std_logic_vector(42 downto 0);
+		d0_5 : in std_logic_vector(40 downto 0);
+		d0_6 : in std_logic_vector(38 downto 0);
+		d0_7 : in std_logic_vector(36 downto 0);
+		d0_8 : in std_logic_vector(34 downto 0);
+		d0_9 : in std_logic_vector(32 downto 0);
+		d0_10 : in std_logic_vector(30 downto 0);
+		d0_11 : in std_logic_vector(28 downto 0);
+		d0_12 : in std_logic_vector(27 downto 0);
+		sum_output : out std_logic_vector(47 downto 0);
+		carry_output : out std_logic_vector(47 downto 0)
+);
+end dadda_tree;
+
+
+architecture structural of dadda_tree is
+
+	signal d1_0 : std_logic_vector(47 downto 0);
+	signal d1_1 : std_logic_vector(47 downto 0);
+	signal d1_2 : std_logic_vector(46 downto 0);
+	signal d1_3 : std_logic_vector(44 downto 0);
+	signal d1_4 : std_logic_vector(42 downto 0);
+	signal d1_5 : std_logic_vector(40 downto 0);
+	signal d1_6 : std_logic_vector(38 downto 0);
+	signal d1_7 : std_logic_vector(36 downto 0);
+	signal d1_8 : std_logic_vector(34 downto 0);
+	signal d2_0 : std_logic_vector(47 downto 0);
+	signal d2_1 : std_logic_vector(47 downto 0);
+	signal d2_2 : std_logic_vector(46 downto 0);
+	signal d2_3 : std_logic_vector(44 downto 0);
+	signal d2_4 : std_logic_vector(42 downto 0);
+	signal d2_5 : std_logic_vector(40 downto 0);
+	signal d3_0 : std_logic_vector(47 downto 0);
+	signal d3_1 : std_logic_vector(47 downto 0);
+	signal d3_2 : std_logic_vector(46 downto 0);
+	signal d3_3 : std_logic_vector(44 downto 0);
+	signal d4_0 : std_logic_vector(47 downto 0);
+	signal d4_1 : std_logic_vector(47 downto 0);
+	signal d4_2 : std_logic_vector(46 downto 0);
+	signal d5_0 : std_logic_vector(47 downto 0);
+	signal d5_1 : std_logic_vector(47 downto 0);
+
+begin
+
 d1_0(0) <= d0_0(0);
 
 d1_1(0) <= d0_1(0);
@@ -3418,3 +3472,7 @@ port map(
 	cout => d5_0(48)
 );
 
+sum_output = d5_0(47) & d5_0(46) & d5_0(45) & d5_0(44) & d5_0(43) & d5_0(42) & d5_0(41) & d5_0(40) & d5_0(39) & d5_0(38) & d5_0(37) & d5_0(36) & d5_0(35) & d5_0(34) & d5_0(33) & d5_0(32) & d5_0(31) & d5_0(30) & d5_0(29) & d5_0(28) & d5_0(27) & d5_0(26) & d5_0(25) & d5_0(24) & d5_0(23) & d5_0(22) & d5_0(21) & d5_0(20) & d5_0(19) & d5_0(18) & d5_0(17) & d5_0(16) & d5_0(15) & d5_0(14) & d5_0(13) & d5_0(12) & d5_0(11) & d5_0(10) & d5_0(9) & d5_0(8) & d5_0(7) & d5_0(6) & d5_0(5) & d5_0(4) & d5_0(3) & d5_0(2) & d5_0(1) & d5_0(0);
+carry_output = d5_1(47) & d5_1(46) & d5_1(45) & d5_1(44) & d5_1(43) & d5_1(42) & d5_1(41) & d5_1(40) & d5_1(39) & d5_1(38) & d5_1(37) & d5_1(36) & d5_1(35) & d5_1(34) & d5_1(33) & d5_1(32) & d5_1(31) & d5_1(30) & d5_1(29) & d5_1(28) & d5_1(27) & d5_1(26) & d5_1(25) & d5_1(24) & d5_1(23) & d5_1(22) & d5_1(21) & d5_1(20) & d5_1(19) & d5_1(18) & d5_1(17) & d5_1(16) & d5_1(15) & d5_1(14) & d5_1(13) & d5_1(12) & d5_1(11) & d5_1(10) & d5_1(9) & d5_1(8) & d5_1(7) & d5_1(6) & d5_1(5) & d5_1(4) & d5_1(3) & d5_1(2) & d5_1(1) & '0';
+
+end structural;
