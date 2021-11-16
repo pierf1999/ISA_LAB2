@@ -96,6 +96,25 @@ architecture STRUCTURAL of MBE_24BIT is
         );
     end component PRECONDITIONING_24BIT;
 
+    component dadda_tree
+        port(
+            d0_0         : in  std_logic_vector(47 downto 0);
+            d0_1         : in  std_logic_vector(47 downto 0);
+            d0_2         : in  std_logic_vector(46 downto 0);
+            d0_3         : in  std_logic_vector(44 downto 0);
+            d0_4         : in  std_logic_vector(42 downto 0);
+            d0_5         : in  std_logic_vector(40 downto 0);
+            d0_6         : in  std_logic_vector(38 downto 0);
+            d0_7         : in  std_logic_vector(36 downto 0);
+            d0_8         : in  std_logic_vector(34 downto 0);
+            d0_9         : in  std_logic_vector(32 downto 0);
+            d0_10        : in  std_logic_vector(30 downto 0);
+            d0_11        : in  std_logic_vector(28 downto 0);
+            d0_12        : in  std_logic_vector(27 downto 0);
+            sum_output   : out std_logic_vector(47 downto 0);
+            carry_output : out std_logic_vector(47 downto 0)
+        );
+    end component dadda_tree;
 
     --------signals--------------------------------------
     signal B_dummy: std_logic_vector(26 downto 0);
@@ -115,6 +134,7 @@ architecture STRUCTURAL of MBE_24BIT is
     signal R10 : std_logic_vector(30 downto 0);
     signal R11 : std_logic_vector(28 downto 0);
     signal R12 : std_logic_vector(27 downto 0);
+    signal SUM_DADDA_ADDER, CARRY_DADDA_ADDER : std_logic_vector(47 downto 0);
 
 
 begin
@@ -215,4 +235,26 @@ begin
             R12 => R12
         );
 
+    i_DADDATREE: dadda_tree
+        port map(
+            d0_0         => R0,
+            d0_1         => R1,
+            d0_2         => R2,
+            d0_3         => R3,
+            d0_4         => R4,
+            d0_5         => R5,
+            d0_6         => R6,
+            d0_7         => R7,
+            d0_8         => R8,
+            d0_9         => R9,
+            d0_10        => R10,
+            d0_11        => R11,
+            d0_12        => R12,
+            sum_output   => SUM_DADDA_ADDER,
+            carry_output => CARRY_DADDA_ADDER
+        );
+        
+     P <= std_logic_vector(unsigned(SUM_DADDA_ADDER) + unsigned(CARRY_DADDA_ADDER));
+     
+     
 end STRUCTURAL;

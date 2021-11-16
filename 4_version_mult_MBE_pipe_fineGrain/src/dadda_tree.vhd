@@ -50,22 +50,22 @@ architecture structural of dadda_tree is
 	signal d1_5 : std_logic_vector(40 downto 0);
 	signal d1_6 : std_logic_vector(38 downto 0);
 	signal d1_7 : std_logic_vector(36 downto 0);
-	signal d1_8 : std_logic_vector(34 downto 0);
+	signal d1_8 : std_logic_vector(35 downto 0);
 	signal d2_0 : std_logic_vector(47 downto 0);
 	signal d2_1 : std_logic_vector(47 downto 0);
 	signal d2_2 : std_logic_vector(46 downto 0);
 	signal d2_3 : std_logic_vector(44 downto 0);
 	signal d2_4 : std_logic_vector(42 downto 0);
-	signal d2_5 : std_logic_vector(40 downto 0);
+	signal d2_5 : std_logic_vector(41 downto 0);
 	signal d3_0 : std_logic_vector(47 downto 0);
 	signal d3_1 : std_logic_vector(47 downto 0);
 	signal d3_2 : std_logic_vector(46 downto 0);
-	signal d3_3 : std_logic_vector(44 downto 0);
+	signal d3_3 : std_logic_vector(45 downto 0);
 	signal d4_0 : std_logic_vector(47 downto 0);
 	signal d4_1 : std_logic_vector(47 downto 0);
-	signal d4_2 : std_logic_vector(46 downto 0);
-	signal d5_0 : std_logic_vector(47 downto 0);
-	signal d5_1 : std_logic_vector(47 downto 0);
+	signal d4_2 : std_logic_vector(47 downto 0);
+	signal d5_0 : std_logic_vector(48 downto 0);
+	signal d5_1 : std_logic_vector(49 downto 0);
 
 begin
 

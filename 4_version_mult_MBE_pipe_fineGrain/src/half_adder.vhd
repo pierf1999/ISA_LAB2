@@ -8,7 +8,7 @@ entity half_adder is
             a:      in std_logic;
             b:      in std_logic;
             s:      out std_logic;
-            c_out:  out std_logic
+            cout:  out std_logic
         );
 end entity half_adder;
 
@@ -16,6 +16,6 @@ architecture structure of half_adder is
 begin
 
     s <= a xor b;
-    c_out <= a and b;
+    cout <= a and b;
 
 end architecture structure;

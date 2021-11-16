@@ -190,14 +190,14 @@ def tree_generator(N_bits):
 
 	architecture_inst_vhdl += "\nbegin\n\n"
 
-	output_assignment_vhdl = "sum_output = "
+	output_assignment_vhdl = "sum_output <= "
 	for k in range(2*N_bits - 1, -1, -1):
 		output_assignment_vhdl += "d" + str(len(levels_height) - 1) + "_0(" + str(k) + ")"
 		if k > 0:
 			output_assignment_vhdl += " & "
 	output_assignment_vhdl += ";\n"
 
-	output_assignment_vhdl += "carry_output = "
+	output_assignment_vhdl += "carry_output <= "
 	for k in range(2*N_bits - 1, 0, -1):
 		output_assignment_vhdl += "d" + str(len(levels_height) - 1) + "_1(" + str(k) + ")"
 		if k > 1:
