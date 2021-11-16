@@ -239,6 +239,6 @@ vhdl_file.write("""            sum_output   => SUM_DADDA_ADDER,
 """)
 vhdl_file.write("        );\n")  
 
-vhdl_file.write("    P <= std_logic_vector(unsigned(SUM_DADDA_ADDER) + unsigned(CARRY_DADDA_ADDER));")
+vhdl_file.write("\n    P <= std_logic_vector(unsigned(SUM_DADDA_ADDER) + unsigned(CARRY_DADDA_ADDER));\n")
 
 vhdl_file.write("\nend STRUCTURAL;")
