@@ -46,5 +46,5 @@ report_power -net > ../netlist/results/FP_MBE_fine_grain_pipe_compile_ultra/powe
 report_power -hier > ../netlist/results/FP_MBE_fine_grain_pipe_compile_ultra/power_hier.txt
 report_timing > ../netlist/results/FP_MBE_fine_grain_pipe_compile_ultra/timing.txt
 report_area -hierarchy > ../netlist/results/FP_MBE_fine_grain_pipe_compile_ultra/area.txt
-
+report_resources > ../netlist/results/FP_MBE_fine_grain_pipe_compile_ultra/resources.txt
 

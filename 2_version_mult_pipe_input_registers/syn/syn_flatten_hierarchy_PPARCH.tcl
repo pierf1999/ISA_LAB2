@@ -39,5 +39,5 @@ report_power -net > ../netlist/results/FP_mul_flatten_PPARCH/power_net.txt
 report_power -hier > ../netlist/results/FP_mul_flatten_PPARCH/power_hier.txt
 report_timing > ../netlist/results/FP_mul_flatten_PPARCH/timing.txt
 report_area -hierarchy > ../netlist/results/FP_mul_flatten_PPARCH/area.txt
-
+report_resources > ../netlist/results/FP_mul_flatten_PPARCH/resources.txt
 
