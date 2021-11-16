@@ -50,7 +50,17 @@ def tree_generator(N_bits):
 	entity_vhdl = "library ieee;\nuse ieee.std_logic_1164.all;\nuse ieee.numeric_std.all;\n\n" + \
 	"entity dadda_tree is\n" + "\tport(\n" + entity_signals_vhdl + "\nend dadda_tree;\n\n\n"
 
-	architecture_signals_vhdl = "architecture structural of dadda_tree is\n\n"
+	architecture_inst_vhdl = "architecture structural of dadda_tree is\n\n"
+
+	architecture_inst_vhdl += "\tcomponent half_adder\n\t\tport(\n" + \
+	"\t\t\ta : in std_logic;\n" + "\t\t\tb : in std_logic;\n" + "\t\t\ts : out std_logic;\n" + \
+	"\t\t\tcout : out std_logic);\n" + \
+	"\tend component;\n\n"
+
+	architecture_inst_vhdl += "\tcomponent full_adder\n\tport(\n" + \
+	"\t\t\ta : in std_logic;\n" + "\t\t\tb : in std_logic;\n" + "\t\t\tcin : in std_logic;\n" + \
+	"\t\t\ts : out std_logic;\n" + "\t\t\tcout : out std_logic);\n" + \
+	"\tend component;\n\n"
 
 	tree_vhdl = ""
 	# iterate to "solve" the tree
@@ -62,7 +72,7 @@ def tree_generator(N_bits):
 			# this seems a very complex line, but itis simply a possible way to find the required parallelism
 			# for the signal representing the row (k) you are considering in this level (i)
 			MSB_dot = 2*N_bits - numpy.where(numpy.array([dots - k for dots in dots_cols[::-1]])>0)[0][0]
-			architecture_signals_vhdl += "\tsignal d" + str(i + 1) + "_" + str(k) + \
+			architecture_inst_vhdl += "\tsignal d" + str(i + 1) + "_" + str(k) + \
 			" : std_logic_vector(" + str(MSB_dot) + " downto 0);\n"
 
 		# This variable is needed to store the number of dots currently present in the considered column (j), but it
@@ -178,7 +188,7 @@ def tree_generator(N_bits):
 		print("Total number of FAs: " + str(FAs_total))
 		print("Total number of HAs: " + str(HAs_total) + "\n")
 
-	architecture_signals_vhdl += "\nbegin\n\n"
+	architecture_inst_vhdl += "\nbegin\n\n"
 
 	output_assignment_vhdl = "sum_output = "
 	for k in range(2*N_bits - 1, -1, -1):
@@ -194,7 +204,7 @@ def tree_generator(N_bits):
 			output_assignment_vhdl += " & "
 	output_assignment_vhdl += " & '0';\n\n"
 
-	file_tree.write(entity_vhdl + architecture_signals_vhdl + tree_vhdl + output_assignment_vhdl)
+	file_tree.write(entity_vhdl + architecture_inst_vhdl + tree_vhdl + output_assignment_vhdl)
 	file_tree.write("end structural;")
 		
 	# close files

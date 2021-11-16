@@ -25,6 +25,23 @@ end dadda_tree;
 
 architecture structural of dadda_tree is
 
+	component half_adder
+		port(
+			a : in std_logic;
+			b : in std_logic;
+			s : out std_logic;
+			cout : out std_logic);
+	end component;
+
+	component full_adder
+	port(
+			a : in std_logic;
+			b : in std_logic;
+			cin : in std_logic;
+			s : out std_logic;
+			cout : out std_logic);
+	end component;
+
 	signal d1_0 : std_logic_vector(47 downto 0);
 	signal d1_1 : std_logic_vector(47 downto 0);
 	signal d1_2 : std_logic_vector(46 downto 0);
