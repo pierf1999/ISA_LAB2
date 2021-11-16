@@ -1,6 +1,15 @@
 import numpy
 
 def tree_generator(N_bits):
+	'''
+	This function generate a complete vhd file of a specific Dadda tree adder for a radix-4 Booth encoded multiplier.
+	The only parameter needed by the script is the number of bits of the input operands of the multiplier.
+
+	The generated vhd component has to be fed in input with the signals representing the rows of the initial tree
+	in a flipped pyramidal shape, therefore with the longest row on the top. 
+	The output will be the two operands which have to be assimilated in a non-redundant form through a carry propagate
+	adder.
+	'''
 	if N_bits%2!=0:
 		print("\nERROR:\nThe number of bits inserted is not even. Insert an even number of bits.\n")
 		exit()
