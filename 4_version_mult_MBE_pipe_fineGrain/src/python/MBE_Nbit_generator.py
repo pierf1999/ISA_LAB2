@@ -158,10 +158,10 @@ begin
             )
             port map(
                 X                 => (OTHERS => '0'),
-                Y(""" + str(N) + """ downto 1)     => A,
-                Y(0)              => '0',
-                Z(""" + str(N) + """)              => '0',
-                Z(""" + str(N - 1) + """ downto 0) => A,
+                Y(""" + str(N) + """)              => '0',
+                Y(""" + str(N - 1) + """ downto 0) => A,
+                Z(""" + str(N) + """ downto 1)     => A,
+                Z(0)              => '0',
                 S                 => SEL_BRU_MUX(2 * I + 1 downto 2 * I),
                 OUTPUT            => PP_MUX_1C(""" + str(N + 1) + """ * I + """ + str(N) + """ downto """ + str(N + 1) + """ * I));
     end generate i_MUX_units_generate;

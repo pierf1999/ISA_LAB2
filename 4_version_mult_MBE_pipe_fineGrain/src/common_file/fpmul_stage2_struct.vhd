@@ -39,6 +39,14 @@ ENTITY FPmul_stage2 IS
 END FPmul_stage2;
 
 ARCHITECTURE struct OF FPmul_stage2 IS
+    
+    component MBE_24BIT
+        port(
+            A : in  std_logic_vector(23 downto 0);
+            B : in  std_logic_vector(23 downto 0);
+            P : out std_logic_vector(47 downto 0)
+        );
+    end component MBE_24BIT;
 
     -- Architecture declarations
 
@@ -145,13 +153,14 @@ BEGIN
     END PROCESS I4combo;
 
     -- ModuleWare code(v1.1) for instance 'I2' of 'mult'
-    I2combo : PROCESS(A_SIG, B_SIG)
-        VARIABLE dtemp : unsigned(63 DOWNTO 0);
-    BEGIN
-        dtemp := (unsigned(A_SIG) * unsigned(B_SIG));
-        prod  <= std_logic_vector(dtemp);
-    END PROCESS I2combo;
-
+    I_mult: MBE_24BIT
+        port map(
+            A => A_SIG(23 downto 0),
+            B => B_SIG(23 downto 0),
+            P => prod(47 downto 0)
+        );
+        
+    prod(63 downto 48) <= (OTHERS=>'0');
     -- ModuleWare code(v1.1) for instance 'I6' of 'vdd'
     dout <= '1';
 
