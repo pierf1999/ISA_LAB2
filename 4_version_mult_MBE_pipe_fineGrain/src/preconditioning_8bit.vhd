@@ -17,7 +17,7 @@ entity PRECONDITIONING_8BIT is
     R1 : out  std_logic_vector(15 downto 0);
     R2 : out  std_logic_vector(14 downto 0);
     R3 : out  std_logic_vector(12 downto 0);
-    R4 : out  std_logic_vector(11 downto 0);
+    R4 : out  std_logic_vector(11 downto 0)
     );
 end PRECONDITIONING_8BIT;
 
