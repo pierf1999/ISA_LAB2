@@ -36,17 +36,16 @@ set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
 set_load $OLOAD [all_outputs]
 
 # compilation
-compile -exact_map 
-optimize_registers
+compile_ultra
 
 # ddc file saving
-write -hierarchy -format ddc -output ../netlist/ddc_files/FP_MBE_fine_grain_pipe.ddc
+write -hierarchy -format ddc -output ../netlist/ddc_files/FP_MBE_fine_grain_pipe_compile_ultra.ddc
 
 # report
-report_power > ../netlist/results/FP_MBE_fine_grain_pipe/power.txt
-report_power -net > ../netlist/results/FP_MBE_fine_grain_pipe/power_net.txt
-report_power -hier > ../netlist/results/FP_MBE_fine_grain_pipe/power_hier.txt
-report_timing > ../netlist/results/FP_MBE_fine_grain_pipe/timing.txt
-report_area -hierarchy > ../netlist/results/FP_MBE_fine_grain_pipe/area.txt
-report_resources > ../netlist/results/FP_MBE_fine_grain_pipe/resources.txt
+report_power > ../netlist/results/FP_MBE_fine_grain_pipe_compile_ultra/power.txt
+report_power -net > ../netlist/results/FP_MBE_fine_grain_pipe_compile_ultra/power_net.txt
+report_power -hier > ../netlist/results/FP_MBE_fine_grain_pipe_compile_ultra/power_hier.txt
+report_timing > ../netlist/results/FP_MBE_fine_grain_pipe_compile_ultra/timing.txt
+report_area -hierarchy > ../netlist/results/FP_MBE_fine_grain_pipe_compile_ultra/area.txt
+report_resources > ../netlist/results/FP_MBE_fine_grain_pipe_compile_ultra/resources.txt
 
