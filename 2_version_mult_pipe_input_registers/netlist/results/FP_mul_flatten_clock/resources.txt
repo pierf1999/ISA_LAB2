@@ -3,7 +3,7 @@
 Report : resources
 Design : FPmul
 Version: O-2018.06-SP4
-Date   : Thu Nov 18 11:07:36 2021
+Date   : Thu Nov 18 11:18:15 2021
 ****************************************
 
 Resource Sharing Report for design FPmul in file
@@ -27,11 +27,11 @@ Implementation Report
 |                    |                  | Current            | Set            |
 | Cell               | Module           | Implementation     | Implementation |
 ===============================================================================
-| I3/I11/add_43      | DW01_inc         | pparch (area,speed)                 |
 | I2/mult_113        | DW_mult_uns      | pparch (area,speed)                 |
-|                    |                  | mult_arch: benc_radix4              |
+|                    |                  | mult_arch: benc_radix8              |
 | add_1_root_I2/add_105_2               |                    |                |
 |                    | DW01_add         | rpl                |                |
+| I3/I11/add_43      | DW01_inc         | rpl                |                |
 ===============================================================================
 
 1

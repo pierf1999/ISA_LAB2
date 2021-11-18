@@ -1,0 +1,68 @@
+Warning: There are infeasible paths detected in your design that were ignored during optimization. Please run 'report_timing -attributes' and/or 'create_qor_snapshot/query_qor_snapshot -infeasible_paths' to identify these paths.  (OPT-1721)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : FPmul
+Version: O-2018.06-SP4
+Date   : Thu Nov 18 11:49:52 2021
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: I1/A_SIG_reg[1]
+              (rising edge-triggered flip-flop clocked by MY_CLK)
+  Endpoint: I2/SIG_in_reg[15]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  FPmul              5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  I1/A_SIG_reg[1]/CK (DFF_X1)                             0.00       0.00 r
+  I1/A_SIG_reg[1]/Q (DFF_X1)                              0.10       0.10 r
+  I2/mult_113/a[1] (FPmul_DW_mult_uns_2)                  0.00       0.10 r
+  I2/mult_113/U1674/ZN (XNOR2_X1)                         0.07       0.17 r
+  I2/mult_113/U2330/ZN (INV_X1)                           0.04       0.21 f
+  I2/mult_113/U1567/ZN (INV_X1)                           0.03       0.25 r
+  I2/mult_113/U1955/ZN (OAI22_X1)                         0.04       0.29 f
+  I2/mult_113/U675/CO (FA_X1)                             0.11       0.39 f
+  I2/mult_113/U662/CO (FA_X1)                             0.11       0.50 f
+  I2/mult_113/U649/CO (FA_X1)                             0.10       0.60 f
+  I2/mult_113/U637/CO (FA_X1)                             0.09       0.69 f
+  I2/mult_113/U625/S (FA_X1)                              0.13       0.83 r
+  I2/mult_113/U624/S (FA_X1)                              0.12       0.94 f
+  I2/mult_113/U2439/ZN (NAND2_X1)                         0.04       0.98 r
+  I2/mult_113/U2546/ZN (OAI21_X1)                         0.03       1.02 f
+  I2/mult_113/U2594/ZN (AOI21_X1)                         0.05       1.07 r
+  I2/mult_113/U2406/ZN (OAI21_X1)                         0.05       1.12 f
+  I2/mult_113/U2429/ZN (AOI21_X1)                         0.09       1.21 r
+  I2/mult_113/U2783/ZN (OAI21_X1)                         0.04       1.25 f
+  I2/mult_113/U2445/ZN (XNOR2_X1)                         0.06       1.31 f
+  I2/mult_113/product[35] (FPmul_DW_mult_uns_2)           0.00       1.31 f
+  I2/SIG_in_reg[15]/D (DFF_X1)                            0.01       1.32 f
+  data arrival time                                                  1.32
+
+  clock MY_CLK (rise edge)                                1.43       1.43
+  clock network delay (ideal)                             0.00       1.43
+  clock uncertainty                                      -0.07       1.36
+  I2/SIG_in_reg[15]/CK (DFF_X1)                           0.00       1.36 r
+  library setup time                                     -0.04       1.32
+  data required time                                                 1.32
+  --------------------------------------------------------------------------
+  data required time                                                 1.32
+  data arrival time                                                 -1.32
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1

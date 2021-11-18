@@ -3,7 +3,7 @@
 Report : area
 Design : FPmul
 Version: O-2018.06-SP4
-Date   : Thu Nov 18 11:07:36 2021
+Date   : Thu Nov 18 11:18:14 2021
 ****************************************
 
 Library(s) Used:
@@ -11,21 +11,21 @@ Library(s) Used:
     NangateOpenCellLibrary (File: /software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db)
 
 Number of ports:                          301
-Number of nets:                          2707
-Number of cells:                         2169
-Number of combinational cells:           1905
+Number of nets:                          2659
+Number of cells:                         2220
+Number of combinational cells:           1956
 Number of sequential cells:               243
 Number of macros/black boxes:               0
-Number of buf/inv:                        345
-Number of references:                      29
+Number of buf/inv:                        366
+Number of references:                      28
 
-Combinational area:               3032.932008
-Buf/Inv area:                      233.282000
-Noncombinational area:            1102.569961
+Combinational area:               2883.706005
+Buf/Inv area:                      255.093999
+Noncombinational area:            1102.037961
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                  4135.501969
+Total cell area:                  3985.743966
 Total area:                 undefined
 
 Hierarchical area distribution
@@ -36,11 +36,11 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
                                   Total      Total    national   national   boxes   Design
 --------------------------------  ---------  -------  ---------  ---------  ------  -------------------
-FPmul                             4135.5020    100.0   256.6900  1102.5700  0.0000  FPmul
-I2/mult_113                       2656.8080     64.2  2656.8080     0.0000  0.0000  FPmul_DW_mult_uns_1
-I3/I11/add_43                       86.9820      2.1    86.9820     0.0000  0.0000  FPmul_DW01_inc_1
+FPmul                             3985.7440    100.0   267.5960  1102.0380  0.0000  FPmul
+I2/mult_113                       2516.6260     63.1  2516.6260     0.0000  0.0000  FPmul_DW_mult_uns_1
+I3/I11/add_43                       67.0320      1.7    67.0320     0.0000  0.0000  FPmul_DW01_inc_0
 add_1_root_I2/add_105_2             32.4520      0.8    32.4520     0.0000  0.0000  FPmul_DW01_add_2
 --------------------------------  ---------  -------  ---------  ---------  ------  -------------------
-Total                                                 3032.9320  1102.5700  0.0000
+Total                                                 2883.7060  1102.0380  0.0000
 
 1
