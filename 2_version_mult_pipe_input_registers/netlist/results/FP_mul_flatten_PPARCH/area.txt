@@ -3,7 +3,7 @@
 Report : area
 Design : FPmul
 Version: O-2018.06-SP4
-Date   : Tue Nov  2 14:24:53 2021
+Date   : Tue Nov 16 15:54:07 2021
 ****************************************
 
 Library(s) Used:
@@ -37,9 +37,9 @@ Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Blac
                                   Total      Total    national   national   boxes   Design
 --------------------------------  ---------  -------  ---------  ---------  ------  -------------------
 FPmul                             4083.6320    100.0   256.6900  1105.2300  0.0000  FPmul
-I2/mult_134                       2602.2780     63.7  2602.2780     0.0000  0.0000  FPmul_DW_mult_uns_2
-I3/I11/add_45                       86.9820      2.1    86.9820     0.0000  0.0000  FPmul_DW01_inc_1
-add_1_root_I2/add_126_2             32.4520      0.8    32.4520     0.0000  0.0000  FPmul_DW01_add_2
+I2/mult_113                       2602.2780     63.7  2602.2780     0.0000  0.0000  FPmul_DW_mult_uns_2
+I3/I11/add_43                       86.9820      2.1    86.9820     0.0000  0.0000  FPmul_DW01_inc_1
+add_1_root_I2/add_105_2             32.4520      0.8    32.4520     0.0000  0.0000  FPmul_DW01_add_2
 --------------------------------  ---------  -------  ---------  ---------  ------  -------------------
 Total                                                 2978.4020  1105.2300  0.0000
 

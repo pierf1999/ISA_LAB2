@@ -5,7 +5,7 @@ Report : power
         -analysis_effort low
 Design : FPmul
 Version: O-2018.06-SP4
-Date   : Tue Nov 16 15:36:59 2021
+Date   : Wed Nov 17 19:44:06 2021
 ****************************************
 
 
@@ -35,9 +35,5 @@ Power-specific unit information :
                                        Switch   Int      Leak     Total
 Hierarchy                              Power    Power    Power    Power    %
 --------------------------------------------------------------------------------
-FPmul                                     0.000    0.000 8.58e+04   85.801 100.0
-  I3/I11/add_43 (FPmul_DW01_inc_1)        0.000    0.000 2.83e+03    2.833   3.3
-  I2/mult_113 (FPmul_DW_mult_uns_1)       0.000    0.000 5.82e+04   58.156  67.8
-  add_1_root_I2/add_105_2 (FPmul_DW01_add_2)
-                                          0.000    0.000  401.935    0.402   0.5
+FPmul                                     0.000    0.000 9.02e+04   90.223 100.0
 1

@@ -1,16 +1,11 @@
-Loading db file '/software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db'
 Information: Updating design information... (UID-85)
-Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
-Warning: There is no defined clock in the design. (PWR-80)
-Warning: Design has unannotated primary inputs. (PWR-414)
-Warning: Design has unannotated sequential cell outputs. (PWR-415)
  
 ****************************************
 Report : power
         -analysis_effort low
 Design : FPmul
 Version: O-2018.06-SP4
-Date   : Tue Nov 16 15:46:18 2021
+Date   : Wed Nov 17 18:55:17 2021
 ****************************************
 
 
@@ -36,12 +31,12 @@ Power-specific unit information :
     Leakage Power Units = 1nW
 
 
-  Cell Internal Power  =   0.0000 uW        
-  Net Switching Power  =   0.0000 uW        
+  Cell Internal Power  = 224.1794 nW   (66%)
+  Net Switching Power  = 116.1033 nW   (34%)
                          ---------
-Total Dynamic Power    =   0.0000 uW        
+Total Dynamic Power    = 340.2827 nW  (100%)
 
-Cell Leakage Power     =  80.9953 uW
+Cell Leakage Power     = 117.5568 uW
 
 
                  Internal         Switching           Leakage            Total
@@ -51,9 +46,9 @@ io_pad             0.0000            0.0000            0.0000            0.0000 
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
 clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
-register           0.0000            0.0000        1.9260e+04           19.2603  (  23.78%)
+register           0.0000            0.0000        3.8571e+04           38.5712  (  32.72%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational      0.0000            0.0000        6.1735e+04           61.7350  (  76.22%)
+combinational      0.2242            0.1161        7.8986e+04           79.3260  (  67.28%)
 --------------------------------------------------------------------------------------------------
-Total              0.0000 uW         0.0000 uW     8.0995e+04 nW        80.9953 uW
+Total              0.2242 uW         0.1161 uW     1.1756e+05 nW       117.8971 uW
 1

@@ -39,5 +39,4 @@ report_power -net > ../netlist/results/FP_mul_flatten_CSA/power_net.txt
 report_power -hier > ../netlist/results/FP_mul_flatten_CSA/power_hier.txt
 report_timing > ../netlist/results/FP_mul_flatten_CSA/timing.txt
 report_area -hierarchy > ../netlist/results/FP_mul_flatten_CSA/area.txt
-
-
+report_resources > ../netlist/results/FP_mul_flatten_CSA/resources.txt

@@ -1,0 +1,14 @@
+{signal: [
+  {name: 'RST_n', wave: '1..........'},
+  {name: 'CLK', wave: 'p..........'},
+  [ 'Input',
+   {name: 'FP_A', wave: 'x34578x.....', data: ['A0', 'A1', 'A2', 'A3', 'A4'], phase: 1},
+   {name: 'FP_B', wave: 'x34578x.....', data: ['B0', 'B1', 'B2', 'B3', 'B4'], phase: 1},
+  ],
+   {},
+  [ 'Output',
+   {name: 'FP_Z', wave: 'x.....34578', data: ['Z0', 'Z1', 'Z2', 'Z3', 'Z4']},
+  ],
+   {},
+], config: {hscale: 2}
+}

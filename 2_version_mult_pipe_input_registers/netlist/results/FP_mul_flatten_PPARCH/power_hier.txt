@@ -5,7 +5,7 @@ Report : power
         -analysis_effort low
 Design : FPmul
 Version: O-2018.06-SP4
-Date   : Tue Nov  2 14:24:53 2021
+Date   : Tue Nov 16 15:54:07 2021
 ****************************************
 
 
@@ -36,8 +36,8 @@ Power-specific unit information :
 Hierarchy                              Power    Power    Power    Power    %
 --------------------------------------------------------------------------------
 FPmul                                     0.000    0.000 8.48e+04   84.762 100.0
-  I2/mult_134 (FPmul_DW_mult_uns_2)       0.000    0.000 5.69e+04   56.942  67.2
-  I3/I11/add_45 (FPmul_DW01_inc_1)        0.000    0.000 2.83e+03    2.833   3.3
-  add_1_root_I2/add_126_2 (FPmul_DW01_add_2)
+  I2/mult_113 (FPmul_DW_mult_uns_2)       0.000    0.000 5.69e+04   56.942  67.2
+  I3/I11/add_43 (FPmul_DW01_inc_1)        0.000    0.000 2.83e+03    2.833   3.3
+  add_1_root_I2/add_105_2 (FPmul_DW01_add_2)
                                           0.000    0.000  401.935    0.402   0.5
 1
