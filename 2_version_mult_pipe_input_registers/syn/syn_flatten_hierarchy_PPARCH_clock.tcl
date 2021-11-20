@@ -27,16 +27,19 @@ set_load $OLOAD [all_outputs]
 
 # compilation
 ungroup -all -flatten
+set_implementation DW_mult_uns/pparch [find cell *mult*]
 compile -exact_map 
 
+create_clock -name MY_CLK -period 1.43 {clk}
+
 # ddc file saving
-write -hierarchy -format ddc -output ../netlist/ddc_files/FP_mul_flatten.ddc
+write -hierarchy -format ddc -output ../netlist/ddc_files/FP_mul_flatten_PPARCH.ddc
 
 # report
-#report_power > ../netlist/results/FP_mul_flatten/power.txt
-#report_power -net > ../netlist/results/FP_mul_flatten/power_net.txt
-#report_power -hier > ../netlist/results/FP_mul_flatten/power_hier.txt
-report_timing > ../netlist/results/FP_mul_flatten/timing.txt
-report_area -hierarchy > ../netlist/results/FP_mul_flatten/area.txt
-report_resources > ../netlist/results/FP_mul_flatten/resources.txt
+report_power > ../netlist/results/FP_mul_flatten_PPARCH_clock/power.txt
+report_power -net > ../netlist/results/FP_mul_flatten_PPARCH_clock/power_net.txt
+report_power -hier > ../netlist/results/FP_mul_flatten_PPARCH_clock/power_hier.txt
+report_timing > ../netlist/results/FP_mul_flatten_PPARCH_clock/timing.txt
+report_area -hierarchy > ../netlist/results/FP_mul_flatten_PPARCH_clock/area.txt
+report_resources > ../netlist/results/FP_mul_flatten_PPARCH_clock/resources.txt
 
