@@ -43,39 +43,19 @@ ARCHITECTURE struct OF FPmul_stage2 IS
     -- Architecture declarations
 
     -- Internal signal declarations
-    SIGNAL EXP_in_int            : std_logic_vector(7 DOWNTO 0);
-    SIGNAL EXP_neg_int           : std_logic;
-    SIGNAL EXP_pos_int           : std_logic;
-    SIGNAL SIG_in_int            : std_logic_vector(27 DOWNTO 0);
-    SIGNAL dout                  : std_logic;
-    SIGNAL dout1                 : std_logic_vector(7 DOWNTO 0);
-    SIGNAL prod                  : std_logic_vector(63 DOWNTO 0);
-    SIGNAL EXP_in_pipe1          : std_logic_vector(7 DOWNTO 0);
-    SIGNAL EXP_pos_stage2_pipe1  : std_logic;
-    SIGNAL EXP_neg_stage2_pipe1  : std_logic;
-    SIGNAL isINF_stage2_pipe1    : std_logic;
-    SIGNAL isNaN_stage2_pipe1    : std_logic;
-    SIGNAL isZ_tab_stage2_pipe1  : std_logic;
-    SIGNAL SIGN_out_stage2_pipe1 : std_logic;
+    SIGNAL EXP_in_int  : std_logic_vector(7 DOWNTO 0);
+    SIGNAL EXP_neg_int : std_logic;
+    SIGNAL EXP_pos_int : std_logic;
+    SIGNAL SIG_in_int  : std_logic_vector(27 DOWNTO 0);
+    SIGNAL dout        : std_logic;
+    SIGNAL dout1       : std_logic_vector(7 DOWNTO 0);
+    SIGNAL prod        : std_logic_vector(63 DOWNTO 0);
 
 BEGIN
     -- Architecture concurrent statements
     -- HDL Embedded Text Block 1 sig
     -- eb1 1
-    -- SIG_in_int <= prod(47 DOWNTO 20);
-    PROCESS(clk)
-    BEGIN
-        IF RISING_EDGE(clk) THEN
-            SIG_in_int <= prod(47 DOWNTO 20);
-        END IF;
-    END PROCESS;
-
-    PROCESS(clk)
-    BEGIN
-        IF RISING_EDGE(clk) THEN
-            SIG_in <= SIG_in_int;
-        END IF;
-    END PROCESS;
+    SIG_in_int <= prod(47 DOWNTO 20);
 
     -- HDL Embedded Text Block 2 inv
     -- eb5 5
@@ -87,18 +67,10 @@ BEGIN
     PROCESS(clk)
     BEGIN
         IF RISING_EDGE(clk) THEN
-            EXP_in_pipe1         <= EXP_in_int;
-            EXP_pos_stage2_pipe1 <= EXP_pos_int;
-            EXP_neg_stage2_pipe1 <= EXP_neg_int;
-        END IF;
-    END PROCESS;
-
-    PROCESS(clk)
-    BEGIN
-        IF RISING_EDGE(clk) THEN
-            EXP_in         <= EXP_in_pipe1;
-            EXP_pos_stage2 <= EXP_pos_stage2_pipe1;
-            EXP_neg_stage2 <= EXP_neg_stage2_pipe1;
+            EXP_in         <= EXP_in_int;
+            SIG_in         <= SIG_in_int;
+            EXP_pos_stage2 <= EXP_pos_int;
+            EXP_neg_stage2 <= EXP_neg_int;
         END IF;
     END PROCESS;
 
@@ -107,20 +79,10 @@ BEGIN
     PROCESS(clk)
     BEGIN
         IF RISING_EDGE(clk) THEN
-            isINF_stage2_pipe1    <= isINF_stage1;
-            isNaN_stage2_pipe1    <= isNaN_stage1;
-            isZ_tab_stage2_pipe1  <= isZ_tab_stage1;
-            SIGN_out_stage2_pipe1 <= SIGN_out_stage1;
-        END IF;
-    END PROCESS;
-
-    PROCESS(clk)
-    BEGIN
-        IF RISING_EDGE(clk) THEN
-            isINF_stage2    <= isINF_stage2_pipe1;
-            isNaN_stage2    <= isNaN_stage2_pipe1;
-            isZ_tab_stage2  <= isZ_tab_stage2_pipe1;
-            SIGN_out_stage2 <= SIGN_out_stage2_pipe1;
+            isINF_stage2    <= isINF_stage1;
+            isNaN_stage2    <= isNaN_stage1;
+            isZ_tab_stage2  <= isZ_tab_stage1;
+            SIGN_out_stage2 <= SIGN_out_stage1;
         END IF;
     END PROCESS;
 

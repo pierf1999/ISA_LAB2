@@ -33,25 +33,33 @@ ARCHITECTURE pipeline OF FPmul IS
     SIGNAL B_EXP                            : std_logic_vector(7 DOWNTO 0);
     SIGNAL B_SIG                            : std_logic_vector(31 DOWNTO 0);
     SIGNAL EXP_in                           : std_logic_vector(7 DOWNTO 0);
+    SIGNAL EXP_in_pipe                      : std_logic_vector(7 DOWNTO 0);
     SIGNAL EXP_neg                          : std_logic;
     SIGNAL EXP_neg_stage2                   : std_logic;
+    SIGNAL EXP_neg_stage2_pipe              : std_logic;
     SIGNAL EXP_out_round                    : std_logic_vector(7 DOWNTO 0);
     SIGNAL EXP_pos                          : std_logic;
     SIGNAL EXP_pos_stage2                   : std_logic;
+    SIGNAL EXP_pos_stage2_pipe              : std_logic;
     SIGNAL SIGN_out                         : std_logic;
     SIGNAL SIGN_out_stage1                  : std_logic;
     SIGNAL SIGN_out_stage2                  : std_logic;
+    SIGNAL SIGN_out_stage2_pipe             : std_logic;
     SIGNAL SIG_in                           : std_logic_vector(27 DOWNTO 0);
+    SIGNAL SIG_in_pipe                      : std_logic_vector(27 DOWNTO 0);
     SIGNAL SIG_out_round                    : std_logic_vector(27 DOWNTO 0);
     SIGNAL isINF_stage1                     : std_logic;
     SIGNAL isINF_stage2                     : std_logic;
+    SIGNAL isINF_stage2_pipe                : std_logic;
     SIGNAL isINF_tab                        : std_logic;
     SIGNAL isNaN                            : std_logic;
     SIGNAL isNaN_stage1                     : std_logic;
     SIGNAL isNaN_stage2                     : std_logic;
+    SIGNAL isNaN_stage2_pipe                : std_logic;
     SIGNAL isZ_tab                          : std_logic;
     SIGNAL isZ_tab_stage1                   : std_logic;
     SIGNAL isZ_tab_stage2                   : std_logic;
+    SIGNAL isZ_tab_stage2_pipe              : std_logic;
     SIGNAL FP_A_reg_stage1, FP_B_reg_stage1 : std_logic_vector(31 DOWNTO 0);
 
     -- Component Declarations
@@ -138,6 +146,29 @@ ARCHITECTURE pipeline OF FPmul IS
             FP_Z          : OUT std_logic_vector(31 DOWNTO 0)
         );
     END COMPONENT;
+    
+    component flip_flop_N_level_rst_n
+        generic(N : positive);
+        port(
+            D     : in  std_logic;
+            clk   : in  std_logic;
+            rst_n : in  std_logic;
+            Q     : out std_logic
+        );
+    end component flip_flop_N_level_rst_n;
+
+    component reg_N_level_rst_n
+        generic(
+            M : positive := 32;
+            N : positive := 1
+        );
+        port(
+            D     : in  std_logic_vector(M - 1 downto 0);
+            clk   : in  std_logic;
+            rst_n : in  std_logic;
+            Q     : out std_logic_vector(M - 1 downto 0)
+        );
+    end component reg_N_level_rst_n;
 
     -- Optional embedded configurations
     -- pragma synthesis_off
@@ -192,17 +223,109 @@ BEGIN
             isNaN_stage2    => isNaN_stage2,
             isZ_tab_stage2  => isZ_tab_stage2
         );
+        
+    
+    i_reg_N_levels_EXP_in : reg_N_level_rst_n
+        generic map(
+            M => 8,
+            N => 2
+        )
+        port map(
+            D     => EXP_in,
+            clk   => clk,
+            rst_n => '1',
+            Q     => EXP_in_pipe
+        );
+
+    i_ff_N_levels_EXP_neg : flip_flop_N_level_rst_n
+        generic map(
+            N => 2
+        )
+        port map(
+            D     => EXP_neg_stage2,
+            clk   => clk,
+            rst_n => '1',
+            Q     => EXP_neg_stage2_pipe
+        );
+
+    i_ff_N_levels_EXP_pos : flip_flop_N_level_rst_n
+        generic map(
+            N => 2
+        )
+        port map(
+            D     => EXP_pos_stage2,
+            clk   => clk,
+            rst_n => '1',
+            Q     => EXP_pos_stage2_pipe
+        );
+
+    i_ff_N_levels_SIGN_out : flip_flop_N_level_rst_n
+        generic map(
+            N => 2
+        )
+        port map(
+            D     => SIGN_out_stage2,
+            clk   => clk,
+            rst_n => '1',
+            Q     => SIGN_out_stage2_pipe
+        );
+
+    i_reg_N_levels_SIG_in : reg_N_level_rst_n
+        generic map(
+            M => 28,
+            N => 2
+        )
+        port map(
+            D     => SIG_in,
+            clk   => clk,
+            rst_n => '1',
+            Q     => SIG_in_pipe
+        );
+
+    i_ff_N_levels_isINF : flip_flop_N_level_rst_n
+        generic map(
+            N => 2
+        )
+        port map(
+            D     => isINF_stage2,
+            clk   => clk,
+            rst_n => '1',
+            Q     => isINF_stage2_pipe
+        );
+
+    i_ff_N_levels_isNan : flip_flop_N_level_rst_n
+        generic map(
+            N => 2
+        )
+        port map(
+            D     => isNaN_stage2,
+            clk   => clk,
+            rst_n => '1',
+            Q     => isNaN_stage2_pipe
+        );
+
+    i_ff_N_levels_isZ : flip_flop_N_level_rst_n
+        generic map(
+            N => 2
+        )
+        port map(
+            D     => isZ_tab_stage2,
+            clk   => clk,
+            rst_n => '1',
+            Q     => isZ_tab_stage2_pipe
+        );
+    
     I3 : FPmul_stage3
         PORT MAP(
-            EXP_in          => EXP_in,
-            EXP_neg_stage2  => EXP_neg_stage2,
-            EXP_pos_stage2  => EXP_pos_stage2,
-            SIGN_out_stage2 => SIGN_out_stage2,
-            SIG_in          => SIG_in,
+            EXP_in          => EXP_in_pipe,
+            EXP_neg_stage2  => EXP_neg_stage2_pipe,
+            EXP_pos_stage2  => EXP_pos_stage2_pipe,
+            SIGN_out_stage2 => SIGN_out_stage2_pipe,
+            SIG_in          => SIG_in_pipe,
             clk             => clk,
-            isINF_stage2    => isINF_stage2,
-            isNaN_stage2    => isNaN_stage2,
-            isZ_tab_stage2  => isZ_tab_stage2,
+            isINF_stage2    => isINF_stage2_pipe,
+            isNaN_stage2    => isNaN_stage2_pipe,
+            isZ_tab_stage2  => isZ_tab_stage2_pipe,
             EXP_neg         => EXP_neg,
             EXP_out_round   => EXP_out_round,
             EXP_pos         => EXP_pos,
