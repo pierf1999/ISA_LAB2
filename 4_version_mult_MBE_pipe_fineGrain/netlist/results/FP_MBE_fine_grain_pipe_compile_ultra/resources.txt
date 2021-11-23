@@ -3,7 +3,7 @@
 Report : resources
 Design : FPmul
 Version: O-2018.06-SP4
-Date   : Wed Nov 17 19:44:07 2021
+Date   : Tue Nov 23 12:25:03 2021
 ****************************************
 
 
@@ -12,21 +12,20 @@ Resource Report for this hierarchy in file
 =============================================================================
 | Cell           | Module         | Parameters | Contained Operations       |
 =============================================================================
-| mult_x_19      | DW_mult_uns    | a_width=32 | I2/mult_151 (fpmul_stage2_struct.vhd:151) |
-  |                | b_width=32 |                            |
+| add_x_22       | DW01_add       | width=48   | I2/I_mult/add_257 (MBE_24bit.vhd:257) |
 | add_x_23       | DW01_add       | width=8    | I3/I9/add_39_aco (fpnormalize_fpnormalize.vhd:39) |
 | add_x_25       | DW01_inc       | width=25   | I3/I11/add_43 (fpround_fpround.vhd:43) |
 | add_x_30       | DW01_add       | width=8    | I4/I1/add_39_aco (fpnormalize_fpnormalize.vhd:39) |
-| DP_OP_46J1_122_7755             |            |                            |
-|                | DP_OP_46J1_122_7755 |       |                            |
+| DP_OP_59J1_122_7755             |            |                            |
+|                | DP_OP_59J1_122_7755 |       |                            |
 =============================================================================
 
-Datapath Report for DP_OP_46J1_122_7755
+Datapath Report for DP_OP_59J1_122_7755
 ==============================================================================
 | Cell                 | Contained Operations                                |
 ==============================================================================
-| DP_OP_46J1_122_7755  | I2/add_143 (fpmul_stage2_struct.vhd:143)            |
-|                      | I2/add_143_2 (fpmul_stage2_struct.vhd:143)          |
+| DP_OP_59J1_122_7755  | I2/add_151 (fpmul_stage2_struct.vhd:151)            |
+|                      | I2/add_151_2 (fpmul_stage2_struct.vhd:151)          |
 ==============================================================================
 
 ==============================================================================
@@ -35,7 +34,7 @@ Datapath Report for DP_OP_46J1_122_7755
 ==============================================================================
 | I1    | PI   | Unsigned | 8     |                                          |
 | I2    | PI   | Unsigned | 8     |                                          |
-| O1    | PO   | Unsigned | 8     | I1 + I2 + $unsigned(1'b1) (fpmul_stage2_struct.vhd:143) |
+| O1    | PO   | Unsigned | 8     | I1 + I2 + $unsigned(1'b1) (fpmul_stage2_struct.vhd:151) |
 ==============================================================================
 
 
@@ -44,13 +43,12 @@ Implementation Report
 |                    |                  | Current            | Set            |
 | Cell               | Module           | Implementation     | Implementation |
 ===============================================================================
-| mult_x_19          | DW_mult_uns      | pparch (area,speed)                 |
-|                    |                  | mult_arch: benc_radix4              |
+| add_x_22           | DW01_add         | pparch (area,speed)                 |
 | add_x_23           | DW01_add         | apparch (area)     |                |
 | add_x_25           | DW01_inc         | pparch (area,speed)                 |
 | add_x_30           | DW01_add         | apparch (area)     |                |
-| DP_OP_46J1_122_7755                   |                    |                |
-|                    | DP_OP_46J1_122_7755 | str (area)      |                |
+| DP_OP_59J1_122_7755                   |                    |                |
+|                    | DP_OP_59J1_122_7755 | str (area)      |                |
 ===============================================================================
 
 1

@@ -3,7 +3,7 @@
 Report : area
 Design : FPmul
 Version: O-2018.06-SP4
-Date   : Wed Nov 17 19:44:07 2021
+Date   : Tue Nov 23 12:25:03 2021
 ****************************************
 
 Library(s) Used:
@@ -11,21 +11,21 @@ Library(s) Used:
     NangateOpenCellLibrary (File: /software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db)
 
 Number of ports:                           97
-Number of nets:                          2731
-Number of cells:                         2373
-Number of combinational cells:           2090
+Number of nets:                          4420
+Number of cells:                         4265
+Number of combinational cells:           3981
 Number of sequential cells:               283
 Number of macros/black boxes:               0
-Number of buf/inv:                        276
-Number of references:                      36
+Number of buf/inv:                        579
+Number of references:                      40
 
-Combinational area:               3074.693995
-Buf/Inv area:                      186.732000
-Noncombinational area:            1282.917954
+Combinational area:               4502.581929
+Buf/Inv area:                      365.750000
+Noncombinational area:            1283.449954
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                  4357.611949
+Total cell area:                  5786.031883
 Total area:                 undefined
 
 Hierarchical area distribution
@@ -36,8 +36,8 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
                                   Total      Total    national   national   boxes   Design
 --------------------------------  ---------  -------  ---------  ---------  ------  ---------
-FPmul                             4357.6119    100.0  3074.6940  1282.9180  0.0000  FPmul
+FPmul                             5786.0319    100.0  4502.5819  1283.4500  0.0000  FPmul
 --------------------------------  ---------  -------  ---------  ---------  ------  ---------
-Total                                                 3074.6940  1282.9180  0.0000
+Total                                                 4502.5819  1283.4500  0.0000
 
 1
