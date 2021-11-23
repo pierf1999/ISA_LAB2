@@ -1,5 +1,9 @@
 # analysis of vhdl files
 analyze -f vhdl -lib WORK ../src/reg_en_rst_n.vhd
+analyze -f vhdl -lib WORK ../src/flipflop_rst_n.vhd
+analyze -f vhdl -lib WORK ../src/reg_rst_n.vhd
+analyze -f vhdl -lib WORK ../src/flip_flop_N_level_rst_n.vhd
+analyze -f vhdl -lib WORK ../src/reg_N_level_rst_n.vhd
 analyze -f vhdl -lib WORK ../src/unpackfp_unpackfp.vhd
 analyze -f vhdl -lib WORK ../src/packfp_packfp.vhd
 analyze -f vhdl -lib WORK ../src/fpnormalize_fpnormalize.vhd
@@ -8,7 +12,7 @@ analyze -f vhdl -lib WORK ../src/fpmul_stage1_struct.vhd
 analyze -f vhdl -lib WORK ../src/fpmul_stage2_struct.vhd
 analyze -f vhdl -lib WORK ../src/fpmul_stage3_struct.vhd
 analyze -f vhdl -lib WORK ../src/fpmul_stage4_struct.vhd
-analyze -f vhdl -lib WORK ../src/fpmul_pipeline.vhd
+analyze -f vhdl -lib WORK ../src/fpmul_pipeline_1pipeMul.vhd
 
 set power_preserve_rtl_hier_names true
 
@@ -29,13 +33,13 @@ set_load $OLOAD [all_outputs]
 compile_ultra
 
 # ddc file saving
-write -hierarchy -format ddc -output ../netlist/ddc_files/FP_mul_fine_grain_pipe_compile_ultra.ddc
+write -hierarchy -format ddc -output ../netlist/ddc_files/FP_mul_fine_grain_1pipe_compile_ultra.ddc
 
 # report
-report_power > ../netlist/results/FP_mul_fine_grain_pipe_compile_ultra/power.txt
-report_power -net > ../netlist/results/FP_mul_fine_grain_pipe_compile_ultra/power_net.txt
-report_power -hier > ../netlist/results/FP_mul_fine_grain_pipe_compile_ultra/power_hier.txt
-report_timing > ../netlist/results/FP_mul_fine_grain_pipe_compile_ultra/timing.txt
-report_area -hierarchy > ../netlist/results/FP_mul_fine_grain_pipe_compile_ultra/area.txt
+report_power > ../netlist/results/FP_mul_fine_grain_1pipe_compile_ultra/power.txt
+report_power -net > ../netlist/results/FP_mul_fine_grain_1pipe_compile_ultra/power_net.txt
+report_power -hier > ../netlist/results/FP_mul_fine_grain_1pipe_compile_ultra/power_hier.txt
+report_timing > ../netlist/results/FP_mul_fine_grain_1pipe_compile_ultra/timing.txt
+report_area -hierarchy > ../netlist/results/FP_mul_fine_grain_1pipe_compile_ultra/area.txt
 
 

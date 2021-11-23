@@ -94,4 +94,6 @@ for i in range(int(N/2)+1):
     vhdl_file.write("    R" + str(i) + " <= " + r[i] + ";\n") 
     
 vhdl_file.write("\nend STRUCTURAL;")
+
+vhdl_file.close()
     
