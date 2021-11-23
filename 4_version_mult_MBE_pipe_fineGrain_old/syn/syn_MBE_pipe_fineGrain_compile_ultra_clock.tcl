@@ -9,18 +9,16 @@ analyze -f vhdl -lib WORK ../src/MBE_24bit.vhd
 analyze -f vhdl -lib WORK ../src/preconditioning_24bit.vhd
 analyze -f vhdl -lib WORK ../src/xor_plane_n_bit.vhd
 
-analyze -f vhdl -lib WORK ../src/unpackfp_unpackfp.vhd
-analyze -f vhdl -lib WORK ../src/reg_en_rst_n.vhd
-analyze -f vhdl -lib WORK ../src/flipflop_rst_n
-analyze -f vhdl -lib WORK ../src/reg_rst_n
-analyze -f vhdl -lib WORK ../src/packfp_packfp.vhd
-analyze -f vhdl -lib WORK ../src/fpnormalize_fpnormalize.vhd
-analyze -f vhdl -lib WORK ../src/fpround_fpround.vhd
-analyze -f vhdl -lib WORK ../src/fpmul_stage1_struct.vhd
-analyze -f vhdl -lib WORK ../src/fpmul_stage2_struct.vhd
-analyze -f vhdl -lib WORK ../src/fpmul_stage3_struct.vhd
-analyze -f vhdl -lib WORK ../src/fpmul_stage4_struct.vhd
-analyze -f vhdl -lib WORK ../src/fpmul_pipeline.vhd
+analyze -f vhdl -lib WORK ../src/common_file/unpackfp_unpackfp.vhd
+analyze -f vhdl -lib WORK ../src/common_file/reg_en_rst_n.vhd
+analyze -f vhdl -lib WORK ../src/common_file/packfp_packfp.vhd
+analyze -f vhdl -lib WORK ../src/common_file/fpnormalize_fpnormalize.vhd
+analyze -f vhdl -lib WORK ../src/common_file/fpround_fpround.vhd
+analyze -f vhdl -lib WORK ../src/common_file/fpmul_stage1_struct.vhd
+analyze -f vhdl -lib WORK ../src/common_file/fpmul_stage2_struct.vhd
+analyze -f vhdl -lib WORK ../src/common_file/fpmul_stage3_struct.vhd
+analyze -f vhdl -lib WORK ../src/common_file/fpmul_stage4_struct.vhd
+analyze -f vhdl -lib WORK ../src/common_file/fpmul_pipeline.vhd
 
 set power_preserve_rtl_hier_names true
 
