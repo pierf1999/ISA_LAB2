@@ -1,0 +1,81 @@
+ 
+****************************************
+Report : area
+Design : FPmul
+Version: O-2018.06-SP4
+Date   : Tue Nov 23 14:40:14 2021
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db)
+
+Number of ports:                         1589
+Number of nets:                          4959
+Number of cells:                         3271
+Number of combinational cells:           2498
+Number of sequential cells:               697
+Number of macros/black boxes:               0
+Number of buf/inv:                        380
+Number of references:                      16
+
+Combinational area:               3751.131998
+Buf/Inv area:                      240.198000
+Noncombinational area:            3157.685886
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                  6908.817885
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  ---------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
+                                  Total      Total    national   national   boxes   Design
+--------------------------------  ---------  -------  ---------  ---------  ------  ------------------------------
+FPmul                             6908.8179    100.0     1.0640    49.7420  0.0000  FPmul
+I1                                  92.0360      1.3    17.2900     0.0000  0.0000  FPmul_stage1
+I1/I0                               42.0280      0.6    37.5060     4.5220  0.0000  UnpackFP_0
+I1/I1                               32.7180      0.5    32.7180     0.0000  0.0000  UnpackFP_1
+I2                                5334.6299     77.2    51.8700    22.6100  0.0000  FPmul_stage2
+I2/mult_113                       5260.1499     76.1  3274.4600  1985.6899  0.0000  FPmul_stage2_DW_mult_uns_1
+I3                                 532.2660      7.7     0.0000    27.1320  0.0000  FPmul_stage3
+I3/I11                             331.9680      4.8    46.2840    99.4840  0.0000  FPround_SIG_width28
+I3/I11/add_43                      186.2000      2.7    86.7160    99.4840  0.0000  FPround_SIG_width28_DW01_inc_1
+I3/I9                              173.1660      2.5    69.1600   104.0060  0.0000  FPnormalize_SIG_width28_0
+I4                                 491.8340      7.1    23.6740   158.8020  0.0000  FPmul_stage4
+I4/I1                              145.7680      2.1    68.8940    76.8740  0.0000  FPnormalize_SIG_width28_1
+I4/I3                              163.5900      2.4    41.4960   122.0940  0.0000  PackFP
+REGA                               144.7040      2.1     0.0000   144.7040  0.0000  reg_en_rst_n_N32_0
+REGB                               149.4920      2.2     0.0000   149.4920  0.0000  reg_en_rst_n_N32_1
+i_ff_N_levels_EXP_neg                9.0440      0.1     0.0000     0.0000  0.0000  flip_flop_N_level_rst_n_N2_0
+i_ff_N_levels_EXP_neg/FD_0           4.5220      0.1     0.0000     4.5220  0.0000  flipflop_rst_n_0
+i_ff_N_levels_EXP_neg/FD_1           4.5220      0.1     0.0000     4.5220  0.0000  flipflop_rst_n_11
+i_ff_N_levels_EXP_pos                4.5220      0.1     0.0000     0.0000  0.0000  flip_flop_N_level_rst_n_N2_5
+i_ff_N_levels_EXP_pos/FD_0           0.0000      0.0     0.0000     0.0000  0.0000  flipflop_rst_n_10
+i_ff_N_levels_EXP_pos/FD_1           4.5220      0.1     0.0000     4.5220  0.0000  flipflop_rst_n_9
+i_ff_N_levels_SIGN_out               9.0440      0.1     0.0000     0.0000  0.0000  flip_flop_N_level_rst_n_N2_4
+i_ff_N_levels_SIGN_out/FD_0          4.5220      0.1     0.0000     4.5220  0.0000  flipflop_rst_n_8
+i_ff_N_levels_SIGN_out/FD_1          4.5220      0.1     0.0000     4.5220  0.0000  flipflop_rst_n_7
+i_ff_N_levels_isINF                  9.0440      0.1     0.0000     0.0000  0.0000  flip_flop_N_level_rst_n_N2_3
+i_ff_N_levels_isINF/FD_0             4.5220      0.1     0.0000     4.5220  0.0000  flipflop_rst_n_6
+i_ff_N_levels_isINF/FD_1             4.5220      0.1     0.0000     4.5220  0.0000  flipflop_rst_n_5
+i_ff_N_levels_isNan                  9.0440      0.1     0.0000     0.0000  0.0000  flip_flop_N_level_rst_n_N2_2
+i_ff_N_levels_isNan/FD_0             4.5220      0.1     0.0000     4.5220  0.0000  flipflop_rst_n_4
+i_ff_N_levels_isNan/FD_1             4.5220      0.1     0.0000     4.5220  0.0000  flipflop_rst_n_3
+i_ff_N_levels_isZ                    9.0440      0.1     0.0000     0.0000  0.0000  flip_flop_N_level_rst_n_N2_1
+i_ff_N_levels_isZ/FD_0               4.5220      0.1     0.0000     4.5220  0.0000  flipflop_rst_n_2
+i_ff_N_levels_isZ/FD_1               4.5220      0.1     0.0000     4.5220  0.0000  flipflop_rst_n_1
+i_reg_N_levels_EXP_in               63.3080      0.9     0.0000     0.0000  0.0000  reg_N_level_rst_n_M8_N2
+i_reg_N_levels_EXP_in/r_0           27.1320      0.4     0.0000    27.1320  0.0000  REG_RST_N_N8_0
+i_reg_N_levels_EXP_in/r_1           36.1760      0.5     0.0000    36.1760  0.0000  REG_RST_N_N8_1
+i_reg_N_levels_SIG_in                0.0000      0.0     0.0000     0.0000  0.0000  reg_N_level_rst_n_M28_N2
+i_reg_N_levels_SIG_in/r_0            0.0000      0.0     0.0000     0.0000  0.0000  REG_RST_N_N28_0
+i_reg_N_levels_SIG_in/r_1            0.0000      0.0     0.0000     0.0000  0.0000  REG_RST_N_N28_1
+--------------------------------  ---------  -------  ---------  ---------  ------  ------------------------------
+Total                                                 3751.1320  3157.6859  0.0000
+
+1

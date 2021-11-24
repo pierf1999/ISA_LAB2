@@ -5,7 +5,7 @@ Report : power
         -analysis_effort low
 Design : FPmul
 Version: O-2018.06-SP4
-Date   : Wed Nov 24 01:52:03 2021
+Date   : Tue Nov 23 20:35:39 2021
 ****************************************
 
 
@@ -31,12 +31,12 @@ Power-specific unit information :
     Leakage Power Units = 1nW
 
 
-  Cell Internal Power  =  20.3130 uW   (63%)
-  Net Switching Power  =  12.0890 uW   (37%)
+  Cell Internal Power  =   0.0000 uW        
+  Net Switching Power  =   0.0000 uW        
                          ---------
-Total Dynamic Power    =  32.4019 uW  (100%)
+Total Dynamic Power    =   0.0000 uW        
 
-Cell Leakage Power     = 133.8326 uW
+Cell Leakage Power     =  94.9858 uW
 
 
                  Internal         Switching           Leakage            Total
@@ -46,9 +46,9 @@ io_pad             0.0000            0.0000            0.0000            0.0000 
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
 clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
-register           0.0000            0.0000        4.6238e+04           46.2379  (  27.81%)
+register           0.0000            0.0000        2.8745e+04           28.7446  (  30.26%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational     20.3130           12.0890        8.7595e+04          119.9966  (  72.19%)
+combinational      0.0000            0.0000        6.6241e+04           66.2412  (  69.74%)
 --------------------------------------------------------------------------------------------------
-Total             20.3130 uW        12.0890 uW     1.3383e+05 nW       166.2346 uW
+Total              0.0000 uW         0.0000 uW     9.4986e+04 nW        94.9858 uW
 1

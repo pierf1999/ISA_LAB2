@@ -228,7 +228,7 @@ BEGIN
     i_reg_N_levels_EXP_in : reg_N_level_rst_n
         generic map(
             M => 8,
-            N => 2
+            N => 1
         )
         port map(
             D     => EXP_in,
@@ -239,7 +239,7 @@ BEGIN
 
     i_ff_N_levels_EXP_neg : flip_flop_N_level_rst_n
         generic map(
-            N => 2
+            N => 1
         )
         port map(
             D     => EXP_neg_stage2,
@@ -250,7 +250,7 @@ BEGIN
 
     i_ff_N_levels_EXP_pos : flip_flop_N_level_rst_n
         generic map(
-            N => 2
+            N => 1
         )
         port map(
             D     => EXP_pos_stage2,
@@ -261,7 +261,7 @@ BEGIN
 
     i_ff_N_levels_SIGN_out : flip_flop_N_level_rst_n
         generic map(
-            N => 2
+            N => 1
         )
         port map(
             D     => SIGN_out_stage2,
@@ -273,7 +273,7 @@ BEGIN
     i_reg_N_levels_SIG_in : reg_N_level_rst_n
         generic map(
             M => 28,
-            N => 2
+            N => 1
         )
         port map(
             D     => SIG_in,
@@ -284,7 +284,7 @@ BEGIN
 
     i_ff_N_levels_isINF : flip_flop_N_level_rst_n
         generic map(
-            N => 2
+            N => 1
         )
         port map(
             D     => isINF_stage2,
@@ -295,7 +295,7 @@ BEGIN
 
     i_ff_N_levels_isNan : flip_flop_N_level_rst_n
         generic map(
-            N => 2
+            N => 1
         )
         port map(
             D     => isNaN_stage2,
@@ -306,7 +306,7 @@ BEGIN
 
     i_ff_N_levels_isZ : flip_flop_N_level_rst_n
         generic map(
-            N => 2
+            N => 1
         )
         port map(
             D     => isZ_tab_stage2,

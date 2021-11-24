@@ -37,7 +37,7 @@ begin
         file_open(file_input, "fp_samples.hex", read_mode);
         file_open(file_output, "output_results.hex", write_mode);
 
-        for i in 0 to 6 loop
+        for i in 0 to 5 loop
 
             readline(file_input, v_ILINE);
             hread(v_ILINE, v_A);
@@ -66,7 +66,7 @@ begin
 
         end loop;
 
-        for i in 0 to 6 loop
+        for i in 0 to 5 loop
             hwrite(v_OLINE, ID_OUT);
             writeline(file_output, v_OLINE);
 

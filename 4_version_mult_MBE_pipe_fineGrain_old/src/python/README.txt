@@ -1,1 +1,0 @@
-- tree_generator.py: it generates the dadda_tree.vhd file that describes the component in charge of summing the operands coming from the previous blocks.
