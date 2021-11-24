@@ -3,12 +3,11 @@
 Report : resources
 Design : FPmul
 Version: O-2018.06-SP4
-Date   : Tue Nov 23 13:05:34 2021
+Date   : Wed Nov 24 21:35:44 2021
 ****************************************
 
 
-Resource Report for this hierarchy in file
-        ../src/common_file/fpmul_stage1_struct.vhd
+Resource Report for this hierarchy in file ../src/fpmul_stage1_struct.vhd
 =============================================================================
 | Cell           | Module         | Parameters | Contained Operations       |
 =============================================================================
@@ -24,8 +23,8 @@ Datapath Report for DP_OP_59J1_122_7755
 ==============================================================================
 | Cell                 | Contained Operations                                |
 ==============================================================================
-| DP_OP_59J1_122_7755  | I2/add_151 (fpmul_stage2_struct.vhd:151)            |
-|                      | I2/add_151_2 (fpmul_stage2_struct.vhd:151)          |
+| DP_OP_59J1_122_7755  | I2/add_112 (fpmul_stage2_struct.vhd:112)            |
+|                      | I2/add_112_2 (fpmul_stage2_struct.vhd:112)          |
 ==============================================================================
 
 ==============================================================================
@@ -34,7 +33,7 @@ Datapath Report for DP_OP_59J1_122_7755
 ==============================================================================
 | I1    | PI   | Unsigned | 8     |                                          |
 | I2    | PI   | Unsigned | 8     |                                          |
-| O1    | PO   | Unsigned | 8     | I1 + I2 + $unsigned(1'b1) (fpmul_stage2_struct.vhd:151) |
+| O1    | PO   | Unsigned | 8     | I1 + I2 + $unsigned(1'b1) (fpmul_stage2_struct.vhd:112) |
 ==============================================================================
 
 
