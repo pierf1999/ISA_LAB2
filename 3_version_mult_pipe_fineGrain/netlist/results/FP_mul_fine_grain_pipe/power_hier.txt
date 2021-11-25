@@ -5,7 +5,7 @@ Report : power
         -analysis_effort low
 Design : FPmul
 Version: O-2018.06-SP4
-Date   : Tue Nov  2 16:00:39 2021
+Date   : Thu Nov 25 22:10:29 2021
 ****************************************
 
 
@@ -35,23 +35,31 @@ Power-specific unit information :
                                        Switch   Int      Leak     Total
 Hierarchy                              Power    Power    Power    Power    %
 --------------------------------------------------------------------------------
-FPmul                                     0.116    0.224 1.18e+05  117.897 100.0
-  I4 (FPmul_stage4)                       0.000    0.000 8.41e+03    8.415   7.1
-    I3 (PackFP)                           0.000    0.000 3.52e+03    3.519   3.0
-    I1 (FPnormalize_SIG_width28_1)        0.000    0.000 3.89e+03    3.888   3.3
-  I3 (FPmul_stage3)                       0.000    0.000 7.10e+03    7.098   6.0
-    I11 (FPround_SIG_width28)             0.000    0.000 2.66e+03    2.657   2.3
+FPmul                                     0.116    0.224 1.16e+05  116.703 100.0
+  I4 (FPmul_stage4)                       0.000    0.000 8.56e+03    8.563   7.3
+    I3 (PackFP)                           0.000    0.000 3.56e+03    3.565   3.1
+    I1 (FPnormalize_SIG_width28_1)        0.000    0.000 3.90e+03    3.904   3.3
+  I3 (FPmul_stage3)                       0.000    0.000 7.13e+03    7.133   6.1
+    I11 (FPround_SIG_width28)             0.000    0.000 2.67e+03    2.665   2.3
       add_43 (FPround_SIG_width28_DW01_inc_1)
-                                          0.000    0.000 1.96e+03    1.960   1.7
-    I9 (FPnormalize_SIG_width28_0)        0.000    0.000 3.97e+03    3.967   3.4
-  I2 (FPmul_stage2)                       0.000    0.000 9.34e+04   93.443  79.3
-    mult_151 (FPmul_stage2_DW_mult_uns_2)
-                                          0.000    0.000 9.00e+04   89.989  76.3
-    add_1_root_add_143_2 (FPmul_stage2_DW01_add_0)
-                                          0.000    0.000  858.024    0.858   0.7
-  I1 (FPmul_stage1)                       0.116    0.224 2.94e+03    3.279   2.8
-    I1 (UnpackFP_1)                       0.000    0.000 1.02e+03    1.022   0.9
-    I0 (UnpackFP_0)                       0.116    0.224 1.54e+03    1.882   1.6
-  REGB (reg_en_rst_n_N32_1)               0.000    0.000 2.78e+03    2.784   2.4
-  REGA (reg_en_rst_n_N32_0)               0.000    0.000 2.53e+03    2.532   2.1
+                                          0.000    0.000 1.97e+03    1.968   1.7
+    I9 (FPnormalize_SIG_width28_0)        0.000    0.000 3.99e+03    3.993   3.4
+  i_ff_isZ (flipflop_rst_n_1)             0.000    0.000   79.112 7.91e-02   0.1
+  i_ff_inNan (flipflop_rst_n_2)           0.000    0.000   79.112 7.91e-02   0.1
+  i_ff_isINF (flipflop_rst_n_3)           0.000    0.000   79.112 7.91e-02   0.1
+  i_reg_SIG_in (REG_RST_N_N28)            0.000    0.000  158.225    0.158   0.1
+  i_ff_SIGN_out (flipflop_rst_n_4)        0.000    0.000   79.112 7.91e-02   0.1
+  i_ff_EXP_pos (flipflop_rst_n_5)         0.000    0.000   79.112 7.91e-02   0.1
+  i_ff_EXP_neg (flipflop_rst_n_0)         0.000    0.000   79.112 7.91e-02   0.1
+  i_reg_EXP_in (REG_RST_N_N8)             0.000    0.000  632.898    0.633   0.5
+  I2 (FPmul_stage2)                       0.000    0.000 9.12e+04   91.214  78.2
+    mult_113 (FPmul_stage2_DW_mult_uns_2)
+                                          0.000    0.000 8.92e+04   89.233  76.5
+    add_1_root_add_105_2 (FPmul_stage2_DW01_add_0)
+                                          0.000    0.000  650.933    0.651   0.6
+  I1 (FPmul_stage1)                       0.116    0.224 2.68e+03    3.021   2.6
+    I1 (UnpackFP_1)                       0.000    0.000  839.676    0.840   0.7
+    I0 (UnpackFP_0)                       0.116    0.224 1.48e+03    1.816   1.6
+  REGB (reg_en_rst_n_N32_1)               0.000    0.000 2.68e+03    2.676   2.3
+  REGA (reg_en_rst_n_N32_0)               0.000    0.000 2.53e+03    2.532   2.2
 1

@@ -1,0 +1,65 @@
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : FPmul
+Version: O-2018.06-SP4
+Date   : Thu Nov 25 22:27:31 2021
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db)
+
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+FPmul                  5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+FPmul                                  2.07e+03 5.60e+03 1.19e+05 7.79e+03 100.0
+  I4 (FPmul_stage4)                     108.478  677.920 8.87e+03  795.272  10.2
+    I3 (PackFP)                          44.142  302.995 3.69e+03  350.831   4.5
+    I1 (FPnormalize_SIG_width28_1)       56.246  330.017 4.11e+03  390.376   5.0
+  I3 (FPmul_stage3)                     152.949  481.556 7.70e+03  642.203   8.2
+    I11 (FPround_SIG_width28)            45.547   92.689 3.00e+03  141.231   1.8
+      add_43 (FPround_SIG_width28_DW01_inc_1)
+                                         35.394   53.802 2.11e+03   91.308   1.2
+    I9 (FPnormalize_SIG_width28_0)      106.994  346.672 4.24e+03  457.904   5.9
+  i_ff_isZ (flipflop_rst_n_1)          1.97e-03    8.002   76.093    8.080   0.1
+  i_ff_inNan (flipflop_rst_n_2)        1.00e-02    7.970   76.241    8.056   0.1
+  i_ff_isINF (flipflop_rst_n_3)           0.000    7.998   76.071    8.074   0.1
+  i_reg_SIG_in (REG_RST_N_N28)            0.997   18.896  158.240   20.052   0.3
+  i_ff_SIGN_out (flipflop_rst_n_4)        0.172    5.998   79.135    6.249   0.1
+  i_ff_EXP_pos (flipflop_rst_n_5)      8.96e-02    6.104   78.820    6.272   0.1
+  i_ff_EXP_neg (flipflop_rst_n_0)      9.63e-02    6.124   78.854    6.299   0.1
+  i_reg_EXP_in (REG_RST_N_N8)             2.014   54.693  632.900   57.340   0.7
+  I2 (FPmul_stage2)                    1.73e+03 3.92e+03 9.29e+04 5.74e+03  73.7
+    mult_113 (FPmul_stage2_DW_mult_uns_2)
+                                       1.72e+03 3.80e+03 9.07e+04 5.61e+03  72.0
+    add_1_root_add_105_2 (FPmul_stage2_DW01_add_0)
+                                          6.544   19.512  865.226   26.921   0.3
+  I1 (FPmul_stage1)                      10.720   58.782 2.57e+03   72.074   0.9
+    I1 (UnpackFP_1)                       3.765    4.411  790.269    8.966   0.1
+    I0 (UnpackFP_0)                       6.691   53.666 1.41e+03   61.764   0.8
+  REGB (reg_en_rst_n_N32_1)              42.164  169.124 2.68e+03  213.963   2.7
+  REGA (reg_en_rst_n_N32_0)              14.217  166.537 2.53e+03  183.286   2.4
+1

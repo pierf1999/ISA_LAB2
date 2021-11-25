@@ -1,14 +1,3 @@
--- VHDL Entity HAVOC.FPmul.symbol
---
--- Created by
--- Guillermo Marcus, gmarcus@ieee.org
--- using Mentor Graphics FPGA Advantage tools.
---
--- Visit "http://fpga.mty.itesm.mx" for more info.
---
--- 2003-2004. V1.0
---
-
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 USE ieee.std_logic_arith.all;
@@ -147,28 +136,24 @@ ARCHITECTURE pipeline OF FPmul IS
         );
     END COMPONENT;
     
-    component flip_flop_N_level_rst_n
-        generic(N : positive);
+    component flipflop_rst_n
         port(
             D     : in  std_logic;
             clk   : in  std_logic;
             rst_n : in  std_logic;
             Q     : out std_logic
         );
-    end component flip_flop_N_level_rst_n;
+    end component flipflop_rst_n;
 
-    component reg_N_level_rst_n
-        generic(
-            M : positive := 32;
-            N : positive := 1
-        );
+    component REG_RST_N
+        generic(N : positive := 32);
         port(
-            D     : in  std_logic_vector(M - 1 downto 0);
-            clk   : in  std_logic;
-            rst_n : in  std_logic;
-            Q     : out std_logic_vector(M - 1 downto 0)
+            D     : in  std_logic_vector(N - 1 downto 0);
+            RST_N : in  std_logic;
+            CLK   : in  std_logic;
+            Q     : out std_logic_vector(N - 1 downto 0)
         );
-    end component reg_N_level_rst_n;
+    end component REG_RST_N;
 
     -- Optional embedded configurations
     -- pragma synthesis_off
@@ -225,22 +210,18 @@ BEGIN
         );
         
     
-    i_reg_N_levels_EXP_in : reg_N_level_rst_n
+    i_reg_EXP_in: REG_RST_N
         generic map(
-            M => 8,
-            N => 1
+            N => 8
         )
         port map(
             D     => EXP_in,
-            clk   => clk,
-            rst_n => '1',
+            RST_N => '1',
+            CLK   => clk,
             Q     => EXP_in_pipe
         );
 
-    i_ff_N_levels_EXP_neg : flip_flop_N_level_rst_n
-        generic map(
-            N => 1
-        )
+    i_ff_EXP_neg: flipflop_rst_n
         port map(
             D     => EXP_neg_stage2,
             clk   => clk,
@@ -248,10 +229,7 @@ BEGIN
             Q     => EXP_neg_stage2_pipe
         );
 
-    i_ff_N_levels_EXP_pos : flip_flop_N_level_rst_n
-        generic map(
-            N => 1
-        )
+    i_ff_EXP_pos: flipflop_rst_n
         port map(
             D     => EXP_pos_stage2,
             clk   => clk,
@@ -259,10 +237,7 @@ BEGIN
             Q     => EXP_pos_stage2_pipe
         );
 
-    i_ff_N_levels_SIGN_out : flip_flop_N_level_rst_n
-        generic map(
-            N => 1
-        )
+    i_ff_SIGN_out: flipflop_rst_n
         port map(
             D     => SIGN_out_stage2,
             clk   => clk,
@@ -270,22 +245,18 @@ BEGIN
             Q     => SIGN_out_stage2_pipe
         );
 
-    i_reg_N_levels_SIG_in : reg_N_level_rst_n
+    i_reg_SIG_in: REG_RST_N
         generic map(
-            M => 28,
-            N => 1
+            N => 28
         )
         port map(
             D     => SIG_in,
-            clk   => clk,
-            rst_n => '1',
+            RST_N => '1',
+            CLK   => clk,
             Q     => SIG_in_pipe
         );
 
-    i_ff_N_levels_isINF : flip_flop_N_level_rst_n
-        generic map(
-            N => 1
-        )
+    i_ff_isINF: flipflop_rst_n
         port map(
             D     => isINF_stage2,
             clk   => clk,
@@ -293,10 +264,7 @@ BEGIN
             Q     => isINF_stage2_pipe
         );
 
-    i_ff_N_levels_isNan : flip_flop_N_level_rst_n
-        generic map(
-            N => 1
-        )
+    i_ff_inNan: flipflop_rst_n
         port map(
             D     => isNaN_stage2,
             clk   => clk,
@@ -304,10 +272,7 @@ BEGIN
             Q     => isNaN_stage2_pipe
         );
 
-    i_ff_N_levels_isZ : flip_flop_N_level_rst_n
-        generic map(
-            N => 1
-        )
+    i_ff_isZ: flipflop_rst_n
         port map(
             D     => isZ_tab_stage2,
             clk   => clk,
@@ -335,6 +300,7 @@ BEGIN
             isNaN           => isNaN,
             isZ_tab         => isZ_tab
         );
+        
     I4 : FPmul_stage4
         PORT MAP(
             EXP_neg       => EXP_neg,

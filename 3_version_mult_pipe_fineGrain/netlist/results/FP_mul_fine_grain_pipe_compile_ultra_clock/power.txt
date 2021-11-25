@@ -1,11 +1,14 @@
 Information: Updating design information... (UID-85)
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
  
 ****************************************
 Report : power
         -analysis_effort low
 Design : FPmul
 Version: O-2018.06-SP4
-Date   : Thu Nov 25 22:10:29 2021
+Date   : Thu Nov 25 23:22:42 2021
 ****************************************
 
 
@@ -31,12 +34,12 @@ Power-specific unit information :
     Leakage Power Units = 1nW
 
 
-  Cell Internal Power  = 224.1794 nW   (66%)
-  Net Switching Power  = 116.1033 nW   (34%)
+  Cell Internal Power  =   2.0907 mW   (66%)
+  Net Switching Power  =   1.0699 mW   (34%)
                          ---------
-Total Dynamic Power    = 340.2827 nW  (100%)
+Total Dynamic Power    =   3.1606 mW  (100%)
 
-Cell Leakage Power     = 116.3627 uW
+Cell Leakage Power     =  91.3237 uW
 
 
                  Internal         Switching           Leakage            Total
@@ -46,9 +49,9 @@ io_pad             0.0000            0.0000            0.0000            0.0000 
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
 clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
-register           0.0000            0.0000        3.8377e+04           38.3769  (  32.88%)
+register       1.1181e+03          126.8347        2.2656e+04        1.2676e+03  (  38.98%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational      0.2242            0.1161        7.7986e+04           78.3260  (  67.12%)
+combinational    972.6222          943.0396        6.8667e+04        1.9843e+03  (  61.02%)
 --------------------------------------------------------------------------------------------------
-Total              0.2242 uW         0.1161 uW     1.1636e+05 nW       116.7030 uW
+Total          2.0907e+03 uW     1.0699e+03 uW     9.1324e+04 nW     3.2519e+03 uW
 1

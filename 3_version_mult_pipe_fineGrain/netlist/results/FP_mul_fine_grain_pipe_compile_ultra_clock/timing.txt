@@ -7,7 +7,7 @@ Report : timing
         -max_paths 1
 Design : FPmul
 Version: O-2018.06-SP4
-Date   : Thu Nov 25 22:39:07 2021
+Date   : Thu Nov 25 23:22:42 2021
 ****************************************
 
 Operating Conditions: typical   Library: NangateOpenCellLibrary
@@ -50,17 +50,17 @@ Wire Load Model Mode: top
   I2/SIG_in_reg[15]/D (DFF_X1)             0.01       1.39 f
   data arrival time                                   1.39
 
-  clock MY_CLK (rise edge)                 0.00       0.00
-  clock network delay (ideal)              0.00       0.00
-  clock uncertainty                       -0.07      -0.07
-  I2/SIG_in_reg[15]/CK (DFF_X1)            0.00      -0.07 r
-  library setup time                      -0.04      -0.11
-  data required time                                 -0.11
+  clock MY_CLK (rise edge)                 1.50       1.50
+  clock network delay (ideal)              0.00       1.50
+  clock uncertainty                       -0.07       1.43
+  I2/SIG_in_reg[15]/CK (DFF_X1)            0.00       1.43 r
+  library setup time                      -0.04       1.39
+  data required time                                  1.39
   -----------------------------------------------------------
-  data required time                                 -0.11
+  data required time                                  1.39
   data arrival time                                  -1.39
   -----------------------------------------------------------
-  slack (VIOLATED)                                   -1.50
+  slack (VIOLATED: increase significant digits)       0.00
 
 
 1
