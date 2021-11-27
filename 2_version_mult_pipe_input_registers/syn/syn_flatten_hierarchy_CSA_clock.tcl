@@ -30,7 +30,7 @@ ungroup -all -flatten
 set_implementation DW02_mult/csa [find cell *mult*]
 compile -exact_map 
 
-create_clock -name MY_CLK -period 3.91 {clk}
+create_clock -name MY_CLK -period 3.911 {clk}
 
 # ddc file saving
 write -hierarchy -format ddc -output ../netlist/ddc_files/FP_mul_flatten_CSA.ddc

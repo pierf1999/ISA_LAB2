@@ -41,7 +41,7 @@ report_timing > ../netlist/results/FP_mul_fine_grain_pipe_compile_ultra/timing.t
 report_area -hierarchy > ../netlist/results/FP_mul_fine_grain_pipe_compile_ultra/area.txt
 
 #set clock
-create_clock -name MY_CLK -period 1.50 {clk}
+create_clock -name MY_CLK -period 1.502 {clk}
 
 # report
 report_power > ../netlist/results/FP_mul_fine_grain_pipe_compile_ultra_clock/power.txt

@@ -8,13 +8,13 @@ Report : timing
         -max_paths 1
 Design : FPmul
 Version: O-2018.06-SP4
-Date   : Sat Nov 27 17:33:41 2021
+Date   : Sat Nov 27 14:46:38 2021
 ****************************************
 
 Operating Conditions: typical   Library: NangateOpenCellLibrary
 Wire Load Model Mode: top
 
-  Startpoint: I4/I3/MY_CLK_r_REG31_S6
+  Startpoint: I4/I3/MY_CLK_r_REG21_S7
               (rising edge-triggered flip-flop clocked by MY_CLK)
   Endpoint: FP_Z[0] (output port clocked by MY_CLK)
   Path Group: MY_CLK
@@ -28,25 +28,24 @@ Wire Load Model Mode: top
   -----------------------------------------------------------
   clock MY_CLK (rise edge)                 0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  I4/I3/MY_CLK_r_REG31_S6/CK (DFF_X1)      0.00       0.00 r
-  I4/I3/MY_CLK_r_REG31_S6/Q (DFF_X1)       0.08       0.08 r
-  I4/I3/U3/ZN (AND2_X1)                    0.12       0.21 r
-  I4/I3/U9/ZN (AND2_X1)                    0.07       0.28 r
-  I4/I3/FP[0] (PackFP)                     0.00       0.28 r
-  I4/FP_Z[0] (FPmul_stage4)                0.00       0.28 r
-  FP_Z[0] (out)                            0.02       0.30 r
-  data arrival time                                   0.30
+  I4/I3/MY_CLK_r_REG21_S7/CK (DFF_X1)      0.00       0.00 r
+  I4/I3/MY_CLK_r_REG21_S7/Q (DFF_X1)       0.16       0.16 r
+  I4/I3/U9/ZN (AND2_X1)                    0.07       0.24 r
+  I4/I3/FP[0] (PackFP)                     0.00       0.24 r
+  I4/FP_Z[0] (FPmul_stage4)                0.00       0.24 r
+  FP_Z[0] (out)                            0.02       0.26 r
+  data arrival time                                   0.26
 
-  clock MY_CLK (rise edge)                 0.87       0.87
-  clock network delay (ideal)              0.00       0.87
-  clock uncertainty                       -0.07       0.80
-  output external delay                   -0.50       0.30
-  data required time                                  0.30
+  clock MY_CLK (rise edge)                 0.83       0.83
+  clock network delay (ideal)              0.00       0.83
+  clock uncertainty                       -0.07       0.76
+  output external delay                   -0.50       0.26
+  data required time                                  0.26
   -----------------------------------------------------------
-  data required time                                  0.30
-  data arrival time                                  -0.30
+  data required time                                  0.26
+  data arrival time                                  -0.26
   -----------------------------------------------------------
-  slack (MET)                                         0.00
+  slack (VIOLATED: increase significant digits)       0.00
 
 
 1
