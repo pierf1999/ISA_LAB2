@@ -52,13 +52,13 @@ report_area -hierarchy > ../netlist/results/FP_MBE_fine_grain_pipe_compile_ultra
 report_resources > ../netlist/results/FP_MBE_fine_grain_pipe_compile_ultra/resources.txt
 
 # set clock
-#create_clock -name MY_CLK -period 1.58 {clk}
+create_clock -name MY_CLK -period 1.58 {clk}
 
 # report
-#report_power > ../netlist/results/FP_MBE_fine_grain_pipe_compile_ultra_clock/power.txt
-#report_power -net > ../netlist/results/FP_MBE_fine_grain_pipe_compile_ultra_clock/power_net.txt
-#report_power -hier > ../netlist/results/FP_MBE_fine_grain_pipe_compile_ultra_clock/power_hier.txt
-#report_timing > ../netlist/results/FP_MBE_fine_grain_pipe_compile_ultra_clock/timing.txt
-#report_area -hierarchy > ../netlist/results/FP_MBE_fine_grain_pipe_compile_ultra_clock/area.txt
-#report_resources > ../netlist/results/FP_MBE_fine_grain_pipe_compile_ultra_clock/resources.txt
+report_power > ../netlist/results/FP_MBE_fine_grain_pipe_compile_ultra_clock/power.txt
+report_power -net > ../netlist/results/FP_MBE_fine_grain_pipe_compile_ultra_clock/power_net.txt
+report_power -hier > ../netlist/results/FP_MBE_fine_grain_pipe_compile_ultra_clock/power_hier.txt
+report_timing > ../netlist/results/FP_MBE_fine_grain_pipe_compile_ultra_clock/timing.txt
+report_area -hierarchy > ../netlist/results/FP_MBE_fine_grain_pipe_compile_ultra_clock/area.txt
+report_resources > ../netlist/results/FP_MBE_fine_grain_pipe_compile_ultra_clock/resources.txt
 

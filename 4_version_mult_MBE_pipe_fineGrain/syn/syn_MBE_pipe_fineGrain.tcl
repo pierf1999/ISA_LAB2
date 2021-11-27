@@ -53,13 +53,13 @@ report_area -hierarchy > ../netlist/results/FP_MBE_fine_grain_pipe/area.txt
 report_resources > ../netlist/results/FP_MBE_fine_grain_pipe/resources.txt
 
 #set clock
-#create_clock -name MY_CLK -period 0.83 {clk}
+create_clock -name MY_CLK -period 0.83 {clk}
 
 # report
-#report_power > ../netlist/results/FP_MBE_fine_grain_pipe_clock/power.txt
-#report_power -net > ../netlist/results/FP_MBE_fine_grain_pipe_clock/power_net.txt
-#report_power -hier > ../netlist/results/FP_MBE_fine_grain_pipe_clock/power_hier.txt
-#report_timing > ../netlist/results/FP_MBE_fine_grain_pipe_clock/timing.txt
-#report_area -hierarchy > ../netlist/results/FP_MBE_fine_grain_pipe_clock/area.txt
-#report_resources > ../netlist/results/FP_MBE_fine_grain_pipe_clock/resources.txt
+report_power > ../netlist/results/FP_MBE_fine_grain_pipe_clock/power.txt
+report_power -net > ../netlist/results/FP_MBE_fine_grain_pipe_clock/power_net.txt
+report_power -hier > ../netlist/results/FP_MBE_fine_grain_pipe_clock/power_hier.txt
+report_timing > ../netlist/results/FP_MBE_fine_grain_pipe_clock/timing.txt
+report_area -hierarchy > ../netlist/results/FP_MBE_fine_grain_pipe_clock/area.txt
+report_resources > ../netlist/results/FP_MBE_fine_grain_pipe_clock/resources.txt
 

@@ -6,7 +6,7 @@ Report : power
         -sort_mode net_switching_power
 Design : FPmul
 Version: O-2018.06-SP4
-Date   : Wed Nov 24 01:52:03 2021
+Date   : Sat Nov 27 12:32:25 2021
 ****************************************
 
 
