@@ -7,7 +7,7 @@ Report : timing
         -max_paths 1
 Design : FPmul
 Version: O-2018.06-SP4
-Date   : Tue Nov 30 14:11:27 2021
+Date   : Tue Nov 30 14:34:09 2021
 ****************************************
 
 Operating Conditions: typical   Library: NangateOpenCellLibrary
@@ -60,7 +60,7 @@ Wire Load Model Mode: top
   data required time                                  0.73
   data arrival time                                  -0.73
   -----------------------------------------------------------
-  slack (VIOLATED: increase significant digits)       0.00
+  slack (MET)                                         0.00
 
 
 1

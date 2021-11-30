@@ -5,7 +5,7 @@ Report : power
         -analysis_effort low
 Design : FPmul
 Version: O-2018.06-SP4
-Date   : Tue Nov 30 14:11:27 2021
+Date   : Tue Nov 30 14:34:08 2021
 ****************************************
 
 
@@ -35,29 +35,29 @@ Power-specific unit information :
                                        Switch   Int      Leak     Total
 Hierarchy                              Power    Power    Power    Power    %
 --------------------------------------------------------------------------------
-FPmul                                  3.46e+03 8.73e+03 1.76e+05 1.24e+04 100.0
-  I4 (FPmul_stage4)                      98.672  711.507 8.55e+03  818.731   6.6
-    I3 (PackFP)                          46.746  260.099 3.08e+03  309.927   2.5
-    I1 (FPnormalize_SIG_width28_1)       25.020  145.092 2.24e+03  172.355   1.4
-  I3 (FPmul_stage3)                     172.213  749.469 9.58e+03  931.262   7.5
-    I11 (FPround_SIG_width28)           116.939  558.339 6.71e+03  681.988   5.5
+FPmul                                  3.45e+03 8.70e+03 1.76e+05 1.23e+04 100.0
+  I4 (FPmul_stage4)                      98.435  709.799 8.55e+03  816.785   6.6
+    I3 (PackFP)                          46.633  259.474 3.08e+03  309.191   2.5
+    I1 (FPnormalize_SIG_width28_1)       24.960  144.743 2.24e+03  171.946   1.4
+  I3 (FPmul_stage3)                     171.800  747.669 9.58e+03  929.049   7.5
+    I11 (FPround_SIG_width28)           116.658  556.999 6.71e+03  680.366   5.5
       add_43 (FPround_SIG_width28_DW01_inc_1)
-                                         54.383  262.866 3.65e+03  320.895   2.6
-    I9 (FPnormalize_SIG_width28_0)       54.843  146.867 2.40e+03  204.115   1.7
-  i_ff_isZ (flipflop_rst_n_1)          2.57e-04    8.374   76.073    8.450   0.1
-  i_ff_inNan (flipflop_rst_n_2)        1.13e-02    8.348   76.247    8.436   0.1
-  i_ff_isINF (flipflop_rst_n_3)        2.06e-03    8.369   76.086    8.447   0.1
+                                         54.253  262.235 3.65e+03  320.133   2.6
+    I9 (FPnormalize_SIG_width28_0)       54.711  146.515 2.40e+03  203.631   1.7
+  i_ff_isZ (flipflop_rst_n_1)          2.57e-04    8.354   76.073    8.430   0.1
+  i_ff_inNan (flipflop_rst_n_2)        1.13e-02    8.328   76.247    8.416   0.1
+  i_ff_isINF (flipflop_rst_n_3)        2.06e-03    8.349   76.086    8.427   0.1
   i_reg_SIG_in (REG_RST_N_N28)            0.000    0.000    0.000    0.000   0.0
-  i_ff_SIGN_out (flipflop_rst_n_4)        0.181    6.285   79.133    6.545   0.1
+  i_ff_SIGN_out (flipflop_rst_n_4)        0.180    6.270   79.133    6.530   0.1
   i_ff_EXP_pos (flipflop_rst_n_5)         0.000    0.000    0.000    0.000   0.0
-  i_ff_EXP_neg (flipflop_rst_n_0)         0.101    6.428   78.837    6.608   0.1
-  i_reg_EXP_in (REG_RST_N_N8)             1.541   44.441  510.663   46.493   0.4
-  I2 (FPmul_stage2)                    3.14e+03 6.61e+03 1.47e+05 9.89e+03  80.0
+  i_ff_EXP_neg (flipflop_rst_n_0)         0.101    6.413   78.837    6.592   0.1
+  i_reg_EXP_in (REG_RST_N_N8)             1.538   44.335  510.663   46.383   0.4
+  I2 (FPmul_stage2)                    3.13e+03 6.59e+03 1.47e+05 9.87e+03  80.0
     I_mult/add_257 (FPmul_stage2_DW01_add_8)
-                                        334.728  974.183 1.41e+04 1.32e+03  10.7
-  I1 (FPmul_stage1)                      12.851  149.675 3.52e+03  166.049   1.3
-    I1 (UnpackFP_1)                       6.524   86.436 1.74e+03   94.698   0.8
-    I0 (UnpackFP_0)                       6.040   62.486 1.40e+03   69.925   0.6
-  REGB (reg_en_rst_n_N32_1)              11.289  174.194 2.53e+03  188.015   1.5
-  REGA (reg_en_rst_n_N32_0)              21.115  174.382 2.53e+03  198.028   1.6
+                                        333.926  971.844 1.41e+04 1.32e+03  10.7
+  I1 (FPmul_stage1)                      12.820  149.315 3.52e+03  165.659   1.3
+    I1 (UnpackFP_1)                       6.509   86.228 1.74e+03   94.475   0.8
+    I0 (UnpackFP_0)                       6.025   62.336 1.40e+03   69.760   0.6
+  REGB (reg_en_rst_n_N32_1)              11.262  173.776 2.53e+03  187.570   1.5
+  REGA (reg_en_rst_n_N32_0)              21.064  173.963 2.53e+03  197.559   1.6
 1
