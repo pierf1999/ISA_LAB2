@@ -7,15 +7,16 @@ Report : timing
         -max_paths 1
 Design : FPmul
 Version: O-2018.06-SP4
-Date   : Sat Nov 27 12:32:25 2021
+Date   : Tue Nov 30 14:08:48 2021
 ****************************************
 
 Operating Conditions: typical   Library: NangateOpenCellLibrary
 Wire Load Model Mode: top
 
-  Startpoint: I4/I3/MY_CLK_r_REG22_S6
+  Startpoint: REGA/MY_CLK_r_REG373_S1
               (rising edge-triggered flip-flop clocked by MY_CLK)
-  Endpoint: FP_Z[0] (output port clocked by MY_CLK)
+  Endpoint: I2/MY_CLK_r_REG178_S2
+            (rising edge-triggered flip-flop clocked by MY_CLK)
   Path Group: MY_CLK
   Path Type: max
 
@@ -27,22 +28,37 @@ Wire Load Model Mode: top
   -----------------------------------------------------------
   clock MY_CLK (rise edge)                 0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  I4/I3/MY_CLK_r_REG22_S6/CK (DFF_X1)      0.00       0.00 r
-  I4/I3/MY_CLK_r_REG22_S6/Q (DFF_X1)       0.16       0.16 r
-  I4/I3/U9/ZN (AND2_X1)                    0.07       0.24 r
-  I4/I3/FP[0] (PackFP)                     0.00       0.24 r
-  I4/FP_Z[0] (FPmul_stage4)                0.00       0.24 r
-  FP_Z[0] (out)                            0.02       0.26 r
-  data arrival time                                   0.26
+  REGA/MY_CLK_r_REG373_S1/CK (DFF_X1)      0.00       0.00 r
+  REGA/MY_CLK_r_REG373_S1/Q (DFF_X1)       0.10       0.10 f
+  REGA/Q[21] (reg_en_rst_n_N32_0)          0.00       0.10 f
+  I1/FP_A[21] (FPmul_stage1)               0.00       0.10 f
+  I1/I0/FP[21] (UnpackFP_0)                0.00       0.10 f
+  I1/I0/SIG[21] (UnpackFP_0)               0.00       0.10 f
+  I1/A_SIG[21] (FPmul_stage1)              0.00       0.10 f
+  I2/A_SIG[21] (FPmul_stage2)              0.00       0.10 f
+  I2/U186/ZN (INV_X1)                      0.15       0.24 r
+  I2/U2422/ZN (NOR3_X1)                    0.05       0.29 f
+  I2/U2423/ZN (OAI22_X1)                   0.07       0.35 r
+  I2/U184/ZN (NAND2_X1)                    0.04       0.40 f
+  I2/U49/ZN (XNOR2_X1)                     0.06       0.46 f
+  I2/U767/Z (XOR2_X1)                      0.07       0.52 f
+  I2/U2432/ZN (NAND2_X1)                   0.04       0.56 r
+  I2/U1082/ZN (AND2_X1)                    0.05       0.62 r
+  I2/U2219/ZN (INV_X1)                     0.03       0.64 f
+  I2/U2190/ZN (XNOR2_X1)                   0.05       0.69 f
+  I2/U2179/ZN (NAND2_X1)                   0.03       0.72 r
+  I2/MY_CLK_r_REG178_S2/D (DFF_X1)         0.01       0.73 r
+  data arrival time                                   0.73
 
   clock MY_CLK (rise edge)                 0.00       0.00
   clock network delay (ideal)              0.00       0.00
   clock uncertainty                       -0.07      -0.07
-  output external delay                   -0.50      -0.57
-  data required time                                 -0.57
+  I2/MY_CLK_r_REG178_S2/CK (DFF_X1)        0.00      -0.07 r
+  library setup time                      -0.03      -0.10
+  data required time                                 -0.10
   -----------------------------------------------------------
-  data required time                                 -0.57
-  data arrival time                                  -0.26
+  data required time                                 -0.10
+  data arrival time                                  -0.73
   -----------------------------------------------------------
   slack (VIOLATED)                                   -0.83
 

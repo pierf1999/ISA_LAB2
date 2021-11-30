@@ -1,0 +1,54 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : FPmul
+Version: O-2018.06-SP4
+Date   : Tue Nov 30 12:36:49 2021
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db)
+
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+FPmul                  5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  =   2.6043 uW   (61%)
+  Net Switching Power  =   1.6855 uW   (39%)
+                         ---------
+Total Dynamic Power    =   4.2898 uW  (100%)
+
+Cell Leakage Power     = 158.8713 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register           0.0000            0.0000        6.2427e+04           62.4271  (  38.26%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational      2.6043            1.6855        9.6444e+04          100.7341  (  61.74%)
+--------------------------------------------------------------------------------------------------
+Total              2.6043 uW         1.6855 uW     1.5887e+05 nW       163.1611 uW
+1

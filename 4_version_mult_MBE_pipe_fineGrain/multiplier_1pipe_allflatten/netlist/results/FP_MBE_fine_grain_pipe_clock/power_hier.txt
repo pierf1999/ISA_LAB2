@@ -1,0 +1,41 @@
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : FPmul
+Version: O-2018.06-SP4
+Date   : Tue Nov 30 13:46:34 2021
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db)
+
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+FPmul                  5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+FPmul                                  3.28e+03 7.81e+03 1.56e+05 1.13e+04 100.0
+  I2/I_mult/add_257 (FPmul_DW01_add_9)  337.869  951.058 1.37e+04 1.30e+03  11.6
+  I3/I11/add_43 (FPmul_DW01_inc_1)       39.424   56.532 1.94e+03   97.895   0.9
+1

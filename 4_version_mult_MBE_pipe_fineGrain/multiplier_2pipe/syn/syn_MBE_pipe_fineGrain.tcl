@@ -39,6 +39,7 @@ set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
 set_load $OLOAD [all_outputs]
 
 # compilation
+ungroup {I2/I_mult} -flatten
 compile -exact_map 
 optimize_registers
 

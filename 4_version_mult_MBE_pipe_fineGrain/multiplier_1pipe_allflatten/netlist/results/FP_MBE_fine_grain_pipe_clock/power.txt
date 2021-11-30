@@ -1,0 +1,57 @@
+Information: Updating design information... (UID-85)
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : FPmul
+Version: O-2018.06-SP4
+Date   : Tue Nov 30 13:46:33 2021
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db)
+
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+FPmul                  5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  =   7.8108 mW   (70%)
+  Net Switching Power  =   3.2831 mW   (30%)
+                         ---------
+Total Dynamic Power    =  11.0939 mW  (100%)
+
+Cell Leakage Power     = 156.3617 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register       5.0775e+03          699.7037        5.1032e+04        5.8283e+03  (  51.81%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational  2.7333e+03        2.5833e+03        1.0533e+05        5.4220e+03  (  48.19%)
+--------------------------------------------------------------------------------------------------
+Total          7.8108e+03 uW     3.2831e+03 uW     1.5636e+05 nW     1.1250e+04 uW
+1

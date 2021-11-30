@@ -1,4 +1,3 @@
-Information: Updating design information... (UID-85)
 Warning: There are infeasible paths detected in your design that were ignored during optimization. Please run 'report_timing -attributes' and/or 'create_qor_snapshot/query_qor_snapshot -infeasible_paths' to identify these paths.  (OPT-1721)
  
 ****************************************
@@ -8,15 +7,16 @@ Report : timing
         -max_paths 1
 Design : FPmul
 Version: O-2018.06-SP4
-Date   : Sat Nov 27 14:46:38 2021
+Date   : Tue Nov 30 12:06:40 2021
 ****************************************
 
 Operating Conditions: typical   Library: NangateOpenCellLibrary
 Wire Load Model Mode: top
 
-  Startpoint: I4/I3/MY_CLK_r_REG21_S7
+  Startpoint: REGA/MY_CLK_r_REG463_S1
               (rising edge-triggered flip-flop clocked by MY_CLK)
-  Endpoint: FP_Z[0] (output port clocked by MY_CLK)
+  Endpoint: I2/MY_CLK_r_REG457_S2
+            (rising edge-triggered flip-flop clocked by MY_CLK)
   Path Group: MY_CLK
   Path Type: max
 
@@ -28,24 +28,36 @@ Wire Load Model Mode: top
   -----------------------------------------------------------
   clock MY_CLK (rise edge)                 0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  I4/I3/MY_CLK_r_REG21_S7/CK (DFF_X1)      0.00       0.00 r
-  I4/I3/MY_CLK_r_REG21_S7/Q (DFF_X1)       0.16       0.16 r
-  I4/I3/U9/ZN (AND2_X1)                    0.07       0.24 r
-  I4/I3/FP[0] (PackFP)                     0.00       0.24 r
-  I4/FP_Z[0] (FPmul_stage4)                0.00       0.24 r
-  FP_Z[0] (out)                            0.02       0.26 r
-  data arrival time                                   0.26
+  REGA/MY_CLK_r_REG463_S1/CK (DFF_X1)      0.00       0.00 r
+  REGA/MY_CLK_r_REG463_S1/Q (DFF_X1)       0.10       0.10 f
+  REGA/Q[17] (reg_en_rst_n_N32_0)          0.00       0.10 f
+  I1/FP_A[17] (FPmul_stage1)               0.00       0.10 f
+  I1/I0/FP[17] (UnpackFP_0)                0.00       0.10 f
+  I1/I0/SIG[17] (UnpackFP_0)               0.00       0.10 f
+  I1/A_SIG[17] (FPmul_stage1)              0.00       0.10 f
+  I2/A_SIG[17] (FPmul_stage2)              0.00       0.10 f
+  I2/U1200/ZN (INV_X1)                     0.17       0.27 r
+  I2/U2848/ZN (OAI22_X1)                   0.07       0.34 f
+  I2/U2849/ZN (INV_X1)                     0.05       0.39 r
+  I2/U1078/ZN (XNOR2_X1)                   0.06       0.45 r
+  I2/U1077/ZN (XNOR2_X1)                   0.07       0.52 r
+  I2/U2853/ZN (OAI22_X1)                   0.04       0.56 f
+  I2/U2854/ZN (INV_X1)                     0.03       0.59 r
+  I2/U2860/ZN (NAND2_X1)                   0.02       0.61 f
+  I2/MY_CLK_r_REG457_S2/D (DFF_X1)         0.01       0.62 f
+  data arrival time                                   0.62
 
-  clock MY_CLK (rise edge)                 0.83       0.83
-  clock network delay (ideal)              0.00       0.83
-  clock uncertainty                       -0.07       0.76
-  output external delay                   -0.50       0.26
-  data required time                                  0.26
+  clock MY_CLK (rise edge)                 0.73       0.73
+  clock network delay (ideal)              0.00       0.73
+  clock uncertainty                       -0.07       0.66
+  I2/MY_CLK_r_REG457_S2/CK (DFF_X1)        0.00       0.66 r
+  library setup time                      -0.04       0.62
+  data required time                                  0.62
   -----------------------------------------------------------
-  data required time                                  0.26
-  data arrival time                                  -0.26
+  data required time                                  0.62
+  data arrival time                                  -0.62
   -----------------------------------------------------------
-  slack (VIOLATED: increase significant digits)       0.00
+  slack (MET)                                         0.00
 
 
 1
