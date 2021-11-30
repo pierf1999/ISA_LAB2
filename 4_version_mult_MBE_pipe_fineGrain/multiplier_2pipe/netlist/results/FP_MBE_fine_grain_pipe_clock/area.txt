@@ -1,0 +1,1499 @@
+ 
+****************************************
+Report : area
+Design : FPmul
+Version: O-2018.06-SP4
+Date   : Sat Nov 27 14:43:24 2021
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db)
+
+Number of ports:                        10877
+Number of nets:                         14946
+Number of cells:                         5987
+Number of combinational cells:           3834
+Number of sequential cells:               735
+Number of macros/black boxes:               0
+Number of buf/inv:                        863
+Number of references:                      15
+
+Combinational area:               4297.495954
+Buf/Inv area:                      503.272001
+Noncombinational area:            3326.861880
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                  7624.357834
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  ---------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
+                                  Total      Total    national   national   boxes   Design
+--------------------------------  ---------  -------  ---------  ---------  ------  ------------------------------
+FPmul                             7624.3578    100.0     0.0000    49.7420  0.0000  FPmul
+I1                                 101.0800      1.3    15.6940     0.0000  0.0000  FPmul_stage1
+I1/I0                               32.7180      0.4    32.7180     0.0000  0.0000  UnpackFP_0
+I1/I1                               52.6680      0.7    39.1020    13.5660  0.0000  UnpackFP_1
+I2                                6055.7559     79.4    48.6780    22.6100  0.0000  FPmul_stage2
+I2/I_mult                         5984.4679     78.5    43.8900    90.4400  0.0000  MBE_24BIT
+I2/I_mult/add_257                  645.8480      8.5   337.8200   308.0280  0.0000  MBE_24BIT_DW01_add_2
+I2/I_mult/i_BRU_I_0                  5.8520      0.1     1.3300     4.5220  0.0000  BRU_0
+I2/I_mult/i_BRU_I_1                 15.1620      0.2     6.1180     9.0440  0.0000  BRU_12
+I2/I_mult/i_BRU_I_10                10.6400      0.1     6.1180     4.5220  0.0000  BRU_3
+I2/I_mult/i_BRU_I_11                 4.5220      0.1     4.5220     0.0000  0.0000  BRU_2
+I2/I_mult/i_BRU_I_12                 0.0000      0.0     0.0000     0.0000  0.0000  BRU_1
+I2/I_mult/i_BRU_I_2                  4.5220      0.1     4.5220     0.0000  0.0000  BRU_11
+I2/I_mult/i_BRU_I_3                  3.9900      0.1     3.9900     0.0000  0.0000  BRU_10
+I2/I_mult/i_BRU_I_4                  6.1180      0.1     6.1180     0.0000  0.0000  BRU_9
+I2/I_mult/i_BRU_I_5                  5.5860      0.1     5.5860     0.0000  0.0000  BRU_8
+I2/I_mult/i_BRU_I_6                  4.5220      0.1     4.5220     0.0000  0.0000  BRU_7
+I2/I_mult/i_BRU_I_7                  4.5220      0.1     4.5220     0.0000  0.0000  BRU_6
+I2/I_mult/i_BRU_I_8                  5.0540      0.1     5.0540     0.0000  0.0000  BRU_5
+I2/I_mult/i_BRU_I_9                  3.9900      0.1     3.9900     0.0000  0.0000  BRU_4
+I2/I_mult/i_DADDATREE             3550.3019     46.6     0.0000     0.0000  0.0000  dadda_tree
+I2/I_mult/i_DADDATREE/i_FA1_1_10     7.9800      0.1     1.0640     0.0000  0.0000  full_adder_38
+I2/I_mult/i_DADDATREE/i_FA1_1_10/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_76
+I2/I_mult/i_DADDATREE/i_FA1_1_10/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_75
+I2/I_mult/i_DADDATREE/i_FA1_1_11    11.7040      0.2     1.0640     0.0000  0.0000  full_adder_37
+I2/I_mult/i_DADDATREE/i_FA1_1_11/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_74
+I2/I_mult/i_DADDATREE/i_FA1_1_11/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_73
+I2/I_mult/i_DADDATREE/i_FA1_1_12     7.7140      0.1     1.0640     0.0000  0.0000  full_adder_36
+I2/I_mult/i_DADDATREE/i_FA1_1_12/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_72
+I2/I_mult/i_DADDATREE/i_FA1_1_12/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_71
+I2/I_mult/i_DADDATREE/i_FA1_1_13     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_35
+I2/I_mult/i_DADDATREE/i_FA1_1_13/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_70
+I2/I_mult/i_DADDATREE/i_FA1_1_13/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_69
+I2/I_mult/i_DADDATREE/i_FA1_1_14     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_34
+I2/I_mult/i_DADDATREE/i_FA1_1_14/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_68
+I2/I_mult/i_DADDATREE/i_FA1_1_14/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_67
+I2/I_mult/i_DADDATREE/i_FA1_1_15     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_33
+I2/I_mult/i_DADDATREE/i_FA1_1_15/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_66
+I2/I_mult/i_DADDATREE/i_FA1_1_15/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_65
+I2/I_mult/i_DADDATREE/i_FA1_1_16    19.6840      0.3     1.0640     4.5220  0.0000  full_adder_32
+I2/I_mult/i_DADDATREE/i_FA1_1_16/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_64
+I2/I_mult/i_DADDATREE/i_FA1_1_16/h1
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_63
+I2/I_mult/i_DADDATREE/i_FA1_1_17    20.2160      0.3     1.0640     4.5220  0.0000  full_adder_31
+I2/I_mult/i_DADDATREE/i_FA1_1_17/h0
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_62
+I2/I_mult/i_DADDATREE/i_FA1_1_17/h1
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_61
+I2/I_mult/i_DADDATREE/i_FA1_1_18    20.2160      0.3     1.0640     4.5220  0.0000  full_adder_30
+I2/I_mult/i_DADDATREE/i_FA1_1_18/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_60
+I2/I_mult/i_DADDATREE/i_FA1_1_18/h1
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_59
+I2/I_mult/i_DADDATREE/i_FA1_1_19    20.7480      0.3     1.0640     4.5220  0.0000  full_adder_29
+I2/I_mult/i_DADDATREE/i_FA1_1_19/h0
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_58
+I2/I_mult/i_DADDATREE/i_FA1_1_19/h1
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_57
+I2/I_mult/i_DADDATREE/i_FA1_1_20    20.2160      0.3     1.0640     0.0000  0.0000  full_adder_28
+I2/I_mult/i_DADDATREE/i_FA1_1_20/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_56
+I2/I_mult/i_DADDATREE/i_FA1_1_20/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_55
+I2/I_mult/i_DADDATREE/i_FA1_1_21    20.2160      0.3     1.0640     0.0000  0.0000  full_adder_27
+I2/I_mult/i_DADDATREE/i_FA1_1_21/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_54
+I2/I_mult/i_DADDATREE/i_FA1_1_21/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_53
+I2/I_mult/i_DADDATREE/i_FA1_1_22    20.2160      0.3     1.0640     0.0000  0.0000  full_adder_26
+I2/I_mult/i_DADDATREE/i_FA1_1_22/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_52
+I2/I_mult/i_DADDATREE/i_FA1_1_22/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_51
+I2/I_mult/i_DADDATREE/i_FA1_1_23    20.2160      0.3     1.0640     0.0000  0.0000  full_adder_25
+I2/I_mult/i_DADDATREE/i_FA1_1_23/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_50
+I2/I_mult/i_DADDATREE/i_FA1_1_23/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_49
+I2/I_mult/i_DADDATREE/i_FA1_1_24    16.2260      0.2     1.0640     0.0000  0.0000  full_adder_24
+I2/I_mult/i_DADDATREE/i_FA1_1_24/h0
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_48
+I2/I_mult/i_DADDATREE/i_FA1_1_24/h1
+                                     7.7140      0.1     2.6600     5.0540  0.0000  half_adder_47
+I2/I_mult/i_DADDATREE/i_FA1_1_25    11.7040      0.2     1.0640     0.0000  0.0000  full_adder_23
+I2/I_mult/i_DADDATREE/i_FA1_1_25/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_46
+I2/I_mult/i_DADDATREE/i_FA1_1_25/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_45
+I2/I_mult/i_DADDATREE/i_FA1_1_26    11.7040      0.2     1.0640     0.0000  0.0000  full_adder_22
+I2/I_mult/i_DADDATREE/i_FA1_1_26/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_44
+I2/I_mult/i_DADDATREE/i_FA1_1_26/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_43
+I2/I_mult/i_DADDATREE/i_FA1_1_27    16.2260      0.2     1.0640     0.0000  0.0000  full_adder_21
+I2/I_mult/i_DADDATREE/i_FA1_1_27/h0
+                                     7.9800      0.1     3.4580     4.5220  0.0000  half_adder_42
+I2/I_mult/i_DADDATREE/i_FA1_1_27/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_41
+I2/I_mult/i_DADDATREE/i_FA1_1_28    20.2160      0.3     1.0640     0.0000  0.0000  full_adder_20
+I2/I_mult/i_DADDATREE/i_FA1_1_28/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_40
+I2/I_mult/i_DADDATREE/i_FA1_1_28/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_39
+I2/I_mult/i_DADDATREE/i_FA1_1_29    19.6840      0.3     1.0640     0.0000  0.0000  full_adder_19
+I2/I_mult/i_DADDATREE/i_FA1_1_29/h0
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_38
+I2/I_mult/i_DADDATREE/i_FA1_1_29/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_37
+I2/I_mult/i_DADDATREE/i_FA1_1_30    19.6840      0.3     1.0640     0.0000  0.0000  full_adder_18
+I2/I_mult/i_DADDATREE/i_FA1_1_30/h0
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_36
+I2/I_mult/i_DADDATREE/i_FA1_1_30/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_35
+I2/I_mult/i_DADDATREE/i_FA1_1_31    15.6940      0.2     1.0640     0.0000  0.0000  full_adder_17
+I2/I_mult/i_DADDATREE/i_FA1_1_31/h0
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_34
+I2/I_mult/i_DADDATREE/i_FA1_1_31/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_33
+I2/I_mult/i_DADDATREE/i_FA1_1_32    11.7040      0.2     1.0640     0.0000  0.0000  full_adder_16
+I2/I_mult/i_DADDATREE/i_FA1_1_32/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_32
+I2/I_mult/i_DADDATREE/i_FA1_1_32/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_31
+I2/I_mult/i_DADDATREE/i_FA1_1_33    12.2360      0.2     1.0640     0.0000  0.0000  full_adder_15
+I2/I_mult/i_DADDATREE/i_FA1_1_33/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_30
+I2/I_mult/i_DADDATREE/i_FA1_1_33/h1
+                                     7.7140      0.1     3.1920     4.5220  0.0000  half_adder_29
+I2/I_mult/i_DADDATREE/i_FA1_1_34    11.9700      0.2     1.0640     0.0000  0.0000  full_adder_14
+I2/I_mult/i_DADDATREE/i_FA1_1_34/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_28
+I2/I_mult/i_DADDATREE/i_FA1_1_34/h1
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_27
+I2/I_mult/i_DADDATREE/i_FA1_1_35    11.7040      0.2     1.0640     0.0000  0.0000  full_adder_13
+I2/I_mult/i_DADDATREE/i_FA1_1_35/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_26
+I2/I_mult/i_DADDATREE/i_FA1_1_35/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_25
+I2/I_mult/i_DADDATREE/i_FA1_1_36    11.7040      0.2     1.0640     0.0000  0.0000  full_adder_12
+I2/I_mult/i_DADDATREE/i_FA1_1_36/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_24
+I2/I_mult/i_DADDATREE/i_FA1_1_36/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_23
+I2/I_mult/i_DADDATREE/i_FA1_1_37    12.2360      0.2     1.0640     0.0000  0.0000  full_adder_11
+I2/I_mult/i_DADDATREE/i_FA1_1_37/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_22
+I2/I_mult/i_DADDATREE/i_FA1_1_37/h1
+                                     7.7140      0.1     3.1920     4.5220  0.0000  half_adder_21
+I2/I_mult/i_DADDATREE/i_FA1_1_38    11.7040      0.2     1.0640     0.0000  0.0000  full_adder_10
+I2/I_mult/i_DADDATREE/i_FA1_1_38/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_20
+I2/I_mult/i_DADDATREE/i_FA1_1_38/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_19
+I2/I_mult/i_DADDATREE/i_FA1_1_39    11.9700      0.2     1.0640     0.0000  0.0000  full_adder_9
+I2/I_mult/i_DADDATREE/i_FA1_1_39/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_18
+I2/I_mult/i_DADDATREE/i_FA1_1_39/h1
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_17
+I2/I_mult/i_DADDATREE/i_FA1_1_4     20.2160      0.3     1.0640     4.5220  0.0000  full_adder_44
+I2/I_mult/i_DADDATREE/i_FA1_1_4/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_88
+I2/I_mult/i_DADDATREE/i_FA1_1_4/h1
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_87
+I2/I_mult/i_DADDATREE/i_FA1_1_40    11.7040      0.2     1.0640     0.0000  0.0000  full_adder_8
+I2/I_mult/i_DADDATREE/i_FA1_1_40/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_16
+I2/I_mult/i_DADDATREE/i_FA1_1_40/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_15
+I2/I_mult/i_DADDATREE/i_FA1_1_41    11.7040      0.2     1.0640     0.0000  0.0000  full_adder_7
+I2/I_mult/i_DADDATREE/i_FA1_1_41/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_14
+I2/I_mult/i_DADDATREE/i_FA1_1_41/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_13
+I2/I_mult/i_DADDATREE/i_FA1_1_42    11.9700      0.2     1.0640     0.0000  0.0000  full_adder_6
+I2/I_mult/i_DADDATREE/i_FA1_1_42/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_12
+I2/I_mult/i_DADDATREE/i_FA1_1_42/h1
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_11
+I2/I_mult/i_DADDATREE/i_FA1_1_43    15.6940      0.2     1.0640     0.0000  0.0000  full_adder_5
+I2/I_mult/i_DADDATREE/i_FA1_1_43/h0
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_10
+I2/I_mult/i_DADDATREE/i_FA1_1_43/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_9
+I2/I_mult/i_DADDATREE/i_FA1_1_44    19.9500      0.3     1.0640     0.0000  0.0000  full_adder_4
+I2/I_mult/i_DADDATREE/i_FA1_1_44/h0
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_8
+I2/I_mult/i_DADDATREE/i_FA1_1_44/h1
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_7
+I2/I_mult/i_DADDATREE/i_FA1_1_45    19.9500      0.3     1.0640     0.0000  0.0000  full_adder_3
+I2/I_mult/i_DADDATREE/i_FA1_1_45/h0
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_6
+I2/I_mult/i_DADDATREE/i_FA1_1_45/h1
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_5
+I2/I_mult/i_DADDATREE/i_FA1_1_46     7.9800      0.1     1.0640     0.0000  0.0000  full_adder_2
+I2/I_mult/i_DADDATREE/i_FA1_1_46/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_4
+I2/I_mult/i_DADDATREE/i_FA1_1_46/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_3
+I2/I_mult/i_DADDATREE/i_FA1_1_47     3.1920      0.0     0.0000     0.0000  0.0000  full_adder_1
+I2/I_mult/i_DADDATREE/i_FA1_1_47/h0
+                                     1.5960      0.0     1.5960     0.0000  0.0000  half_adder_2
+I2/I_mult/i_DADDATREE/i_FA1_1_47/h1
+                                     1.5960      0.0     1.5960     0.0000  0.0000  half_adder_1
+I2/I_mult/i_DADDATREE/i_FA1_1_5     20.4820      0.3     1.0640     4.5220  0.0000  full_adder_43
+I2/I_mult/i_DADDATREE/i_FA1_1_5/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_86
+I2/I_mult/i_DADDATREE/i_FA1_1_5/h1
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_85
+I2/I_mult/i_DADDATREE/i_FA1_1_6     16.4920      0.2     1.0640     0.0000  0.0000  full_adder_42
+I2/I_mult/i_DADDATREE/i_FA1_1_6/h0
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_84
+I2/I_mult/i_DADDATREE/i_FA1_1_6/h1
+                                     7.9800      0.1     3.4580     4.5220  0.0000  half_adder_83
+I2/I_mult/i_DADDATREE/i_FA1_1_7     11.9700      0.2     1.0640     0.0000  0.0000  full_adder_41
+I2/I_mult/i_DADDATREE/i_FA1_1_7/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_82
+I2/I_mult/i_DADDATREE/i_FA1_1_7/h1
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_81
+I2/I_mult/i_DADDATREE/i_FA1_1_8     12.5020      0.2     1.0640     0.0000  0.0000  full_adder_40
+I2/I_mult/i_DADDATREE/i_FA1_1_8/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_80
+I2/I_mult/i_DADDATREE/i_FA1_1_8/h1
+                                     7.9800      0.1     3.4580     4.5220  0.0000  half_adder_79
+I2/I_mult/i_DADDATREE/i_FA1_1_9     11.7040      0.2     1.0640     0.0000  0.0000  full_adder_39
+I2/I_mult/i_DADDATREE/i_FA1_1_9/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_78
+I2/I_mult/i_DADDATREE/i_FA1_1_9/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_77
+I2/I_mult/i_DADDATREE/i_FA1_2_10    15.9600      0.2     1.0640     0.0000  0.0000  full_adder_80
+I2/I_mult/i_DADDATREE/i_FA1_2_10/h0
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_160
+I2/I_mult/i_DADDATREE/i_FA1_2_10/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_159
+I2/I_mult/i_DADDATREE/i_FA1_2_11     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_79
+I2/I_mult/i_DADDATREE/i_FA1_2_11/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_158
+I2/I_mult/i_DADDATREE/i_FA1_2_11/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_157
+I2/I_mult/i_DADDATREE/i_FA1_2_12     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_78
+I2/I_mult/i_DADDATREE/i_FA1_2_12/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_156
+I2/I_mult/i_DADDATREE/i_FA1_2_12/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_155
+I2/I_mult/i_DADDATREE/i_FA1_2_13     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_77
+I2/I_mult/i_DADDATREE/i_FA1_2_13/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_154
+I2/I_mult/i_DADDATREE/i_FA1_2_13/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_153
+I2/I_mult/i_DADDATREE/i_FA1_2_14     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_76
+I2/I_mult/i_DADDATREE/i_FA1_2_14/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_152
+I2/I_mult/i_DADDATREE/i_FA1_2_14/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_151
+I2/I_mult/i_DADDATREE/i_FA1_2_15     7.9800      0.1     1.0640     0.0000  0.0000  full_adder_75
+I2/I_mult/i_DADDATREE/i_FA1_2_15/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_150
+I2/I_mult/i_DADDATREE/i_FA1_2_15/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_149
+I2/I_mult/i_DADDATREE/i_FA1_2_16     7.7140      0.1     1.0640     0.0000  0.0000  full_adder_74
+I2/I_mult/i_DADDATREE/i_FA1_2_16/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_148
+I2/I_mult/i_DADDATREE/i_FA1_2_16/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_147
+I2/I_mult/i_DADDATREE/i_FA1_2_17     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_73
+I2/I_mult/i_DADDATREE/i_FA1_2_17/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_146
+I2/I_mult/i_DADDATREE/i_FA1_2_17/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_145
+I2/I_mult/i_DADDATREE/i_FA1_2_18     7.7140      0.1     1.0640     0.0000  0.0000  full_adder_72
+I2/I_mult/i_DADDATREE/i_FA1_2_18/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_144
+I2/I_mult/i_DADDATREE/i_FA1_2_18/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_143
+I2/I_mult/i_DADDATREE/i_FA1_2_19     7.7140      0.1     1.0640     0.0000  0.0000  full_adder_71
+I2/I_mult/i_DADDATREE/i_FA1_2_19/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_142
+I2/I_mult/i_DADDATREE/i_FA1_2_19/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_141
+I2/I_mult/i_DADDATREE/i_FA1_2_20     7.7140      0.1     1.0640     0.0000  0.0000  full_adder_70
+I2/I_mult/i_DADDATREE/i_FA1_2_20/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_140
+I2/I_mult/i_DADDATREE/i_FA1_2_20/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_139
+I2/I_mult/i_DADDATREE/i_FA1_2_21     7.7140      0.1     1.0640     0.0000  0.0000  full_adder_69
+I2/I_mult/i_DADDATREE/i_FA1_2_21/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_138
+I2/I_mult/i_DADDATREE/i_FA1_2_21/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_137
+I2/I_mult/i_DADDATREE/i_FA1_2_22     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_68
+I2/I_mult/i_DADDATREE/i_FA1_2_22/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_136
+I2/I_mult/i_DADDATREE/i_FA1_2_22/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_135
+I2/I_mult/i_DADDATREE/i_FA1_2_23     7.7140      0.1     1.0640     0.0000  0.0000  full_adder_67
+I2/I_mult/i_DADDATREE/i_FA1_2_23/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_134
+I2/I_mult/i_DADDATREE/i_FA1_2_23/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_133
+I2/I_mult/i_DADDATREE/i_FA1_2_24    24.7380      0.3     0.7980     9.0440  0.0000  full_adder_66
+I2/I_mult/i_DADDATREE/i_FA1_2_24/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_132
+I2/I_mult/i_DADDATREE/i_FA1_2_24/h1
+                                    12.2360      0.2     3.1920     9.0440  0.0000  half_adder_131
+I2/I_mult/i_DADDATREE/i_FA1_2_25    20.4820      0.3     1.0640     4.5220  0.0000  full_adder_65
+I2/I_mult/i_DADDATREE/i_FA1_2_25/h0
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_130
+I2/I_mult/i_DADDATREE/i_FA1_2_25/h1
+                                    11.7040      0.2     2.6600     9.0440  0.0000  half_adder_129
+I2/I_mult/i_DADDATREE/i_FA1_2_26    20.7480      0.3     1.0640     4.5220  0.0000  full_adder_64
+I2/I_mult/i_DADDATREE/i_FA1_2_26/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_128
+I2/I_mult/i_DADDATREE/i_FA1_2_26/h1
+                                    11.7040      0.2     2.6600     9.0440  0.0000  half_adder_127
+I2/I_mult/i_DADDATREE/i_FA1_2_27     7.7140      0.1     1.0640     0.0000  0.0000  full_adder_63
+I2/I_mult/i_DADDATREE/i_FA1_2_27/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_126
+I2/I_mult/i_DADDATREE/i_FA1_2_27/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_125
+I2/I_mult/i_DADDATREE/i_FA1_2_28     7.7140      0.1     1.0640     0.0000  0.0000  full_adder_62
+I2/I_mult/i_DADDATREE/i_FA1_2_28/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_124
+I2/I_mult/i_DADDATREE/i_FA1_2_28/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_123
+I2/I_mult/i_DADDATREE/i_FA1_2_29     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_61
+I2/I_mult/i_DADDATREE/i_FA1_2_29/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_122
+I2/I_mult/i_DADDATREE/i_FA1_2_29/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_121
+I2/I_mult/i_DADDATREE/i_FA1_2_30     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_60
+I2/I_mult/i_DADDATREE/i_FA1_2_30/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_120
+I2/I_mult/i_DADDATREE/i_FA1_2_30/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_119
+I2/I_mult/i_DADDATREE/i_FA1_2_31    20.2160      0.3     1.0640     0.0000  0.0000  full_adder_59
+I2/I_mult/i_DADDATREE/i_FA1_2_31/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_118
+I2/I_mult/i_DADDATREE/i_FA1_2_31/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_117
+I2/I_mult/i_DADDATREE/i_FA1_2_32    20.7480      0.3     1.0640     0.0000  0.0000  full_adder_58
+I2/I_mult/i_DADDATREE/i_FA1_2_32/h0
+                                    12.5020      0.2     3.4580     9.0440  0.0000  half_adder_116
+I2/I_mult/i_DADDATREE/i_FA1_2_32/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_115
+I2/I_mult/i_DADDATREE/i_FA1_2_33    20.7480      0.3     1.0640     0.0000  0.0000  full_adder_57
+I2/I_mult/i_DADDATREE/i_FA1_2_33/h0
+                                    12.5020      0.2     3.4580     9.0440  0.0000  half_adder_114
+I2/I_mult/i_DADDATREE/i_FA1_2_33/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_113
+I2/I_mult/i_DADDATREE/i_FA1_2_34    20.4820      0.3     1.0640     0.0000  0.0000  full_adder_56
+I2/I_mult/i_DADDATREE/i_FA1_2_34/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_112
+I2/I_mult/i_DADDATREE/i_FA1_2_34/h1
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_111
+I2/I_mult/i_DADDATREE/i_FA1_2_35    20.7480      0.3     1.0640     0.0000  0.0000  full_adder_55
+I2/I_mult/i_DADDATREE/i_FA1_2_35/h0
+                                    12.5020      0.2     3.4580     9.0440  0.0000  half_adder_110
+I2/I_mult/i_DADDATREE/i_FA1_2_35/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_109
+I2/I_mult/i_DADDATREE/i_FA1_2_36    20.4820      0.3     1.0640     0.0000  0.0000  full_adder_54
+I2/I_mult/i_DADDATREE/i_FA1_2_36/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_108
+I2/I_mult/i_DADDATREE/i_FA1_2_36/h1
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_107
+I2/I_mult/i_DADDATREE/i_FA1_2_37    19.6840      0.3     1.0640     4.5220  0.0000  full_adder_53
+I2/I_mult/i_DADDATREE/i_FA1_2_37/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_106
+I2/I_mult/i_DADDATREE/i_FA1_2_37/h1
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_105
+I2/I_mult/i_DADDATREE/i_FA1_2_38    21.2800      0.3     1.0640     4.5220  0.0000  full_adder_52
+I2/I_mult/i_DADDATREE/i_FA1_2_38/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_104
+I2/I_mult/i_DADDATREE/i_FA1_2_38/h1
+                                    12.2360      0.2     3.1920     9.0440  0.0000  half_adder_103
+I2/I_mult/i_DADDATREE/i_FA1_2_39    19.6840      0.3     1.0640     4.5220  0.0000  full_adder_51
+I2/I_mult/i_DADDATREE/i_FA1_2_39/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_102
+I2/I_mult/i_DADDATREE/i_FA1_2_39/h1
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_101
+I2/I_mult/i_DADDATREE/i_FA1_2_40    19.6840      0.3     1.0640     4.5220  0.0000  full_adder_50
+I2/I_mult/i_DADDATREE/i_FA1_2_40/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_100
+I2/I_mult/i_DADDATREE/i_FA1_2_40/h1
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_99
+I2/I_mult/i_DADDATREE/i_FA1_2_41    19.9500      0.3     1.0640     4.5220  0.0000  full_adder_49
+I2/I_mult/i_DADDATREE/i_FA1_2_41/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_98
+I2/I_mult/i_DADDATREE/i_FA1_2_41/h1
+                                    11.7040      0.2     2.6600     9.0440  0.0000  half_adder_97
+I2/I_mult/i_DADDATREE/i_FA1_2_42    19.6840      0.3     1.0640     4.5220  0.0000  full_adder_48
+I2/I_mult/i_DADDATREE/i_FA1_2_42/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_96
+I2/I_mult/i_DADDATREE/i_FA1_2_42/h1
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_95
+I2/I_mult/i_DADDATREE/i_FA1_2_43     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_47
+I2/I_mult/i_DADDATREE/i_FA1_2_43/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_94
+I2/I_mult/i_DADDATREE/i_FA1_2_43/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_93
+I2/I_mult/i_DADDATREE/i_FA1_2_44     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_46
+I2/I_mult/i_DADDATREE/i_FA1_2_44/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_92
+I2/I_mult/i_DADDATREE/i_FA1_2_44/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_91
+I2/I_mult/i_DADDATREE/i_FA1_2_45    11.9700      0.2     1.0640     0.0000  0.0000  full_adder_45
+I2/I_mult/i_DADDATREE/i_FA1_2_45/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_90
+I2/I_mult/i_DADDATREE/i_FA1_2_45/h1
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_89
+I2/I_mult/i_DADDATREE/i_FA1_2_6     19.6840      0.3     1.0640     4.5220  0.0000  full_adder_84
+I2/I_mult/i_DADDATREE/i_FA1_2_6/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_168
+I2/I_mult/i_DADDATREE/i_FA1_2_6/h1
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_167
+I2/I_mult/i_DADDATREE/i_FA1_2_7     19.6840      0.3     1.0640     4.5220  0.0000  full_adder_83
+I2/I_mult/i_DADDATREE/i_FA1_2_7/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_166
+I2/I_mult/i_DADDATREE/i_FA1_2_7/h1
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_165
+I2/I_mult/i_DADDATREE/i_FA1_2_8     19.9500      0.3     1.0640     0.0000  0.0000  full_adder_82
+I2/I_mult/i_DADDATREE/i_FA1_2_8/h0
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_164
+I2/I_mult/i_DADDATREE/i_FA1_2_8/h1
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_163
+I2/I_mult/i_DADDATREE/i_FA1_2_9     20.4820      0.3     1.0640     0.0000  0.0000  full_adder_81
+I2/I_mult/i_DADDATREE/i_FA1_2_9/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_162
+I2/I_mult/i_DADDATREE/i_FA1_2_9/h1
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_161
+I2/I_mult/i_DADDATREE/i_FA1_3_10    19.6840      0.3     1.0640     4.5220  0.0000  full_adder_150
+I2/I_mult/i_DADDATREE/i_FA1_3_10/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_300
+I2/I_mult/i_DADDATREE/i_FA1_3_10/h1
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_299
+I2/I_mult/i_DADDATREE/i_FA1_3_11    19.9500      0.3     1.0640     4.5220  0.0000  full_adder_148
+I2/I_mult/i_DADDATREE/i_FA1_3_11/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_296
+I2/I_mult/i_DADDATREE/i_FA1_3_11/h1
+                                    11.7040      0.2     2.6600     9.0440  0.0000  half_adder_295
+I2/I_mult/i_DADDATREE/i_FA1_3_12    20.7480      0.3     1.0640     0.0000  0.0000  full_adder_146
+I2/I_mult/i_DADDATREE/i_FA1_3_12/h0
+                                    12.5020      0.2     2.9260     9.5760  0.0000  half_adder_292
+I2/I_mult/i_DADDATREE/i_FA1_3_12/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_291
+I2/I_mult/i_DADDATREE/i_FA1_3_13    19.6840      0.3     1.0640     0.0000  0.0000  full_adder_144
+I2/I_mult/i_DADDATREE/i_FA1_3_13/h0
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_288
+I2/I_mult/i_DADDATREE/i_FA1_3_13/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_287
+I2/I_mult/i_DADDATREE/i_FA1_3_14    20.2160      0.3     1.0640     0.0000  0.0000  full_adder_142
+I2/I_mult/i_DADDATREE/i_FA1_3_14/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_284
+I2/I_mult/i_DADDATREE/i_FA1_3_14/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_283
+I2/I_mult/i_DADDATREE/i_FA1_3_15    19.6840      0.3     1.0640     0.0000  0.0000  full_adder_140
+I2/I_mult/i_DADDATREE/i_FA1_3_15/h0
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_280
+I2/I_mult/i_DADDATREE/i_FA1_3_15/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_279
+I2/I_mult/i_DADDATREE/i_FA1_3_16    19.9500      0.3     1.0640     0.0000  0.0000  full_adder_138
+I2/I_mult/i_DADDATREE/i_FA1_3_16/h0
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_276
+I2/I_mult/i_DADDATREE/i_FA1_3_16/h1
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_275
+I2/I_mult/i_DADDATREE/i_FA1_3_17     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_136
+I2/I_mult/i_DADDATREE/i_FA1_3_17/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_272
+I2/I_mult/i_DADDATREE/i_FA1_3_17/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_271
+I2/I_mult/i_DADDATREE/i_FA1_3_18     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_134
+I2/I_mult/i_DADDATREE/i_FA1_3_18/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_268
+I2/I_mult/i_DADDATREE/i_FA1_3_18/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_267
+I2/I_mult/i_DADDATREE/i_FA1_3_19     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_132
+I2/I_mult/i_DADDATREE/i_FA1_3_19/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_264
+I2/I_mult/i_DADDATREE/i_FA1_3_19/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_263
+I2/I_mult/i_DADDATREE/i_FA1_3_20     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_130
+I2/I_mult/i_DADDATREE/i_FA1_3_20/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_260
+I2/I_mult/i_DADDATREE/i_FA1_3_20/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_259
+I2/I_mult/i_DADDATREE/i_FA1_3_21     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_128
+I2/I_mult/i_DADDATREE/i_FA1_3_21/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_256
+I2/I_mult/i_DADDATREE/i_FA1_3_21/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_255
+I2/I_mult/i_DADDATREE/i_FA1_3_22     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_126
+I2/I_mult/i_DADDATREE/i_FA1_3_22/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_252
+I2/I_mult/i_DADDATREE/i_FA1_3_22/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_251
+I2/I_mult/i_DADDATREE/i_FA1_3_23     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_124
+I2/I_mult/i_DADDATREE/i_FA1_3_23/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_248
+I2/I_mult/i_DADDATREE/i_FA1_3_23/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_247
+I2/I_mult/i_DADDATREE/i_FA1_3_24     7.7140      0.1     1.0640     0.0000  0.0000  full_adder_122
+I2/I_mult/i_DADDATREE/i_FA1_3_24/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_244
+I2/I_mult/i_DADDATREE/i_FA1_3_24/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_243
+I2/I_mult/i_DADDATREE/i_FA1_3_25     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_120
+I2/I_mult/i_DADDATREE/i_FA1_3_25/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_240
+I2/I_mult/i_DADDATREE/i_FA1_3_25/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_239
+I2/I_mult/i_DADDATREE/i_FA1_3_26     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_118
+I2/I_mult/i_DADDATREE/i_FA1_3_26/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_236
+I2/I_mult/i_DADDATREE/i_FA1_3_26/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_235
+I2/I_mult/i_DADDATREE/i_FA1_3_27     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_116
+I2/I_mult/i_DADDATREE/i_FA1_3_27/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_232
+I2/I_mult/i_DADDATREE/i_FA1_3_27/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_231
+I2/I_mult/i_DADDATREE/i_FA1_3_28     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_114
+I2/I_mult/i_DADDATREE/i_FA1_3_28/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_228
+I2/I_mult/i_DADDATREE/i_FA1_3_28/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_227
+I2/I_mult/i_DADDATREE/i_FA1_3_29     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_112
+I2/I_mult/i_DADDATREE/i_FA1_3_29/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_224
+I2/I_mult/i_DADDATREE/i_FA1_3_29/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_223
+I2/I_mult/i_DADDATREE/i_FA1_3_30     7.9800      0.1     1.0640     0.0000  0.0000  full_adder_110
+I2/I_mult/i_DADDATREE/i_FA1_3_30/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_220
+I2/I_mult/i_DADDATREE/i_FA1_3_30/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_219
+I2/I_mult/i_DADDATREE/i_FA1_3_31     7.7140      0.1     1.0640     0.0000  0.0000  full_adder_108
+I2/I_mult/i_DADDATREE/i_FA1_3_31/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_216
+I2/I_mult/i_DADDATREE/i_FA1_3_31/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_215
+I2/I_mult/i_DADDATREE/i_FA1_3_32     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_106
+I2/I_mult/i_DADDATREE/i_FA1_3_32/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_212
+I2/I_mult/i_DADDATREE/i_FA1_3_32/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_211
+I2/I_mult/i_DADDATREE/i_FA1_3_33     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_104
+I2/I_mult/i_DADDATREE/i_FA1_3_33/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_208
+I2/I_mult/i_DADDATREE/i_FA1_3_33/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_207
+I2/I_mult/i_DADDATREE/i_FA1_3_34     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_102
+I2/I_mult/i_DADDATREE/i_FA1_3_34/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_204
+I2/I_mult/i_DADDATREE/i_FA1_3_34/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_203
+I2/I_mult/i_DADDATREE/i_FA1_3_35     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_100
+I2/I_mult/i_DADDATREE/i_FA1_3_35/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_200
+I2/I_mult/i_DADDATREE/i_FA1_3_35/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_199
+I2/I_mult/i_DADDATREE/i_FA1_3_36     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_98
+I2/I_mult/i_DADDATREE/i_FA1_3_36/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_196
+I2/I_mult/i_DADDATREE/i_FA1_3_36/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_195
+I2/I_mult/i_DADDATREE/i_FA1_3_37    11.1720      0.1     1.0640     0.0000  0.0000  full_adder_96
+I2/I_mult/i_DADDATREE/i_FA1_3_37/h0
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_192
+I2/I_mult/i_DADDATREE/i_FA1_3_37/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_191
+I2/I_mult/i_DADDATREE/i_FA1_3_38    11.7040      0.2     1.0640     0.0000  0.0000  full_adder_94
+I2/I_mult/i_DADDATREE/i_FA1_3_38/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_188
+I2/I_mult/i_DADDATREE/i_FA1_3_38/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_187
+I2/I_mult/i_DADDATREE/i_FA1_3_39    15.9600      0.2     1.0640     0.0000  0.0000  full_adder_92
+I2/I_mult/i_DADDATREE/i_FA1_3_39/h0
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_184
+I2/I_mult/i_DADDATREE/i_FA1_3_39/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_183
+I2/I_mult/i_DADDATREE/i_FA1_3_40     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_90
+I2/I_mult/i_DADDATREE/i_FA1_3_40/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_180
+I2/I_mult/i_DADDATREE/i_FA1_3_40/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_179
+I2/I_mult/i_DADDATREE/i_FA1_3_41     7.9800      0.1     1.0640     0.0000  0.0000  full_adder_88
+I2/I_mult/i_DADDATREE/i_FA1_3_41/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_176
+I2/I_mult/i_DADDATREE/i_FA1_3_41/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_175
+I2/I_mult/i_DADDATREE/i_FA1_3_42     9.5760      0.1     1.0640     0.0000  0.0000  full_adder_86
+I2/I_mult/i_DADDATREE/i_FA1_3_42/h0
+                                     5.0540      0.1     0.5320     4.5220  0.0000  half_adder_172
+I2/I_mult/i_DADDATREE/i_FA1_3_42/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_171
+I2/I_mult/i_DADDATREE/i_FA1_3_43    11.1720      0.1     1.0640     0.0000  0.0000  full_adder_85
+I2/I_mult/i_DADDATREE/i_FA1_3_43/h0
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_170
+I2/I_mult/i_DADDATREE/i_FA1_3_43/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_169
+I2/I_mult/i_DADDATREE/i_FA1_3_8      7.1820      0.1     1.0640     0.0000  0.0000  full_adder_152
+I2/I_mult/i_DADDATREE/i_FA1_3_8/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_304
+I2/I_mult/i_DADDATREE/i_FA1_3_8/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_303
+I2/I_mult/i_DADDATREE/i_FA1_3_9      7.1820      0.1     1.0640     0.0000  0.0000  full_adder_151
+I2/I_mult/i_DADDATREE/i_FA1_3_9/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_302
+I2/I_mult/i_DADDATREE/i_FA1_3_9/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_301
+I2/I_mult/i_DADDATREE/i_FA1_4_12     7.7140      0.1     1.0640     0.0000  0.0000  full_adder_224
+I2/I_mult/i_DADDATREE/i_FA1_4_12/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_448
+I2/I_mult/i_DADDATREE/i_FA1_4_12/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_447
+I2/I_mult/i_DADDATREE/i_FA1_4_13     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_223
+I2/I_mult/i_DADDATREE/i_FA1_4_13/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_446
+I2/I_mult/i_DADDATREE/i_FA1_4_13/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_445
+I2/I_mult/i_DADDATREE/i_FA1_4_14     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_222
+I2/I_mult/i_DADDATREE/i_FA1_4_14/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_444
+I2/I_mult/i_DADDATREE/i_FA1_4_14/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_443
+I2/I_mult/i_DADDATREE/i_FA1_4_15     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_220
+I2/I_mult/i_DADDATREE/i_FA1_4_15/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_440
+I2/I_mult/i_DADDATREE/i_FA1_4_15/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_439
+I2/I_mult/i_DADDATREE/i_FA1_4_16    20.2160      0.3     1.0640     4.5220  0.0000  full_adder_218
+I2/I_mult/i_DADDATREE/i_FA1_4_16/h0
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_436
+I2/I_mult/i_DADDATREE/i_FA1_4_16/h1
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_435
+I2/I_mult/i_DADDATREE/i_FA1_4_17    16.4920      0.2     1.0640     9.0440  0.0000  full_adder_215
+I2/I_mult/i_DADDATREE/i_FA1_4_17/h0
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_430
+I2/I_mult/i_DADDATREE/i_FA1_4_17/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_429
+I2/I_mult/i_DADDATREE/i_FA1_4_18    20.4820      0.3     1.0640     0.0000  0.0000  full_adder_212
+I2/I_mult/i_DADDATREE/i_FA1_4_18/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_424
+I2/I_mult/i_DADDATREE/i_FA1_4_18/h1
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_423
+I2/I_mult/i_DADDATREE/i_FA1_4_19    20.2160      0.3     1.0640     0.0000  0.0000  full_adder_209
+I2/I_mult/i_DADDATREE/i_FA1_4_19/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_418
+I2/I_mult/i_DADDATREE/i_FA1_4_19/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_417
+I2/I_mult/i_DADDATREE/i_FA1_4_20    20.2160      0.3     1.0640     0.0000  0.0000  full_adder_206
+I2/I_mult/i_DADDATREE/i_FA1_4_20/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_412
+I2/I_mult/i_DADDATREE/i_FA1_4_20/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_411
+I2/I_mult/i_DADDATREE/i_FA1_4_21    20.7480      0.3     1.0640     0.0000  0.0000  full_adder_203
+I2/I_mult/i_DADDATREE/i_FA1_4_21/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_406
+I2/I_mult/i_DADDATREE/i_FA1_4_21/h1
+                                     7.7140      0.1     3.1920     4.5220  0.0000  half_adder_405
+I2/I_mult/i_DADDATREE/i_FA1_4_22    19.6840      0.3     1.0640     0.0000  0.0000  full_adder_200
+I2/I_mult/i_DADDATREE/i_FA1_4_22/h0
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_400
+I2/I_mult/i_DADDATREE/i_FA1_4_22/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_399
+I2/I_mult/i_DADDATREE/i_FA1_4_23    15.6940      0.2     1.0640     0.0000  0.0000  full_adder_197
+I2/I_mult/i_DADDATREE/i_FA1_4_23/h0
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_394
+I2/I_mult/i_DADDATREE/i_FA1_4_23/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_393
+I2/I_mult/i_DADDATREE/i_FA1_4_24     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_194
+I2/I_mult/i_DADDATREE/i_FA1_4_24/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_388
+I2/I_mult/i_DADDATREE/i_FA1_4_24/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_387
+I2/I_mult/i_DADDATREE/i_FA1_4_25    15.6940      0.2     1.0640     0.0000  0.0000  full_adder_191
+I2/I_mult/i_DADDATREE/i_FA1_4_25/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_382
+I2/I_mult/i_DADDATREE/i_FA1_4_25/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_381
+I2/I_mult/i_DADDATREE/i_FA1_4_26    16.4920      0.2     1.0640     0.0000  0.0000  full_adder_188
+I2/I_mult/i_DADDATREE/i_FA1_4_26/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_376
+I2/I_mult/i_DADDATREE/i_FA1_4_26/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_375
+I2/I_mult/i_DADDATREE/i_FA1_4_27    15.6940      0.2     1.0640     0.0000  0.0000  full_adder_185
+I2/I_mult/i_DADDATREE/i_FA1_4_27/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_370
+I2/I_mult/i_DADDATREE/i_FA1_4_27/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_369
+I2/I_mult/i_DADDATREE/i_FA1_4_28    16.2260      0.2     1.0640     0.0000  0.0000  full_adder_182
+I2/I_mult/i_DADDATREE/i_FA1_4_28/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_364
+I2/I_mult/i_DADDATREE/i_FA1_4_28/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_363
+I2/I_mult/i_DADDATREE/i_FA1_4_29    15.6940      0.2     1.0640     0.0000  0.0000  full_adder_179
+I2/I_mult/i_DADDATREE/i_FA1_4_29/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_358
+I2/I_mult/i_DADDATREE/i_FA1_4_29/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_357
+I2/I_mult/i_DADDATREE/i_FA1_4_30    15.1620      0.2     1.0640     0.0000  0.0000  full_adder_176
+I2/I_mult/i_DADDATREE/i_FA1_4_30/h0
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_352
+I2/I_mult/i_DADDATREE/i_FA1_4_30/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_351
+I2/I_mult/i_DADDATREE/i_FA1_4_31    20.7480      0.3     1.0640     0.0000  0.0000  full_adder_173
+I2/I_mult/i_DADDATREE/i_FA1_4_31/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_346
+I2/I_mult/i_DADDATREE/i_FA1_4_31/h1
+                                     7.7140      0.1     3.1920     4.5220  0.0000  half_adder_345
+I2/I_mult/i_DADDATREE/i_FA1_4_32    16.4920      0.2     1.0640     0.0000  0.0000  full_adder_170
+I2/I_mult/i_DADDATREE/i_FA1_4_32/h0
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_340
+I2/I_mult/i_DADDATREE/i_FA1_4_32/h1
+                                     7.9800      0.1     3.4580     4.5220  0.0000  half_adder_339
+I2/I_mult/i_DADDATREE/i_FA1_4_33    16.4920      0.2     1.0640     0.0000  0.0000  full_adder_167
+I2/I_mult/i_DADDATREE/i_FA1_4_33/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_334
+I2/I_mult/i_DADDATREE/i_FA1_4_33/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_333
+I2/I_mult/i_DADDATREE/i_FA1_4_34    11.4380      0.2     1.0640     0.0000  0.0000  full_adder_164
+I2/I_mult/i_DADDATREE/i_FA1_4_34/h0
+                                     2.9260      0.0     2.9260     0.0000  0.0000  half_adder_328
+I2/I_mult/i_DADDATREE/i_FA1_4_34/h1
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_327
+I2/I_mult/i_DADDATREE/i_FA1_4_35    11.7040      0.2     1.0640     0.0000  0.0000  full_adder_161
+I2/I_mult/i_DADDATREE/i_FA1_4_35/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_322
+I2/I_mult/i_DADDATREE/i_FA1_4_35/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_321
+I2/I_mult/i_DADDATREE/i_FA1_4_36     4.5220      0.1     1.0640     0.0000  0.0000  full_adder_158
+I2/I_mult/i_DADDATREE/i_FA1_4_36/h0
+                                     0.0000      0.0     0.0000     0.0000  0.0000  half_adder_316
+I2/I_mult/i_DADDATREE/i_FA1_4_36/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_315
+I2/I_mult/i_DADDATREE/i_FA1_4_37    15.6940      0.2     1.0640     0.0000  0.0000  full_adder_156
+I2/I_mult/i_DADDATREE/i_FA1_4_37/h0
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_312
+I2/I_mult/i_DADDATREE/i_FA1_4_37/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_311
+I2/I_mult/i_DADDATREE/i_FA1_4_38     4.5220      0.1     1.0640     0.0000  0.0000  full_adder_154
+I2/I_mult/i_DADDATREE/i_FA1_4_38/h0
+                                     0.0000      0.0     0.0000     0.0000  0.0000  half_adder_308
+I2/I_mult/i_DADDATREE/i_FA1_4_38/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_307
+I2/I_mult/i_DADDATREE/i_FA1_4_39    15.6940      0.2     1.0640     0.0000  0.0000  full_adder_153
+I2/I_mult/i_DADDATREE/i_FA1_4_39/h0
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_306
+I2/I_mult/i_DADDATREE/i_FA1_4_39/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_305
+I2/I_mult/i_DADDATREE/i_FA1_5_18     7.7140      0.1     1.0640     0.0000  0.0000  full_adder_0
+I2/I_mult/i_DADDATREE/i_FA1_5_18/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_528
+I2/I_mult/i_DADDATREE/i_FA1_5_18/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_527
+I2/I_mult/i_DADDATREE/i_FA1_5_19     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_263
+I2/I_mult/i_DADDATREE/i_FA1_5_19/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_526
+I2/I_mult/i_DADDATREE/i_FA1_5_19/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_525
+I2/I_mult/i_DADDATREE/i_FA1_5_20     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_262
+I2/I_mult/i_DADDATREE/i_FA1_5_20/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_524
+I2/I_mult/i_DADDATREE/i_FA1_5_20/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_523
+I2/I_mult/i_DADDATREE/i_FA1_5_21     7.7140      0.1     1.0640     0.0000  0.0000  full_adder_260
+I2/I_mult/i_DADDATREE/i_FA1_5_21/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_520
+I2/I_mult/i_DADDATREE/i_FA1_5_21/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_519
+I2/I_mult/i_DADDATREE/i_FA1_5_22     7.7140      0.1     1.0640     0.0000  0.0000  full_adder_258
+I2/I_mult/i_DADDATREE/i_FA1_5_22/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_516
+I2/I_mult/i_DADDATREE/i_FA1_5_22/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_515
+I2/I_mult/i_DADDATREE/i_FA1_5_23    20.4820      0.3     1.0640     4.5220  0.0000  full_adder_255
+I2/I_mult/i_DADDATREE/i_FA1_5_23/h0
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_510
+I2/I_mult/i_DADDATREE/i_FA1_5_23/h1
+                                    11.7040      0.2     2.6600     9.0440  0.0000  half_adder_509
+I2/I_mult/i_DADDATREE/i_FA1_5_24     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_252
+I2/I_mult/i_DADDATREE/i_FA1_5_24/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_504
+I2/I_mult/i_DADDATREE/i_FA1_5_24/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_503
+I2/I_mult/i_DADDATREE/i_FA1_5_25     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_248
+I2/I_mult/i_DADDATREE/i_FA1_5_25/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_496
+I2/I_mult/i_DADDATREE/i_FA1_5_25/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_495
+I2/I_mult/i_DADDATREE/i_FA1_5_26     7.7140      0.1     1.0640     0.0000  0.0000  full_adder_244
+I2/I_mult/i_DADDATREE/i_FA1_5_26/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_488
+I2/I_mult/i_DADDATREE/i_FA1_5_26/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_487
+I2/I_mult/i_DADDATREE/i_FA1_5_27     7.7140      0.1     1.0640     0.0000  0.0000  full_adder_240
+I2/I_mult/i_DADDATREE/i_FA1_5_27/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_480
+I2/I_mult/i_DADDATREE/i_FA1_5_27/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_479
+I2/I_mult/i_DADDATREE/i_FA1_5_28     5.0540      0.1     1.0640     0.0000  0.0000  full_adder_236
+I2/I_mult/i_DADDATREE/i_FA1_5_28/h0
+                                     0.0000      0.0     0.0000     0.0000  0.0000  half_adder_472
+I2/I_mult/i_DADDATREE/i_FA1_5_28/h1
+                                     3.9900      0.1     3.9900     0.0000  0.0000  half_adder_471
+I2/I_mult/i_DADDATREE/i_FA1_5_29     8.5120      0.1     1.8620     0.0000  0.0000  full_adder_233
+I2/I_mult/i_DADDATREE/i_FA1_5_29/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_466
+I2/I_mult/i_DADDATREE/i_FA1_5_29/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_465
+I2/I_mult/i_DADDATREE/i_FA1_5_30     4.5220      0.1     1.0640     0.0000  0.0000  full_adder_230
+I2/I_mult/i_DADDATREE/i_FA1_5_30/h0
+                                     0.0000      0.0     0.0000     0.0000  0.0000  half_adder_460
+I2/I_mult/i_DADDATREE/i_FA1_5_30/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_459
+I2/I_mult/i_DADDATREE/i_FA1_5_31    17.0240      0.2     1.0640     9.0440  0.0000  full_adder_228
+I2/I_mult/i_DADDATREE/i_FA1_5_31/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_456
+I2/I_mult/i_DADDATREE/i_FA1_5_31/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_455
+I2/I_mult/i_DADDATREE/i_FA1_5_32     3.9900      0.1     1.0640     0.0000  0.0000  full_adder_226
+I2/I_mult/i_DADDATREE/i_FA1_5_32/h0
+                                     0.0000      0.0     0.0000     0.0000  0.0000  half_adder_452
+I2/I_mult/i_DADDATREE/i_FA1_5_32/h1
+                                     2.9260      0.0     2.9260     0.0000  0.0000  half_adder_451
+I2/I_mult/i_DADDATREE/i_FA1_5_33    20.4820      0.3     1.0640     4.5220  0.0000  full_adder_225
+I2/I_mult/i_DADDATREE/i_FA1_5_33/h0
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_450
+I2/I_mult/i_DADDATREE/i_FA1_5_33/h1
+                                    11.7040      0.2     2.6600     9.0440  0.0000  half_adder_449
+I2/I_mult/i_DADDATREE/i_FA2_3_10    15.6940      0.2     1.0640     4.5220  0.0000  full_adder_149
+I2/I_mult/i_DADDATREE/i_FA2_3_10/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_298
+I2/I_mult/i_DADDATREE/i_FA2_3_10/h1
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_297
+I2/I_mult/i_DADDATREE/i_FA2_3_11    16.4920      0.2     1.0640     9.0440  0.0000  full_adder_147
+I2/I_mult/i_DADDATREE/i_FA2_3_11/h0
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_294
+I2/I_mult/i_DADDATREE/i_FA2_3_11/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_293
+I2/I_mult/i_DADDATREE/i_FA2_3_12    16.4920      0.2     1.0640     4.5220  0.0000  full_adder_145
+I2/I_mult/i_DADDATREE/i_FA2_3_12/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_290
+I2/I_mult/i_DADDATREE/i_FA2_3_12/h1
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_289
+I2/I_mult/i_DADDATREE/i_FA2_3_13    20.2160      0.3     1.0640     4.5220  0.0000  full_adder_143
+I2/I_mult/i_DADDATREE/i_FA2_3_13/h0
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_286
+I2/I_mult/i_DADDATREE/i_FA2_3_13/h1
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_285
+I2/I_mult/i_DADDATREE/i_FA2_3_14    15.6940      0.2     1.0640     0.0000  0.0000  full_adder_141
+I2/I_mult/i_DADDATREE/i_FA2_3_14/h0
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_282
+I2/I_mult/i_DADDATREE/i_FA2_3_14/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_281
+I2/I_mult/i_DADDATREE/i_FA2_3_15    15.4280      0.2     1.0640     0.0000  0.0000  full_adder_139
+I2/I_mult/i_DADDATREE/i_FA2_3_15/h0
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_278
+I2/I_mult/i_DADDATREE/i_FA2_3_15/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_277
+I2/I_mult/i_DADDATREE/i_FA2_3_16    11.9700      0.2     1.0640     0.0000  0.0000  full_adder_137
+I2/I_mult/i_DADDATREE/i_FA2_3_16/h0
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_274
+I2/I_mult/i_DADDATREE/i_FA2_3_16/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_273
+I2/I_mult/i_DADDATREE/i_FA2_3_17    11.1720      0.1     1.0640     0.0000  0.0000  full_adder_135
+I2/I_mult/i_DADDATREE/i_FA2_3_17/h0
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_270
+I2/I_mult/i_DADDATREE/i_FA2_3_17/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_269
+I2/I_mult/i_DADDATREE/i_FA2_3_18     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_133
+I2/I_mult/i_DADDATREE/i_FA2_3_18/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_266
+I2/I_mult/i_DADDATREE/i_FA2_3_18/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_265
+I2/I_mult/i_DADDATREE/i_FA2_3_19     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_131
+I2/I_mult/i_DADDATREE/i_FA2_3_19/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_262
+I2/I_mult/i_DADDATREE/i_FA2_3_19/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_261
+I2/I_mult/i_DADDATREE/i_FA2_3_20     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_129
+I2/I_mult/i_DADDATREE/i_FA2_3_20/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_258
+I2/I_mult/i_DADDATREE/i_FA2_3_20/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_257
+I2/I_mult/i_DADDATREE/i_FA2_3_21     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_127
+I2/I_mult/i_DADDATREE/i_FA2_3_21/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_254
+I2/I_mult/i_DADDATREE/i_FA2_3_21/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_253
+I2/I_mult/i_DADDATREE/i_FA2_3_22     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_125
+I2/I_mult/i_DADDATREE/i_FA2_3_22/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_250
+I2/I_mult/i_DADDATREE/i_FA2_3_22/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_249
+I2/I_mult/i_DADDATREE/i_FA2_3_23     8.5120      0.1     1.0640     0.0000  0.0000  full_adder_123
+I2/I_mult/i_DADDATREE/i_FA2_3_23/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_246
+I2/I_mult/i_DADDATREE/i_FA2_3_23/h1
+                                     3.9900      0.1     3.9900     0.0000  0.0000  half_adder_245
+I2/I_mult/i_DADDATREE/i_FA2_3_24     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_121
+I2/I_mult/i_DADDATREE/i_FA2_3_24/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_242
+I2/I_mult/i_DADDATREE/i_FA2_3_24/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_241
+I2/I_mult/i_DADDATREE/i_FA2_3_25     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_119
+I2/I_mult/i_DADDATREE/i_FA2_3_25/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_238
+I2/I_mult/i_DADDATREE/i_FA2_3_25/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_237
+I2/I_mult/i_DADDATREE/i_FA2_3_26     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_117
+I2/I_mult/i_DADDATREE/i_FA2_3_26/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_234
+I2/I_mult/i_DADDATREE/i_FA2_3_26/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_233
+I2/I_mult/i_DADDATREE/i_FA2_3_27     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_115
+I2/I_mult/i_DADDATREE/i_FA2_3_27/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_230
+I2/I_mult/i_DADDATREE/i_FA2_3_27/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_229
+I2/I_mult/i_DADDATREE/i_FA2_3_28     7.9800      0.1     1.0640     0.0000  0.0000  full_adder_113
+I2/I_mult/i_DADDATREE/i_FA2_3_28/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_226
+I2/I_mult/i_DADDATREE/i_FA2_3_28/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_225
+I2/I_mult/i_DADDATREE/i_FA2_3_29     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_111
+I2/I_mult/i_DADDATREE/i_FA2_3_29/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_222
+I2/I_mult/i_DADDATREE/i_FA2_3_29/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_221
+I2/I_mult/i_DADDATREE/i_FA2_3_30     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_109
+I2/I_mult/i_DADDATREE/i_FA2_3_30/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_218
+I2/I_mult/i_DADDATREE/i_FA2_3_30/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_217
+I2/I_mult/i_DADDATREE/i_FA2_3_31     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_107
+I2/I_mult/i_DADDATREE/i_FA2_3_31/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_214
+I2/I_mult/i_DADDATREE/i_FA2_3_31/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_213
+I2/I_mult/i_DADDATREE/i_FA2_3_32     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_105
+I2/I_mult/i_DADDATREE/i_FA2_3_32/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_210
+I2/I_mult/i_DADDATREE/i_FA2_3_32/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_209
+I2/I_mult/i_DADDATREE/i_FA2_3_33     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_103
+I2/I_mult/i_DADDATREE/i_FA2_3_33/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_206
+I2/I_mult/i_DADDATREE/i_FA2_3_33/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_205
+I2/I_mult/i_DADDATREE/i_FA2_3_34     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_101
+I2/I_mult/i_DADDATREE/i_FA2_3_34/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_202
+I2/I_mult/i_DADDATREE/i_FA2_3_34/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_201
+I2/I_mult/i_DADDATREE/i_FA2_3_35     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_99
+I2/I_mult/i_DADDATREE/i_FA2_3_35/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_198
+I2/I_mult/i_DADDATREE/i_FA2_3_35/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_197
+I2/I_mult/i_DADDATREE/i_FA2_3_36    11.1720      0.1     1.0640     0.0000  0.0000  full_adder_97
+I2/I_mult/i_DADDATREE/i_FA2_3_36/h0
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_194
+I2/I_mult/i_DADDATREE/i_FA2_3_36/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_193
+I2/I_mult/i_DADDATREE/i_FA2_3_37     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_95
+I2/I_mult/i_DADDATREE/i_FA2_3_37/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_190
+I2/I_mult/i_DADDATREE/i_FA2_3_37/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_189
+I2/I_mult/i_DADDATREE/i_FA2_3_38    11.9700      0.2     1.0640     0.0000  0.0000  full_adder_93
+I2/I_mult/i_DADDATREE/i_FA2_3_38/h0
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_186
+I2/I_mult/i_DADDATREE/i_FA2_3_38/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_185
+I2/I_mult/i_DADDATREE/i_FA2_3_39     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_91
+I2/I_mult/i_DADDATREE/i_FA2_3_39/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_182
+I2/I_mult/i_DADDATREE/i_FA2_3_39/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_181
+I2/I_mult/i_DADDATREE/i_FA2_3_40     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_89
+I2/I_mult/i_DADDATREE/i_FA2_3_40/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_178
+I2/I_mult/i_DADDATREE/i_FA2_3_40/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_177
+I2/I_mult/i_DADDATREE/i_FA2_3_41     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_87
+I2/I_mult/i_DADDATREE/i_FA2_3_41/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_174
+I2/I_mult/i_DADDATREE/i_FA2_3_41/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_173
+I2/I_mult/i_DADDATREE/i_FA2_4_14     7.9800      0.1     1.0640     0.0000  0.0000  full_adder_221
+I2/I_mult/i_DADDATREE/i_FA2_4_14/h0
+                                     4.2560      0.1     4.2560     0.0000  0.0000  half_adder_442
+I2/I_mult/i_DADDATREE/i_FA2_4_14/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_441
+I2/I_mult/i_DADDATREE/i_FA2_4_15    18.6200      0.2     1.8620     0.0000  0.0000  full_adder_219
+I2/I_mult/i_DADDATREE/i_FA2_4_15/h0
+                                     4.2560      0.1     4.2560     0.0000  0.0000  half_adder_438
+I2/I_mult/i_DADDATREE/i_FA2_4_15/h1
+                                    12.5020      0.2     3.4580     9.0440  0.0000  half_adder_437
+I2/I_mult/i_DADDATREE/i_FA2_4_16    16.4920      0.2     1.0640     9.0440  0.0000  full_adder_217
+I2/I_mult/i_DADDATREE/i_FA2_4_16/h0
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_434
+I2/I_mult/i_DADDATREE/i_FA2_4_16/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_433
+I2/I_mult/i_DADDATREE/i_FA2_4_17    19.9500      0.3     1.0640     4.5220  0.0000  full_adder_214
+I2/I_mult/i_DADDATREE/i_FA2_4_17/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_428
+I2/I_mult/i_DADDATREE/i_FA2_4_17/h1
+                                    11.7040      0.2     2.6600     9.0440  0.0000  half_adder_427
+I2/I_mult/i_DADDATREE/i_FA2_4_18    19.6840      0.3     1.0640     4.5220  0.0000  full_adder_211
+I2/I_mult/i_DADDATREE/i_FA2_4_18/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_422
+I2/I_mult/i_DADDATREE/i_FA2_4_18/h1
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_421
+I2/I_mult/i_DADDATREE/i_FA2_4_19    20.2160      0.3     1.0640     4.5220  0.0000  full_adder_208
+I2/I_mult/i_DADDATREE/i_FA2_4_19/h0
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_416
+I2/I_mult/i_DADDATREE/i_FA2_4_19/h1
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_415
+I2/I_mult/i_DADDATREE/i_FA2_4_20    20.2160      0.3     1.0640     0.0000  0.0000  full_adder_205
+I2/I_mult/i_DADDATREE/i_FA2_4_20/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_410
+I2/I_mult/i_DADDATREE/i_FA2_4_20/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_409
+I2/I_mult/i_DADDATREE/i_FA2_4_21    21.5460      0.3     1.0640     0.0000  0.0000  full_adder_202
+I2/I_mult/i_DADDATREE/i_FA2_4_21/h0
+                                    12.5020      0.2     2.9260     9.5760  0.0000  half_adder_404
+I2/I_mult/i_DADDATREE/i_FA2_4_21/h1
+                                     7.9800      0.1     3.4580     4.5220  0.0000  half_adder_403
+I2/I_mult/i_DADDATREE/i_FA2_4_22    19.6840      0.3     1.0640     0.0000  0.0000  full_adder_199
+I2/I_mult/i_DADDATREE/i_FA2_4_22/h0
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_398
+I2/I_mult/i_DADDATREE/i_FA2_4_22/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_397
+I2/I_mult/i_DADDATREE/i_FA2_4_23    11.7040      0.2     1.0640     0.0000  0.0000  full_adder_196
+I2/I_mult/i_DADDATREE/i_FA2_4_23/h0
+                                     7.9800      0.1     3.4580     4.5220  0.0000  half_adder_392
+I2/I_mult/i_DADDATREE/i_FA2_4_23/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_391
+I2/I_mult/i_DADDATREE/i_FA2_4_24    20.4820      0.3     1.0640     0.0000  0.0000  full_adder_193
+I2/I_mult/i_DADDATREE/i_FA2_4_24/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_386
+I2/I_mult/i_DADDATREE/i_FA2_4_24/h1
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_385
+I2/I_mult/i_DADDATREE/i_FA2_4_25    20.2160      0.3     1.0640     0.0000  0.0000  full_adder_190
+I2/I_mult/i_DADDATREE/i_FA2_4_25/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_380
+I2/I_mult/i_DADDATREE/i_FA2_4_25/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_379
+I2/I_mult/i_DADDATREE/i_FA2_4_26    20.2160      0.3     1.0640     0.0000  0.0000  full_adder_187
+I2/I_mult/i_DADDATREE/i_FA2_4_26/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_374
+I2/I_mult/i_DADDATREE/i_FA2_4_26/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_373
+I2/I_mult/i_DADDATREE/i_FA2_4_27    12.2360      0.2     1.0640     0.0000  0.0000  full_adder_184
+I2/I_mult/i_DADDATREE/i_FA2_4_27/h0
+                                     7.9800      0.1     3.4580     4.5220  0.0000  half_adder_368
+I2/I_mult/i_DADDATREE/i_FA2_4_27/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_367
+I2/I_mult/i_DADDATREE/i_FA2_4_28    12.2360      0.2     1.0640     0.0000  0.0000  full_adder_181
+I2/I_mult/i_DADDATREE/i_FA2_4_28/h0
+                                     7.9800      0.1     3.4580     4.5220  0.0000  half_adder_362
+I2/I_mult/i_DADDATREE/i_FA2_4_28/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_361
+I2/I_mult/i_DADDATREE/i_FA2_4_29    21.0140      0.3     1.0640     0.0000  0.0000  full_adder_178
+I2/I_mult/i_DADDATREE/i_FA2_4_29/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_356
+I2/I_mult/i_DADDATREE/i_FA2_4_29/h1
+                                     7.9800      0.1     3.4580     4.5220  0.0000  half_adder_355
+I2/I_mult/i_DADDATREE/i_FA2_4_30    20.4820      0.3     1.0640     0.0000  0.0000  full_adder_175
+I2/I_mult/i_DADDATREE/i_FA2_4_30/h0
+                                    11.9700      0.2     2.9260     9.0440  0.0000  half_adder_350
+I2/I_mult/i_DADDATREE/i_FA2_4_30/h1
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_349
+I2/I_mult/i_DADDATREE/i_FA2_4_31    15.9600      0.2     1.0640     0.0000  0.0000  full_adder_172
+I2/I_mult/i_DADDATREE/i_FA2_4_31/h0
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_344
+I2/I_mult/i_DADDATREE/i_FA2_4_31/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_343
+I2/I_mult/i_DADDATREE/i_FA2_4_32    15.1620      0.2     1.0640     0.0000  0.0000  full_adder_169
+I2/I_mult/i_DADDATREE/i_FA2_4_32/h0
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_338
+I2/I_mult/i_DADDATREE/i_FA2_4_32/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_337
+I2/I_mult/i_DADDATREE/i_FA2_4_33    15.4280      0.2     1.0640     4.5220  0.0000  full_adder_166
+I2/I_mult/i_DADDATREE/i_FA2_4_33/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_332
+I2/I_mult/i_DADDATREE/i_FA2_4_33/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_331
+I2/I_mult/i_DADDATREE/i_FA2_4_34    15.4280      0.2     1.0640     4.5220  0.0000  full_adder_163
+I2/I_mult/i_DADDATREE/i_FA2_4_34/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_326
+I2/I_mult/i_DADDATREE/i_FA2_4_34/h1
+                                     7.1820      0.1     2.6600     4.5220  0.0000  half_adder_325
+I2/I_mult/i_DADDATREE/i_FA2_4_35    19.6840      0.3     1.0640     4.5220  0.0000  full_adder_160
+I2/I_mult/i_DADDATREE/i_FA2_4_35/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_320
+I2/I_mult/i_DADDATREE/i_FA2_4_35/h1
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_319
+I2/I_mult/i_DADDATREE/i_FA2_4_36    19.6840      0.3     1.0640     4.5220  0.0000  full_adder_157
+I2/I_mult/i_DADDATREE/i_FA2_4_36/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_314
+I2/I_mult/i_DADDATREE/i_FA2_4_36/h1
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_313
+I2/I_mult/i_DADDATREE/i_FA2_4_37    20.4820      0.3     1.0640     4.5220  0.0000  full_adder_155
+I2/I_mult/i_DADDATREE/i_FA2_4_37/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_310
+I2/I_mult/i_DADDATREE/i_FA2_4_37/h1
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_309
+I2/I_mult/i_DADDATREE/i_FA2_5_20     7.7140      0.1     1.0640     0.0000  0.0000  full_adder_261
+I2/I_mult/i_DADDATREE/i_FA2_5_20/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_522
+I2/I_mult/i_DADDATREE/i_FA2_5_20/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_521
+I2/I_mult/i_DADDATREE/i_FA2_5_21     9.3100      0.1     1.8620     0.0000  0.0000  full_adder_259
+I2/I_mult/i_DADDATREE/i_FA2_5_21/h0
+                                     4.2560      0.1     4.2560     0.0000  0.0000  half_adder_518
+I2/I_mult/i_DADDATREE/i_FA2_5_21/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_517
+I2/I_mult/i_DADDATREE/i_FA2_5_22     7.9800      0.1     1.0640     0.0000  0.0000  full_adder_257
+I2/I_mult/i_DADDATREE/i_FA2_5_22/h0
+                                     4.2560      0.1     4.2560     0.0000  0.0000  half_adder_514
+I2/I_mult/i_DADDATREE/i_FA2_5_22/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_513
+I2/I_mult/i_DADDATREE/i_FA2_5_23    20.4820      0.3     1.0640     4.5220  0.0000  full_adder_254
+I2/I_mult/i_DADDATREE/i_FA2_5_23/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_508
+I2/I_mult/i_DADDATREE/i_FA2_5_23/h1
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_507
+I2/I_mult/i_DADDATREE/i_FA2_5_24     7.9800      0.1     1.0640     0.0000  0.0000  full_adder_251
+I2/I_mult/i_DADDATREE/i_FA2_5_24/h0
+                                     4.2560      0.1     4.2560     0.0000  0.0000  half_adder_502
+I2/I_mult/i_DADDATREE/i_FA2_5_24/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_501
+I2/I_mult/i_DADDATREE/i_FA2_5_25     7.9800      0.1     1.0640     0.0000  0.0000  full_adder_247
+I2/I_mult/i_DADDATREE/i_FA2_5_25/h0
+                                     4.2560      0.1     4.2560     0.0000  0.0000  half_adder_494
+I2/I_mult/i_DADDATREE/i_FA2_5_25/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_493
+I2/I_mult/i_DADDATREE/i_FA2_5_26     9.5760      0.1     1.8620     0.0000  0.0000  full_adder_243
+I2/I_mult/i_DADDATREE/i_FA2_5_26/h0
+                                     5.0540      0.1     5.0540     0.0000  0.0000  half_adder_486
+I2/I_mult/i_DADDATREE/i_FA2_5_26/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_485
+I2/I_mult/i_DADDATREE/i_FA2_5_27    18.6200      0.2     1.8620     0.0000  0.0000  full_adder_239
+I2/I_mult/i_DADDATREE/i_FA2_5_27/h0
+                                     4.2560      0.1     4.2560     0.0000  0.0000  half_adder_478
+I2/I_mult/i_DADDATREE/i_FA2_5_27/h1
+                                    12.5020      0.2     3.4580     9.0440  0.0000  half_adder_477
+I2/I_mult/i_DADDATREE/i_FA2_5_28    17.0240      0.2     1.8620     0.0000  0.0000  full_adder_235
+I2/I_mult/i_DADDATREE/i_FA2_5_28/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_470
+I2/I_mult/i_DADDATREE/i_FA2_5_28/h1
+                                    11.7040      0.2     2.6600     9.0440  0.0000  half_adder_469
+I2/I_mult/i_DADDATREE/i_FA2_5_29     9.3100      0.1     1.8620     0.0000  0.0000  full_adder_232
+I2/I_mult/i_DADDATREE/i_FA2_5_29/h0
+                                     4.2560      0.1     4.2560     0.0000  0.0000  half_adder_464
+I2/I_mult/i_DADDATREE/i_FA2_5_29/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_463
+I2/I_mult/i_DADDATREE/i_FA2_5_30     7.7140      0.1     1.0640     0.0000  0.0000  full_adder_229
+I2/I_mult/i_DADDATREE/i_FA2_5_30/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_458
+I2/I_mult/i_DADDATREE/i_FA2_5_30/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_457
+I2/I_mult/i_DADDATREE/i_FA2_5_31     9.5760      0.1     1.8620     0.0000  0.0000  full_adder_227
+I2/I_mult/i_DADDATREE/i_FA2_5_31/h0
+                                     5.0540      0.1     5.0540     0.0000  0.0000  half_adder_454
+I2/I_mult/i_DADDATREE/i_FA2_5_31/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_453
+I2/I_mult/i_DADDATREE/i_FA3_4_16    15.6940      0.2     1.0640     4.5220  0.0000  full_adder_216
+I2/I_mult/i_DADDATREE/i_FA3_4_16/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_432
+I2/I_mult/i_DADDATREE/i_FA3_4_16/h1
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_431
+I2/I_mult/i_DADDATREE/i_FA3_4_17    20.4820      0.3     1.0640     4.5220  0.0000  full_adder_213
+I2/I_mult/i_DADDATREE/i_FA3_4_17/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_426
+I2/I_mult/i_DADDATREE/i_FA3_4_17/h1
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_425
+I2/I_mult/i_DADDATREE/i_FA3_4_18    15.6940      0.2     1.0640     4.5220  0.0000  full_adder_210
+I2/I_mult/i_DADDATREE/i_FA3_4_18/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_420
+I2/I_mult/i_DADDATREE/i_FA3_4_18/h1
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_419
+I2/I_mult/i_DADDATREE/i_FA3_4_19    19.6840      0.3     1.0640     4.5220  0.0000  full_adder_207
+I2/I_mult/i_DADDATREE/i_FA3_4_19/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_414
+I2/I_mult/i_DADDATREE/i_FA3_4_19/h1
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_413
+I2/I_mult/i_DADDATREE/i_FA3_4_20    15.6940      0.2     1.0640     4.5220  0.0000  full_adder_204
+I2/I_mult/i_DADDATREE/i_FA3_4_20/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_408
+I2/I_mult/i_DADDATREE/i_FA3_4_20/h1
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_407
+I2/I_mult/i_DADDATREE/i_FA3_4_21    19.6840      0.3     1.0640     4.5220  0.0000  full_adder_201
+I2/I_mult/i_DADDATREE/i_FA3_4_21/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_402
+I2/I_mult/i_DADDATREE/i_FA3_4_21/h1
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_401
+I2/I_mult/i_DADDATREE/i_FA3_4_22    15.6940      0.2     1.0640     4.5220  0.0000  full_adder_198
+I2/I_mult/i_DADDATREE/i_FA3_4_22/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_396
+I2/I_mult/i_DADDATREE/i_FA3_4_22/h1
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_395
+I2/I_mult/i_DADDATREE/i_FA3_4_23    15.9600      0.2     1.0640     0.0000  0.0000  full_adder_195
+I2/I_mult/i_DADDATREE/i_FA3_4_23/h0
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_390
+I2/I_mult/i_DADDATREE/i_FA3_4_23/h1
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_389
+I2/I_mult/i_DADDATREE/i_FA3_4_24    16.4920      0.2     1.0640     0.0000  0.0000  full_adder_192
+I2/I_mult/i_DADDATREE/i_FA3_4_24/h0
+                                    11.9700      0.2     2.3940     9.5760  0.0000  half_adder_384
+I2/I_mult/i_DADDATREE/i_FA3_4_24/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_383
+I2/I_mult/i_DADDATREE/i_FA3_4_25    11.9700      0.2     1.0640     0.0000  0.0000  full_adder_189
+I2/I_mult/i_DADDATREE/i_FA3_4_25/h0
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_378
+I2/I_mult/i_DADDATREE/i_FA3_4_25/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_377
+I2/I_mult/i_DADDATREE/i_FA3_4_26    11.9700      0.2     1.0640     0.0000  0.0000  full_adder_186
+I2/I_mult/i_DADDATREE/i_FA3_4_26/h0
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_372
+I2/I_mult/i_DADDATREE/i_FA3_4_26/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_371
+I2/I_mult/i_DADDATREE/i_FA3_4_27    11.9700      0.2     1.0640     0.0000  0.0000  full_adder_183
+I2/I_mult/i_DADDATREE/i_FA3_4_27/h0
+                                     7.4480      0.1     2.9260     4.5220  0.0000  half_adder_366
+I2/I_mult/i_DADDATREE/i_FA3_4_27/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_365
+I2/I_mult/i_DADDATREE/i_FA3_4_28    12.5020      0.2     1.0640     0.0000  0.0000  full_adder_180
+I2/I_mult/i_DADDATREE/i_FA3_4_28/h0
+                                     7.9800      0.1     3.4580     4.5220  0.0000  half_adder_360
+I2/I_mult/i_DADDATREE/i_FA3_4_28/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_359
+I2/I_mult/i_DADDATREE/i_FA3_4_29    15.9600      0.2     1.0640     0.0000  0.0000  full_adder_177
+I2/I_mult/i_DADDATREE/i_FA3_4_29/h0
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_354
+I2/I_mult/i_DADDATREE/i_FA3_4_29/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_353
+I2/I_mult/i_DADDATREE/i_FA3_4_30     7.9800      0.1     1.0640     0.0000  0.0000  full_adder_174
+I2/I_mult/i_DADDATREE/i_FA3_4_30/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_348
+I2/I_mult/i_DADDATREE/i_FA3_4_30/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_347
+I2/I_mult/i_DADDATREE/i_FA3_4_31     7.9800      0.1     1.0640     0.0000  0.0000  full_adder_171
+I2/I_mult/i_DADDATREE/i_FA3_4_31/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_342
+I2/I_mult/i_DADDATREE/i_FA3_4_31/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_341
+I2/I_mult/i_DADDATREE/i_FA3_4_32     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_168
+I2/I_mult/i_DADDATREE/i_FA3_4_32/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_336
+I2/I_mult/i_DADDATREE/i_FA3_4_32/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_335
+I2/I_mult/i_DADDATREE/i_FA3_4_33     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_165
+I2/I_mult/i_DADDATREE/i_FA3_4_33/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_330
+I2/I_mult/i_DADDATREE/i_FA3_4_33/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_329
+I2/I_mult/i_DADDATREE/i_FA3_4_34     7.1820      0.1     1.0640     0.0000  0.0000  full_adder_162
+I2/I_mult/i_DADDATREE/i_FA3_4_34/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_324
+I2/I_mult/i_DADDATREE/i_FA3_4_34/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_323
+I2/I_mult/i_DADDATREE/i_FA3_4_35    15.9600      0.2     1.0640     0.0000  0.0000  full_adder_159
+I2/I_mult/i_DADDATREE/i_FA3_4_35/h0
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_318
+I2/I_mult/i_DADDATREE/i_FA3_4_35/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_317
+I2/I_mult/i_DADDATREE/i_FA3_5_22    15.9600      0.2     1.0640     9.0440  0.0000  full_adder_256
+I2/I_mult/i_DADDATREE/i_FA3_5_22/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_512
+I2/I_mult/i_DADDATREE/i_FA3_5_22/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_511
+I2/I_mult/i_DADDATREE/i_FA3_5_23    20.2160      0.3     1.0640     4.5220  0.0000  full_adder_253
+I2/I_mult/i_DADDATREE/i_FA3_5_23/h0
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_506
+I2/I_mult/i_DADDATREE/i_FA3_5_23/h1
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_505
+I2/I_mult/i_DADDATREE/i_FA3_5_24    16.4920      0.2     1.0640     9.0440  0.0000  full_adder_250
+I2/I_mult/i_DADDATREE/i_FA3_5_24/h0
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_500
+I2/I_mult/i_DADDATREE/i_FA3_5_24/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_499
+I2/I_mult/i_DADDATREE/i_FA3_5_25    19.6840      0.3     1.0640     4.5220  0.0000  full_adder_246
+I2/I_mult/i_DADDATREE/i_FA3_5_25/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_492
+I2/I_mult/i_DADDATREE/i_FA3_5_25/h1
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_491
+I2/I_mult/i_DADDATREE/i_FA3_5_26    19.6840      0.3     1.0640     4.5220  0.0000  full_adder_242
+I2/I_mult/i_DADDATREE/i_FA3_5_26/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_484
+I2/I_mult/i_DADDATREE/i_FA3_5_26/h1
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_483
+I2/I_mult/i_DADDATREE/i_FA3_5_27    25.2700      0.3     1.0640     9.0440  0.0000  full_adder_238
+I2/I_mult/i_DADDATREE/i_FA3_5_27/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_476
+I2/I_mult/i_DADDATREE/i_FA3_5_27/h1
+                                    12.5020      0.2     3.4580     9.0440  0.0000  half_adder_475
+I2/I_mult/i_DADDATREE/i_FA3_5_28    19.6840      0.3     1.0640     4.5220  0.0000  full_adder_234
+I2/I_mult/i_DADDATREE/i_FA3_5_28/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_468
+I2/I_mult/i_DADDATREE/i_FA3_5_28/h1
+                                    11.4380      0.2     2.3940     9.0440  0.0000  half_adder_467
+I2/I_mult/i_DADDATREE/i_FA3_5_29    16.7580      0.2     1.0640     9.0440  0.0000  full_adder_231
+I2/I_mult/i_DADDATREE/i_FA3_5_29/h0
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_462
+I2/I_mult/i_DADDATREE/i_FA3_5_29/h1
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_461
+I2/I_mult/i_DADDATREE/i_FA4_5_24     8.5120      0.1     1.8620     0.0000  0.0000  full_adder_249
+I2/I_mult/i_DADDATREE/i_FA4_5_24/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_498
+I2/I_mult/i_DADDATREE/i_FA4_5_24/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_497
+I2/I_mult/i_DADDATREE/i_FA4_5_25     8.5120      0.1     1.8620     0.0000  0.0000  full_adder_245
+I2/I_mult/i_DADDATREE/i_FA4_5_25/h0
+                                     3.4580      0.0     3.4580     0.0000  0.0000  half_adder_490
+I2/I_mult/i_DADDATREE/i_FA4_5_25/h1
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_489
+I2/I_mult/i_DADDATREE/i_FA4_5_26    15.1620      0.2     0.7980     9.0440  0.0000  full_adder_241
+I2/I_mult/i_DADDATREE/i_FA4_5_26/h0
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_482
+I2/I_mult/i_DADDATREE/i_FA4_5_26/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_481
+I2/I_mult/i_DADDATREE/i_FA4_5_27    15.6940      0.2     0.7980     9.0440  0.0000  full_adder_237
+I2/I_mult/i_DADDATREE/i_FA4_5_27/h0
+                                     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_474
+I2/I_mult/i_DADDATREE/i_FA4_5_27/h1
+                                     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_473
+I2/I_mult/i_DADDATREE/i_HA1_2_0      2.6600      0.0     2.6600     0.0000  0.0000  half_adder_531
+I2/I_mult/i_DADDATREE/i_HA1_2_2      2.6600      0.0     2.6600     0.0000  0.0000  half_adder_530
+I2/I_mult/i_DADDATREE/i_HA1_2_3      2.6600      0.0     2.6600     0.0000  0.0000  half_adder_529
+I2/I_mult/i_DADDATREE/i_HA1_3_4      2.6600      0.0     2.6600     0.0000  0.0000  half_adder_534
+I2/I_mult/i_DADDATREE/i_HA1_3_46     4.5220      0.1     0.0000     4.5220  0.0000  half_adder_532
+I2/I_mult/i_DADDATREE/i_HA1_3_5      2.6600      0.0     2.6600     0.0000  0.0000  half_adder_533
+I2/I_mult/i_DADDATREE/i_HA1_4_42     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_536
+I2/I_mult/i_DADDATREE/i_HA1_4_44     4.5220      0.1     0.0000     4.5220  0.0000  half_adder_535
+I2/I_mult/i_DADDATREE/i_HA1_4_6      2.6600      0.0     2.6600     0.0000  0.0000  half_adder_540
+I2/I_mult/i_DADDATREE/i_HA1_4_7      2.6600      0.0     2.6600     0.0000  0.0000  half_adder_539
+I2/I_mult/i_DADDATREE/i_HA1_4_8      2.6600      0.0     2.6600     0.0000  0.0000  half_adder_538
+I2/I_mult/i_DADDATREE/i_HA1_4_9      2.6600      0.0     2.6600     0.0000  0.0000  half_adder_537
+I2/I_mult/i_DADDATREE/i_HA1_5_10     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_549
+I2/I_mult/i_DADDATREE/i_HA1_5_11     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_548
+I2/I_mult/i_DADDATREE/i_HA1_5_12     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_547
+I2/I_mult/i_DADDATREE/i_HA1_5_13     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_546
+I2/I_mult/i_DADDATREE/i_HA1_5_14     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_545
+I2/I_mult/i_DADDATREE/i_HA1_5_15     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_544
+I2/I_mult/i_DADDATREE/i_HA1_5_36     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_543
+I2/I_mult/i_DADDATREE/i_HA1_5_38     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_542
+I2/I_mult/i_DADDATREE/i_HA1_5_40     4.5220      0.1     0.0000     4.5220  0.0000  half_adder_541
+I2/I_mult/i_DADDATREE/i_HA1_6_16     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_0
+I2/I_mult/i_DADDATREE/i_HA1_6_17     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_560
+I2/I_mult/i_DADDATREE/i_HA1_6_18     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_559
+I2/I_mult/i_DADDATREE/i_HA1_6_19     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_558
+I2/I_mult/i_DADDATREE/i_HA1_6_20     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_557
+I2/I_mult/i_DADDATREE/i_HA1_6_21     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_556
+I2/I_mult/i_DADDATREE/i_HA1_6_22     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_555
+I2/I_mult/i_DADDATREE/i_HA1_6_23     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_554
+I2/I_mult/i_DADDATREE/i_HA1_6_28     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_553
+I2/I_mult/i_DADDATREE/i_HA1_6_30     3.1920      0.0     3.1920     0.0000  0.0000  half_adder_552
+I2/I_mult/i_DADDATREE/i_HA1_6_32     2.6600      0.0     2.6600     0.0000  0.0000  half_adder_551
+I2/I_mult/i_DADDATREE/i_HA1_6_34     4.5220      0.1     0.0000     4.5220  0.0000  half_adder_550
+I2/I_mult/i_MUX_I_0                 72.3520      0.9     0.0000     0.0000  0.0000  bN_3to1mux_N25_0
+I2/I_mult/i_MUX_I_0/mux1            27.1320      0.4    27.1320     0.0000  0.0000  bN_2to1mux_N25_0
+I2/I_mult/i_MUX_I_0/mux2            45.2200      0.6    45.2200     0.0000  0.0000  bN_2to1mux_N25_23
+I2/I_mult/i_MUX_I_1                 78.2040      1.0     0.0000     0.0000  0.0000  bN_3to1mux_N25_11
+I2/I_mult/i_MUX_I_1/mux1            31.1220      0.4    26.6000     4.5220  0.0000  bN_2to1mux_N25_22
+I2/I_mult/i_MUX_I_1/mux2            47.0820      0.6    47.0820     0.0000  0.0000  bN_2to1mux_N25_21
+I2/I_mult/i_MUX_I_10                88.0460      1.2     0.0000     0.0000  0.0000  bN_3to1mux_N25_2
+I2/I_mult/i_MUX_I_10/mux1           35.9100      0.5    26.8660     9.0440  0.0000  bN_2to1mux_N25_4
+I2/I_mult/i_MUX_I_10/mux2           52.1360      0.7    47.6140     4.5220  0.0000  bN_2to1mux_N25_3
+I2/I_mult/i_MUX_I_11                87.5140      1.1     0.0000     0.0000  0.0000  bN_3to1mux_N25_1
+I2/I_mult/i_MUX_I_11/mux1           31.3880      0.4    26.8660     4.5220  0.0000  bN_2to1mux_N25_2
+I2/I_mult/i_MUX_I_11/mux2           56.1260      0.7    47.0820     9.0440  0.0000  bN_2to1mux_N25_1
+I2/I_mult/i_MUX_I_2                 75.2780      1.0     0.0000     0.0000  0.0000  bN_3to1mux_N25_10
+I2/I_mult/i_MUX_I_2/mux1            26.6000      0.3    26.6000     0.0000  0.0000  bN_2to1mux_N25_20
+I2/I_mult/i_MUX_I_2/mux2            48.6780      0.6    48.6780     0.0000  0.0000  bN_2to1mux_N25_19
+I2/I_mult/i_MUX_I_3                 78.7360      1.0     0.0000     0.0000  0.0000  bN_3to1mux_N25_9
+I2/I_mult/i_MUX_I_3/mux1            27.6640      0.4    27.6640     0.0000  0.0000  bN_2to1mux_N25_18
+I2/I_mult/i_MUX_I_3/mux2            51.0720      0.7    51.0720     0.0000  0.0000  bN_2to1mux_N25_17
+I2/I_mult/i_MUX_I_4                 82.7260      1.1     0.0000     0.0000  0.0000  bN_3to1mux_N25_8
+I2/I_mult/i_MUX_I_4/mux1            29.7920      0.4    29.7920     0.0000  0.0000  bN_2to1mux_N25_16
+I2/I_mult/i_MUX_I_4/mux2            52.9340      0.7    52.9340     0.0000  0.0000  bN_2to1mux_N25_15
+I2/I_mult/i_MUX_I_5                 79.0020      1.0     0.0000     0.0000  0.0000  bN_3to1mux_N25_7
+I2/I_mult/i_MUX_I_5/mux1            28.7280      0.4    28.7280     0.0000  0.0000  bN_2to1mux_N25_14
+I2/I_mult/i_MUX_I_5/mux2            50.2740      0.7    50.2740     0.0000  0.0000  bN_2to1mux_N25_13
+I2/I_mult/i_MUX_I_6                 77.1400      1.0     0.0000     0.0000  0.0000  bN_3to1mux_N25_6
+I2/I_mult/i_MUX_I_6/mux1            28.9940      0.4    28.9940     0.0000  0.0000  bN_2to1mux_N25_12
+I2/I_mult/i_MUX_I_6/mux2            48.1460      0.6    48.1460     0.0000  0.0000  bN_2to1mux_N25_11
+I2/I_mult/i_MUX_I_7                 76.0760      1.0     0.0000     0.0000  0.0000  bN_3to1mux_N25_5
+I2/I_mult/i_MUX_I_7/mux1            27.9300      0.4    27.9300     0.0000  0.0000  bN_2to1mux_N25_10
+I2/I_mult/i_MUX_I_7/mux2            48.1460      0.6    48.1460     0.0000  0.0000  bN_2to1mux_N25_9
+I2/I_mult/i_MUX_I_8                 74.4800      1.0     0.0000     0.0000  0.0000  bN_3to1mux_N25_4
+I2/I_mult/i_MUX_I_8/mux1            27.1320      0.4    27.1320     0.0000  0.0000  bN_2to1mux_N25_8
+I2/I_mult/i_MUX_I_8/mux2            47.3480      0.6    47.3480     0.0000  0.0000  bN_2to1mux_N25_7
+I2/I_mult/i_MUX_I_9                 83.2580      1.1     0.0000     0.0000  0.0000  bN_3to1mux_N25_3
+I2/I_mult/i_MUX_I_9/mux1            31.6540      0.4    27.1320     4.5220  0.0000  bN_2to1mux_N25_6
+I2/I_mult/i_MUX_I_9/mux2            51.6040      0.7    47.0820     4.5220  0.0000  bN_2to1mux_N25_5
+I2/I_mult/i_PRECONDITIONING         35.1120      0.5     3.4580    31.6540  0.0000  PRECONDITIONING_24BIT
+I2/I_mult/i_XOR_plane_I_0           41.4960      0.5    41.4960     0.0000  0.0000  xor_plane_n_bit_N25_0
+I2/I_mult/i_XOR_plane_I_1           42.0280      0.6    42.0280     0.0000  0.0000  xor_plane_n_bit_N25_11
+I2/I_mult/i_XOR_plane_I_10          51.0720      0.7    42.0280     9.0440  0.0000  xor_plane_n_bit_N25_2
+I2/I_mult/i_XOR_plane_I_11          50.2740      0.7    41.2300     9.0440  0.0000  xor_plane_n_bit_N25_1
+I2/I_mult/i_XOR_plane_I_2           41.4960      0.5    41.4960     0.0000  0.0000  xor_plane_n_bit_N25_10
+I2/I_mult/i_XOR_plane_I_3           43.8900      0.6    43.8900     0.0000  0.0000  xor_plane_n_bit_N25_9
+I2/I_mult/i_XOR_plane_I_4           43.6240      0.6    43.6240     0.0000  0.0000  xor_plane_n_bit_N25_8
+I2/I_mult/i_XOR_plane_I_5           42.0280      0.6    42.0280     0.0000  0.0000  xor_plane_n_bit_N25_7
+I2/I_mult/i_XOR_plane_I_6           42.0280      0.6    42.0280     0.0000  0.0000  xor_plane_n_bit_N25_6
+I2/I_mult/i_XOR_plane_I_7           42.5600      0.6    42.5600     0.0000  0.0000  xor_plane_n_bit_N25_5
+I2/I_mult/i_XOR_plane_I_8           41.4960      0.5    41.4960     0.0000  0.0000  xor_plane_n_bit_N25_4
+I2/I_mult/i_XOR_plane_I_9           46.2840      0.6    41.2300     5.0540  0.0000  xor_plane_n_bit_N25_3
+I2/I_mult/i_last_MUX                63.3080      0.8    27.1320    36.1760  0.0000  bN_2to1mux_N24
+I3                                 545.3000      7.2     0.0000    27.1320  0.0000  FPmul_stage3
+I3/I11                             375.5920      4.9    46.8160   131.1380  0.0000  FPround_SIG_width28
+I3/I11/add_43                      197.6380      2.6    84.5880   113.0500  0.0000  FPround_SIG_width28_DW01_inc_1
+I3/I9                              142.5760      1.9    70.2240    72.3520  0.0000  FPnormalize_SIG_width28_0
+I4                                 470.0220      6.2    22.3440   162.7920  0.0000  FPmul_stage4
+I4/I1                              129.5420      1.7    66.2340    63.3080  0.0000  FPnormalize_SIG_width28_1
+I4/I3                              155.3440      2.0    42.2940   113.0500  0.0000  PackFP
+REGA                               144.7040      1.9     0.0000   144.7040  0.0000  reg_en_rst_n_N32_0
+REGB                               144.7040      1.9     0.0000   144.7040  0.0000  reg_en_rst_n_N32_1
+i_ff_N_levels_EXP_neg                9.0440      0.1     0.0000     0.0000  0.0000  flip_flop_N_level_rst_n_N2_0
+i_ff_N_levels_EXP_neg/FD_0           4.5220      0.1     0.0000     4.5220  0.0000  flipflop_rst_n_0
+i_ff_N_levels_EXP_neg/FD_1           4.5220      0.1     0.0000     4.5220  0.0000  flipflop_rst_n_11
+i_ff_N_levels_EXP_pos                4.5220      0.1     0.0000     0.0000  0.0000  flip_flop_N_level_rst_n_N2_5
+i_ff_N_levels_EXP_pos/FD_0           0.0000      0.0     0.0000     0.0000  0.0000  flipflop_rst_n_10
+i_ff_N_levels_EXP_pos/FD_1           4.5220      0.1     0.0000     4.5220  0.0000  flipflop_rst_n_9
+i_ff_N_levels_SIGN_out               9.0440      0.1     0.0000     0.0000  0.0000  flip_flop_N_level_rst_n_N2_4
+i_ff_N_levels_SIGN_out/FD_0          4.5220      0.1     0.0000     4.5220  0.0000  flipflop_rst_n_8
+i_ff_N_levels_SIGN_out/FD_1          4.5220      0.1     0.0000     4.5220  0.0000  flipflop_rst_n_7
+i_ff_N_levels_isINF                  9.0440      0.1     0.0000     0.0000  0.0000  flip_flop_N_level_rst_n_N2_3
+i_ff_N_levels_isINF/FD_0             4.5220      0.1     0.0000     4.5220  0.0000  flipflop_rst_n_6
+i_ff_N_levels_isINF/FD_1             4.5220      0.1     0.0000     4.5220  0.0000  flipflop_rst_n_5
+i_ff_N_levels_isNan                  9.0440      0.1     0.0000     0.0000  0.0000  flip_flop_N_level_rst_n_N2_2
+i_ff_N_levels_isNan/FD_0             4.5220      0.1     0.0000     4.5220  0.0000  flipflop_rst_n_4
+i_ff_N_levels_isNan/FD_1             4.5220      0.1     0.0000     4.5220  0.0000  flipflop_rst_n_3
+i_ff_N_levels_isZ                    9.0440      0.1     0.0000     0.0000  0.0000  flip_flop_N_level_rst_n_N2_1
+i_ff_N_levels_isZ/FD_0               4.5220      0.1     0.0000     4.5220  0.0000  flipflop_rst_n_2
+i_ff_N_levels_isZ/FD_1               4.5220      0.1     0.0000     4.5220  0.0000  flipflop_rst_n_1
+i_reg_N_levels_EXP_in               63.3080      0.8     0.0000     0.0000  0.0000  reg_N_level_rst_n_M8_N2
+i_reg_N_levels_EXP_in/r_0           27.1320      0.4     0.0000    27.1320  0.0000  REG_RST_N_N8_0
+i_reg_N_levels_EXP_in/r_1           36.1760      0.5     0.0000    36.1760  0.0000  REG_RST_N_N8_1
+i_reg_N_levels_SIG_in                0.0000      0.0     0.0000     0.0000  0.0000  reg_N_level_rst_n_M28_N2
+i_reg_N_levels_SIG_in/r_0            0.0000      0.0     0.0000     0.0000  0.0000  REG_RST_N_N28_0
+i_reg_N_levels_SIG_in/r_1            0.0000      0.0     0.0000     0.0000  0.0000  REG_RST_N_N28_1
+--------------------------------  ---------  -------  ---------  ---------  ------  ------------------------------
+Total                                                 4297.4960  3326.8619  0.0000
+
+1
