@@ -1,6 +1,6 @@
 In this section, we are performing two different logic synthesis of the fine grain pipeline structure:
    -Logic Synthesis with compile and optmize_register commands;
-    -Logic Synthesis with compile ultra command;
+   -Logic Synthesis with compile ultra command;
 
 The different folder are organized as usual.
 Moreover, both in syn and in netlist/results folders we have two different scripts and two 
